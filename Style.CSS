@@ -1,0 +1,39 @@
+/* Colores de fondo de la web*/
+header{
+    /*Agg backgruond color green dog*/
+    text-align: center;
+}
+
+h1{
+    color: bisque;
+}
+
+/* ------------------------------------------------------ */
+
+body{
+    background-color: #F5F7F6;;
+}
+
+h2{
+    color: rgba(0, 0, 0, 0.605);
+    text-align: center;
+}
+
+/* ------------------------------------------------------ */
+footer{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/003/086/563/large_2x/artificial-grass-texture-banner-free-photo.jpg);
+    background-size: cover;
+    background-position: 100vh;
+
+    text-align: center;
+    height: 150px;
+    display: flex; /*activa el sistema flexible*/
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente */
+}
+
+h3{
+    color: bisque;
+}
+
+/* ------------------------------------------------------ */
