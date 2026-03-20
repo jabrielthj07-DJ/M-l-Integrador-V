@@ -1,27 +1,16 @@
-/* Colores de fondo de la web*/
-header{
-    /*Agg backgruond color green dog*/
-    text-align: center;
+html{
+scroll-behavior: smooth; /*Es para bajar lentamente*/
 }
-
-h1{
-    color: bisque;
-}
-
 /* ------------------------------------------------------ */
 
 body{
     background-color: #F5F7F6;;
 }
 
-h2{
-    color: rgba(0, 0, 0, 0.605);
-    text-align: center;
-}
 
 /* ------------------------------------------------------ */
 footer{
-    background-image: url(https://static.vecteezy.com/system/resources/previews/003/086/563/large_2x/artificial-grass-texture-banner-free-photo.jpg);
+    background-color: #00B4D8;
     background-size: cover;
     background-position: 100vh;
 
@@ -32,8 +21,139 @@ footer{
     align-items: center;     /* centra verticalmente */
 }
 
+.Derechos{
+    color: beige;
+}
+
 h3{
     color: bisque;
 }
+/* estilo de la imagen de los perros */
+body {
+
+background-image: linear-gradient(180deg, rgba(97, 91, 91, 0.495), rgba(199, 191, 191, 0.5)), url('BannerHeaderpng.png');
+  background-size: cover;
+  justify-content: center;
+  background-repeat: no-repeat; /*evita que se repita */
+  align-items: center;
+  height: 100vh;
+
+  
+}
+/* imagen parte de abajo
 
 /* ------------------------------------------------------ */
+
+/* encabezado del sitio web */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.clearflix {
+    clear: both;
+    float: none;
+}
+
+header{
+    width: 100k;
+    background: #00B4D8;
+    height: 90px;
+}
+
+.LeftLogo{
+    text-align: right;
+}
+
+
+nav {
+    float: right;
+
+}
+
+
+
+nav a {
+    padding: 30px 20px;
+    color: rgb(235, 228, 228);
+    text-decoration: none;
+    line-height: 50px;
+    font-weight: bold;
+    border-radius: 5px;
+
+    transition: all 1s;
+
+}
+
+nav a:hover{
+    background: white;
+    color: #00B4D8;
+}
+
+.half {
+    width: 30%;
+    float: left;
+    text-align: center;
+
+}
+
+.half img{
+   width: 100%; 
+   height: auto;
+}
+
+.half h1{
+    margin-top: 300px;
+    line-height: 50px;
+}
+
+.logo {
+  font-size: 30px;   /* Tamaño de letra */
+  font-weight: bold;
+  color: white;      /* Texto en blanco para contraste */
+  text-align: left;  /* Alineado a la izquierda */
+ 
+}
+/*  servicios parte de abajo          */
+
+.servicios{
+    text-align: center;
+    margin: 50px 0; /* espacio arriba y abajo */
+}
+
+.servicios h2{
+    font-size: 2rem;
+    margin-bottom: 10px; /* espacio entre el titulo y los cuadritos */
+    color: black;
+    font-weight: bold;
+   
+}
+.servicios {
+  display: flex;              /* coloca los íconos en fila */
+  justify-content: center;    /* centra horizontalmente */
+  gap: 100px;                  /* espacio entre tarjetas */
+  margin-top: 550px;           /* empuja hacia abajo */
+  margin-bottom: 50px;        /* espacio antes del footer */
+}
+
+.servicio {
+  background-color: #00B4D8;  /* fondo azul de los cuadritos */
+  color: white;               /* texto blanco de los cuadritos*/
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: 150px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.servicio img {
+  width: 60px;
+  margin-bottom: 10px;
+}
