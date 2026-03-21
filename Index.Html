@@ -1,56 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Style.CSS">
-    <title> Veterinaria M&L</title>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Veterinaria M&L</title>
 
 </head>
 
+<body>
 
-    <body>
-        <header>
-            
+<header class="header">
 
-   <div class="content">
-      <div class="logo">Veterinaria M&L - Masatepe</div>
-      <nav class="menu">
-         <a href="#">Nosotros</a>
-         <a href="#">Galeria</a>
-         <a href="#">Contacto</a>
-         <a href="#">Servicio</a>
-      </nav>
-   </div>
+    <div class="logo-container">
+        <img src="Ahora si el logo.png" alt="Logo" class="logo-img">
+        <h1>Veterinaria M&L - Masatepe</h1>
+    </div>
+
+    <nav class="menu">
+        <a href="#Nosotros">Nosotros</a>
+        <a href="#">Galeria</a> <!-- Pensar que agregar aqui y quien va a sustituir producto porq eso va en otra page-->
+        <a href="#Contacto">Contacto</a>
+        <a href="#Productos">Productos</a>
+    </nav>
+
 </header>
 
 
-  <section class="servicios">
-    
-  <div class="servicio">
-    <img src="img/estetoscopio.svg" alt="Consulta médica">
-    <p>Consulta médica</p>
-  </div>
-  <div class="servicio">
-    <img src="img/secadora.svg" alt="Estética veterinaria">
-    <p>Estética veterinaria</p>
-  </div>
-  <div class="servicio">
-    <img src="img/bisturi.svg" alt="Cirugías veterinarias">
-    <p>Cirugías veterinarias</p>
-  </div>
-  <div class="servicio">
-    <img src="img/jeringa.svg" alt="Vacunas">
-    <p>Vacunas</p>
-  </div>
+<!-- Imagen de los dogs-->
+<section class="banner">
+    <div class="overlay">
+        <h2 id="Nosotros">Cuidamos la salud de tus mascotas porque vos no podes</h2>
+        <p>Amor, compromiso y atención profesional</p>
+    </div>
 </section>
-   
-</ul>
 
 
-<!-- Cambio jefferson-->
+<section class="descripcion">
+    <h2>Sobre Nosotros</h2>
+    <p>
+        En Veterinaria M&L - Masatepe nos dedicamos al cuidado integral de tus mascotas,
+        brindando servicios de consulta médica, estética, cirugías y vacunación.
+        Nuestro compromiso es ofrecer atención profesional con amor y responsabilidad,
+        garantizando el bienestar de cada animal que llega a nuestras manos.
+    </p>
+</section>
+
+<section id="Productos" class="ProductosSection">
+
+    <div class="producto">
+        <img src="https://www.naturalbestproducts.net/images/max-vitamine-range.png">
+        <p>Loros</p>
+    </div>
+
+    <div class="producto">
+        <img src="https://www.naturalbestproducts.net/images/max-biocide-geraniol-rabbit-range.png">
+        <p>Conejos</p>
+    </div>
+
+    <div class="producto">
+        <img src="https://www.naturalbestproducts.net/images/herba-max-dimeticone-slider.png">
+        <p>Perros</p>
+    </div>
+
+    <div class="producto">
+        <img src="https://www.naturalbestproducts.net/images/max-biocide-margosa-slider.png">
+        <p>Gatos</p>
+    </div>
+
+</section>
+
 <footer>
-<p class="Derechos"> @Derecho De Autor</p>
+    <p id="Contacto">@Derechos Reservados - 2026</p> <!-- Despues cambiar con el formulario, na mas es de prueba-->
 </footer>
 
+</body>
+</html>
