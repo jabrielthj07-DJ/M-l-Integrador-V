@@ -5,7 +5,7 @@ header{
 }
 
 h1{
-    color: black;
+    color: #00B4D8;
 }
 
 /* ------------------------------------------------------ */
@@ -54,40 +54,61 @@ body {
 /* encabezado del sitio web */
 *{
     margin: 0;
-    padding: 0;
+    padding: 0; /* elima el espacio en blanco de encabezado al lado izquierdo  y 
+    derecho */
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .content{
     width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-}
-
-.clearflix {
-    clear: both;
-    float: none;
+    padding: 0 20px;
 }
 
 header{
     width: 100k;
     background: #00B4D8;
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
-header img {
-    float: left;
+header .content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo-img {
     height: 80px;
     width: auto;
-    display: block;
+    margin-right: 10px;
+}
+/* estilo del texto del encabezado del logo y el texto */
+header h1 { 
+    margin: 0 0 0 20px; /* espacio entre logo y texto */
+    flex: 1;
+    text-align: center;
+}
+/* estilo del logo */
+.logo-img {
+    height: 136px; /* agranda un poco el logo */
+    width: auto;
+    margin-right: 20px;
 }
 
+/* estilo del texto del servicio,Galeria,ect */
 nav {
-    float: right;
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
 }
 
 nav a {
-    padding: 30px 20px;
+    padding: 10px 15px;
     color: white;
     text-decoration: none;
     line-height: 50px;
@@ -97,6 +118,7 @@ nav a {
     transition: all 1s;
 
 }
+
 
 nav a:hover{
     background: white;
@@ -113,13 +135,14 @@ nav a:hover{
 .half img{
    width: 100%; 
    height: auto;
+   
 }
 
 .half h1{
     margin-top: 300px;
     line-height: 50px;
 }
-
+/*logo de encabezado veterinaria Masatepe */
 .logo {
   font-size: 30px;   /* Tamaño de letra */
   font-weight: bold;
@@ -145,7 +168,7 @@ nav a:hover{
   display: flex;              /* coloca los íconos en fila */
   justify-content: center;    /* centra horizontalmente */
   gap: 100px;                  /* espacio entre tarjetas */
-  margin-top: 550px;           /* empuja hacia abajo */
+  margin-top: 700px;           /* empuja hacia abajo */
   margin-bottom: 50px;        /* espacio antes del footer */
 }
 
@@ -153,8 +176,8 @@ nav a:hover{
   background-color: #00B4D8;  /* fondo azul de los cuadritos */
   color: white;               /* texto blanco de los cuadritos*/
   text-align: center;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 40px;
+  border-radius: 20px;
   width: 150px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
