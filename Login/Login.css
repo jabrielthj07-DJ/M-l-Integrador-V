@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root{
+    /*Optimizar los procesos con los colores, fuentes, tama;os etc*/
+}
+
 html{
 font-size: 62.3%;
 }
@@ -12,6 +16,9 @@ body{
 font-family: "Open Sans", sans-serif;
 font-size:1.4rem;
 background-color: #010f15; /*Si no cambiarlo a negro con amarillo*/
+border: 1px solid rgba(0, 136, 255, 0.636);
+padding: 0.4rem;
+margin: 0.5rem;
 }
 
 .conteiner_login{
