@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&family=Merienda:wght@300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <title>Inicio de sesion</title>
+    <link rel="stylesheet" href="/Login/Login.css">
+
+</head>
+<body>
+    <main class="conteiner_login">
+        <section class="login_content">
+        <div>
+            <h1 class="form_titulo">Iniciar Sesión</h1><br>  <!--Tactica DJ(No borrar) -->
+            <form class="form_registro" >
+                <div class="form_campo">
+                    <label class="form_label" for="email">Correo electrónico:</label>
+                    <input class="form_input" type="email" id="email" placeholder="Ingresa tu Email" >
+                </div>
+                
+                <div class="form_campo">
+                    <label class="form_label" for="password">Contraseña:</label>
+                    <input class="form_input" type="password" id="password" placeholder="◾◾◾◾◾◾" >
+                </div>
+                
+                <button class="form_butom" type="submit">Iniciar Sesión</button>
+            </form>
+            
+<nav class="login_nav">
+    <a class="login_link" href="/registro">¿No tienes una cuenta? <span class="link">Crear</span></a>
+    <a class="login_link" href="/Olvido su Contraseña">¿Olvidaste tu contraseña? <span class="link">Recuperar</span></a>
+</nav>
+
+        </div>
+        </section>
+    </main>
+
+
+</body>
+</html>
+
+<!-- por si las moscas asi -->
+<!-- <main>
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form action="Login.php" method="POST">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+</main> -->
