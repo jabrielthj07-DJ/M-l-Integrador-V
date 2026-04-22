@@ -1,135 +1,101 @@
-html{
-    scroll-behavior: smooth; /*Es para bajar lentamente*/
-}
-
-/* Oe Nota pa todos mis shacks, si van a modificar no desordenen tanto y traten de dejar comentariado*/
-/*ATT: DJDA */
-
+/* reset basico pa evitar errores raros */
 *{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body{
-    background-color: #F5F7F6;
+.main-container{
+    display:grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 80px auto 60px;
+
+    grid-template-areas: 
+    "header header"
+    "section section"
+    "footer footer";
 }
 
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background: #00B4D8;
-    padding: 0 50px;
-    height: 90px;
+.header-contenedor{
+    grid-area: header;
+    background-color: rgb(44, 146, 194);
+    padding:15px;
 }
 
-.logo-container{
-    display: flex;
-    align-items: center;
-    gap: 15px; /* espacio en el logo y el texto en este caso la veterinaria */
+.header-contenedor a{
+    color:white;
+    margin-right:15px;
+    text-decoration:none;
 }
 
-/* logo de la vet m&l */
-.logo-img{
-    width: 90px; /* tamaño del logo */
+.section-contenedor{
+    grid-area: section;
+    display:flex;
+    height:100%;
 }
 
-/* texto */
-.logo-container h1{
-    font-size: 20px;
-    color: beige;
+.sidebar{
+    width:220px;
+    background-color: rgb(81, 125, 207);
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    color:white;
 }
 
-/* menu denavegacion*/
-.menu{
-    display: flex;
-    gap: 30px; /*Oe probando di que este era el q teniamos que agregar pa q se centrara*/
+.sidebar ul{
+    list-style:none;
+    flex-grow:1;
 }
 
-/* LINKS */
-.menu a{
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.sidebar ul li{
+    padding:10px;
+    margin-bottom:10px;
+    background:rgba(255,255,255,0.2);
+    border-radius:6px;
 }
 
-.menu a:hover{
-    color: #023E8A;
+.sidebar ul li:hover{
+    background:rgba(255,255,255,0.4); /*Sombreado al pasar el cursor*/
+    cursor:pointer;
 }
 
-.banner{
-    height: 400px;
-
-    /* Ft de the pets xd*/
-    background: url('Imagenes/BannerHeaderpng.png') center/cover no-repeat;
-
-    position: relative;
-}
-
-/* Cortina en imagen de the pets  */
-.overlay{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.4); /* Oe no cambien esto, es la cortina oscura en la img de los dogs*/
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    color: white;
+.perfil{
+    margin-top:auto;
+    padding:10px;
+    background:rgba(0,0,0,0.3);
+    border-radius:6px;
+    cursor:pointer;
     text-align: center;
 }
 
-/* Info sobre la veterinaria o mejor dicho descripcion breve de ella*/
-.descripcion{
-    text-align: center;
-    padding: 50px;
+.perfil_link{
+    color:white;
+    text-decoration:none;
 }
 
-.descripcion h2{
-    margin-bottom: 20px;
+.contenido_inicio{
+    flex:1;
+    background-color:beige;
+    padding:25px;
+    height: 100vh;
 }
 
-/* Seccion de producto imagend */
-.ProductosSection{
-    display: flex; /* pone los productos en fila */
-    justify-content: center; /* centra horizontalmente */
-    gap: 50px; /* espacio entre cada los productos */
-    padding: 50px;
+.card{
+    background:white;
+    padding:15px;
+    margin-top:15px;
+    border-radius:10px;
 }
 
-
-/*Trajetas o fondo celeste en img producto */
-.producto{
-    background: #00B4D8; 
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 150px;
-
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /*SOmbra debajo de los cuadros celestones*/
+.footer{
+    grid-area: footer;
+    background-color:#2aaeea;
+    color:white;
+    text-align:center;
+    padding:15px;
 }
 
-
-/* IMG dentro del fondo celeste */
-.producto img{
-    width: 70px;
-    margin-bottom: 10px;
-}
-
-/* Aqui para abajo agreguen solamente lo que este en relacion con el footer, por ejemplo agregar contacto*/
-footer{
-    background: #00B4D8;
-    color: white;
-    height: 100px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card h3{
+    margin-bottom:5px;
 }

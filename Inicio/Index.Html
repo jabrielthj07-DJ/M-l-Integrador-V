@@ -9,69 +9,56 @@
 
 <body>
 
-<header class="header">
+    <div class="main-container">
 
-    <div class="logo-container">
-        <img src="Imagenes/Ahora si el logo.png" alt="Logo" class="logo-img">
-        <h1>Veterinaria M&L - Masatepe</h1>
+        <header class="header-contenedor">
+            <nav>
+                <img src="logo.png" alt="Logo Veterinaria M&L" class="logo">
+                <h1>Veterinaria M&L</h1>
+            </nav>
+        </header>
+
+        <section class="section-contenedor">
+
+            <div class="sidebar"> <!--sidebar = barra lateral por si las moscas-->
+
+                <ul>
+                    <li>Inicio</li>
+                    <li>Productos</li>
+                    <li>Categorias</li>
+                    <li>Ventas</li>
+                    <!--agregar más opciones con base al docx-->
+                </ul>
+
+                
+                <div class="perfil">
+                    <a class="perfil_link" href="/Perfil_Usuario/Perfil.Html">Mi Perfil</a>  <!--Agregr icono o diseno mejor-->
+                </div>
+            </div>
+
+            <div class="contenido_inicio">
+                <h1>Bienvenido al sistema</h1>
+
+                <!-- Aqui vamosa agregar los diagramas [ara hacer el dashboard]-->
+                <div class="card">
+                    <h3>Productos</h3>
+                    <p>Control de inventario</p>
+                </div>
+
+                <div class="card">
+                    <h3>Categorias</h3>
+                    <p>Gestión de categorías</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <p>Derechos Reservados - Veterinaria M&L - Masatepe © 2026</p>
+        </footer>
+
     </div>
-
-    <nav class="menu">
-        <a href="#Nosotros">Nosotros</a>
-        <a href="#">Galeria</a> <!-- Pensar que agregar aqui y quien va a sustituir producto porq eso va en otra page-->
-        <a href="#Contacto">Contacto</a>
-        <a href="#Productos">Productos</a>
-    </nav>
-
-</header>
-
-
-<!-- Imagen de los dogs-->
-<section class="banner">
-    <div class="overlay">
-        <h2 id="Nosotros">Cuidamos la salud de tus mascotas porque vos no podes</h2>
-        <p>Amor, compromiso y atención profesional</p>
-    </div>
-</section>
-
-
-<section class="descripcion">
-    <h2>Sobre Nosotros</h2>
-    <p>
-        En Veterinaria M&L - Masatepe nos dedicamos al cuidado integral de tus mascotas,
-        brindando servicios de consulta médica, estética, cirugías y vacunación.
-        Nuestro compromiso es ofrecer atención profesional con amor y responsabilidad,
-        garantizando el bienestar de cada animal que llega a nuestras manos.
-    </p>
-</section>
-
-<section id="Productos" class="ProductosSection">
-
-    <div class="producto">
-        <img src="https://www.naturalbestproducts.net/images/max-vitamine-range.png">
-        <p>Loros</p>
-    </div>
-
-    <div class="producto">
-        <img src="https://www.naturalbestproducts.net/images/max-biocide-geraniol-rabbit-range.png">
-        <p>Conejos</p>
-    </div>
-
-    <div class="producto">
-        <img src="https://www.naturalbestproducts.net/images/herba-max-dimeticone-slider.png">
-        <p>Perros</p>
-    </div>
-
-    <div class="producto">
-        <img src="https://www.naturalbestproducts.net/images/max-biocide-margosa-slider.png">
-        <p>Gatos</p>
-    </div>
-
-</section>
-
-<footer>
-    <p id="Contacto">@Derechos Reservados - 2026</p> <!-- Despues cambiar con el formulario, na mas es de prueba-->
-</footer>
 
 </body>
 </html>
