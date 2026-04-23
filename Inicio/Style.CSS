@@ -25,7 +25,7 @@
 
 .header-contenedor{
     grid-area:header;
-    background-color: rgb(47, 153, 202);
+    background-color: #1f85c0;
     display: flex;
     padding:15px;
 }
@@ -36,7 +36,7 @@
 }
 
 .titulo{
-    color:beige;
+    color:#FFFFFF;
     font-size:27px;
 }
 
@@ -48,7 +48,7 @@
 
 .sidebar{
     width:220px;
-    background-color: rgb(81, 125, 207);
+     background-color: #1F2937; /*rgb(81, 125, 207); */
     padding:20px;
     display:flex;
     flex-direction:column;
@@ -74,8 +74,9 @@
 }
 
 .sidebar ul li:hover{
-    background:rgba(255,255,255,0.4); 
+    background:#27AE60; 
     cursor:pointer;
+    color:#FFFFFF;
 }
 
 .perfil{
@@ -94,13 +95,13 @@
 
 .contenido_inicio{
     flex:1;
-    background-color:beige;
+    background-color:#F9FAFB;
     padding:25px;
     height: 100vh;
 }
 
 .card{
-    background:white;
+    background:#FFFFFF;
     padding:15px;
     margin-top:15px;
     border-radius:10px;
@@ -108,8 +109,8 @@
 
 .footer{
     grid-area: footer;
-    background-color:#2aaeea;
-    color:white;
+    background-color:#111827;
+    color:#9CA3AF;
     text-align:center;
     padding:5px;
 }
