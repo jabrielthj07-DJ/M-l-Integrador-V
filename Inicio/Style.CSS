@@ -24,14 +24,14 @@
 
 .header-contenedor{
     grid-area:header;
-    background-color: #1f85c0;
+    background: linear-gradient(to right, #1f85c0, #4fc3f7, #7b1fa2);
     display: flex;
     padding:15px;
 }
 
 .logo{
     width:70px;
-    height:auto;
+    height:70px;
 }
 
 .titulo{
