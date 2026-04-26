@@ -52,7 +52,7 @@
 
 .sidebar{
     width:220px;
-     background-color: #1F2937; /*rgb(81, 125, 207); */
+     background-color: #263345; /*rgb(81, 125, 207); */
     padding:20px;
     display:flex;
     flex-direction:column;
@@ -82,7 +82,7 @@
 }
 
 .sidebar ul li:hover{
-    background:#27AE60; 
+    background:#6a4a99; 
     cursor:pointer;
     color:#FFFFFF;
 }
@@ -117,10 +117,13 @@
 
 .footer{
     grid-area: footer;
-    background-color:#111827;
+    background-color:#1f2b45;
     color:#9CA3AF;
     text-align:center;
     padding:5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .Icons{
