@@ -1,4 +1,3 @@
-
 *{
     margin:0;
     padding:0;
@@ -46,13 +45,18 @@
     height:100%;
 }
 
+.Icons_Inicio{
+    width:25px; 
+    height:auto;  
+}
+
 .sidebar{
     width:220px;
      background-color: #1F2937; /*rgb(81, 125, 207); */
     padding:20px;
     display:flex;
     flex-direction:column;
-    color:white;
+    color:rgb(236, 231, 231);
 }
 
 .sidebar ul{
@@ -71,6 +75,10 @@
     text-align:center;
     width: auto;
     height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
 }
 
 .sidebar ul li:hover{
