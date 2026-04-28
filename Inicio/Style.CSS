@@ -24,7 +24,7 @@
 
 .header-contenedor{
     grid-area:header;
-    background: linear-gradient(to right, #1f85c0, #4fc3f7, #7b1fa2);
+    background: linear-gradient(to right, #2e5e8b, #2e5e8b, #2e5e8b);
     display: flex;
     padding:15px;
 }
@@ -70,7 +70,7 @@
 .sidebar ul li{
     padding:10px;
     margin-bottom:10px;
-    background:rgba(255,255,255,0.4);
+    background:rgba(2, 95, 255, 0.4);
     border-radius:6px;
     text-align:center;
     width: auto;
@@ -80,9 +80,9 @@
     justify-content: center;
     gap:10px;
 }
-
+/*efecto para la barra de navegación */
 .sidebar ul li:hover{
-    background:#6a4a99; 
+    background:#adadad; 
     cursor:pointer;
     color:#FFFFFF;
 }
