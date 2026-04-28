@@ -1,0 +1,96 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*Optimizar los procesos con los colores, fuentes, tama;os etc*/
+}
+
+html{
+font-size: 62.3%;
+}
+
+body{
+font-family: "Open Sans", sans-serif;
+font-size:1.4rem;
+background-color: #010f15; /*Si no cambiarlo a negro con amarillo*/
+border: 1px solid rgba(0, 136, 255, 0.636);
+padding: 0.4rem;
+margin: 0.5rem;
+}
+
+.conteiner_login{
+display: flex;
+height: 100vh;
+align-items: center;
+justify-content: center;
+}
+
+.login_content{
+background-color: rgba(20, 20, 20, .9);
+border-radius: 2rem;
+padding: 4rem;
+max-width: 45rem;
+width: 90%;
+box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.6); /*La sombra de siempre*/
+border: 1px solid rgba(0, 136, 255, 0.636);
+}
+
+.form_titulo{
+color: #6fe2f1;
+font-size: 3.2rem;
+text-align: center;
+margin-bottom: 3.7rem;
+}
+
+.form_campo{
+margin-bottom: 3rem;
+}
+
+.form_label{
+    display:block;
+    margin-bottom: 0.5rem;
+    color: #6fe2f1 ; 
+}
+
+.form_input{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size:1.2rem ;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    color: #fff
+
+}
+
+.form_butom{
+width: 100%;
+padding: 1.5rem;
+background-color:#6fe2f1;
+color:black;
+border-radius: 1rem;
+border: none;
+font-size: 2rem;
+font-weight: bold;
+cursor:pointer;
+/* transition: background-color 0.3s ease; indagar mas pa agregarle en este caso el background */
+}
+
+.login_nav{
+text-align: center;
+margin-top:1.5rem;
+
+}
+
+.login_link{
+    display:block;
+    text-decoration:none;
+color: #e0e0e0;;
+}
+
+.link{
+    color:#6fe2f1 ;
+}
