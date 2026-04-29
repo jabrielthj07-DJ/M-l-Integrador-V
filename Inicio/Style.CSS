@@ -52,11 +52,11 @@
 
 .sidebar{
     width:220px;
-     background-color: #344256; /*rgb(81, 125, 207); */
+     background-color: rgb(0 0 0 / 15%); 
     padding:20px;
     display:flex;
     flex-direction:column;
-    color:rgb(236, 231, 231);
+    color:#444;;
 }
 
 .sidebar ul{
@@ -70,19 +70,19 @@
 .sidebar ul li{
     padding:10px;
     margin-bottom:10px;
-    background:rgba(255,255,255,0.4);
+    background:rgb(255 255 255 / 95%);
     border-radius:6px;
     text-align:center;
     width: auto;
     height:40px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start; 
     gap:10px;
+    transition: all 0.3s ease;
 }
 
 .sidebar ul li:hover{
-    background:#436cb7; 
+    background:  #1f85c0; /*rgb(0 0 0 / 5%);  preguntar cual de los dos se mire mejor */ 
     cursor:pointer;
     color:#FFFFFF;
 }
