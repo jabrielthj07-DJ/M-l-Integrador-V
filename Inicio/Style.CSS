@@ -17,26 +17,34 @@
 
 .nav_header{
     display: flex;
-    flex-direction:center;
     align-items:center;
-    gap:25px;
+    width: 100%;
+    justify-content: center;
 }
 
 .header-contenedor{
-    grid-area:header;
-    background: linear-gradient(to right, #1f85c0, #4fc3f7,#3387db, #1b51a1);
+    grid-area: header;
+    background: linear-gradient(to right, #1f85c0, #4fc3f7, #3387db, #1b51a1);
     display: flex;
-    padding:15px;
+    align-items: center;
+    justify-content: center; 
+    padding: 15px;
+    position: relative; /* posicionael logo de manera absoluta  (se separa del logo) */
 }
 
 .logo{
-    width:70px;
-    height:70px;
+    width:130px;
+    height:125px;
+    position: absolute; /*Se despega del row pa centrarlo esta en el contenedor padre*/
+    left: 20px; /*lo mueve desde izquierda*/
 }
 
 .titulo{
-    color:#FFFFFF;
-    font-size:27px;
+    color: #FFFFFF;
+    font-size: 33px;
+    font-weight: 600;
+    letter-spacing: 1px; 
+    text-align: center;
 }
 
 .section-contenedor{
@@ -52,7 +60,7 @@
 
 .sidebar{
     width:220px;
-     background-color: rgb(0 0 0 / 15%); 
+    background-color: rgb(0 0 0 / 15%); 
     padding:20px;
     display:flex;
     flex-direction:column;
@@ -82,7 +90,7 @@
 }
 
 .sidebar ul li:hover{
-    background:  #1f85c0; /*rgb(0 0 0 / 5%);  preguntar cual de los dos se mire mejor */ 
+    background:  #1f85c0;/*rgb(0 0 0 / 5%);  preguntar cual de los dos se mire mejor  */
     cursor:pointer;
     color:#FFFFFF;
 }
