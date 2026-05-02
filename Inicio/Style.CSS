@@ -64,7 +64,7 @@
     padding:20px;
     display:flex;
     flex-direction:column;
-    color:#444;;
+    color:#444;
 }
 
 .sidebar ul{
@@ -98,20 +98,20 @@
 .perfil{
     margin-top:auto;
     padding:10px;
-    background:rgba(255,255,255,0.4);
+    background:rgb(255 255 255 / 95%);
     border-radius:6px;
     cursor:pointer;
     text-align: center;
 }
 
 .perfil_link{
-    color:white;
+    color:#444;
     text-decoration:none;
-}
+} 
 
 .Text_LinkPerfil{
     text-align:center;
-}
+} 
 
 .contenido_inicio{
     flex:1;

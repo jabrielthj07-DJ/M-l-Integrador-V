@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Perfil.Css">
     <title>Perfil de Usuario</title>
 
-    <link rel="stylesheet" href="/Perfil_Usuario/Perfil.Css">
 </head>
+
 <body>
+
     <div class="main-container">
 
         <header class="header-contenedor">
-            <nav>
-                <img src="Ahora_si_el_logo.png" alt="VeterinariaM&L" class="logo">
-                <h1>Veterinaria M&L</h1>
+            <nav class="nav_header">
+                <img src="/Inicio/Imagenes_Inicio/imagen.png" alt="Logo Veterinaria M&L" class="logo">
+                <h1 class="titulo">Veterinaria M&L</h1>
             </nav>
         </header>
 
@@ -21,28 +22,34 @@
 
             <div class="sidebar"> <!--sidebar = barra lateral por si las moscas-->
 
-                <ul>
-                    <li>Inicio</li>
-                    <li>Productos</li>
-                    <li>Categorias</li>
-                    <li>Ventas</li>
-                    <!--agregar más opciones con base al docx-->
+                <ul class="sidebar_ul">
+                    <li><img alt="Inicio" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/inicio.svg">Inicio</li>
+                    <li><img alt="Productos"  class="Icons_Inicio" src="Imagenes_Perfil/Iconos/producto.svg">Productos</li>
+                    <li><img alt="Categorias" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/categorias.svg">Categorias</li>
+                    <li><img alt="Ventas" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/Ventas_original.svg">Ventas</li>
+                    <li><img alt="Compras" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/compras.svg">Compras</li>
+                    <li><img alt="Inventario" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/Inventario.svg">Inventario</li>
+                    <li><img alt="Proovedores" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/proovedor.svg">Proovedores</li>
+                    
                 </ul>
-
-                
+          
+                <div class="perfil"> <!-- AGREGAR UNAFLECHA PARA HACER QUE REGRESE AL INICIO, QUE NO SE REPITA EL Inicio-->
+                    <a class="perfil_link"  href="/Inicio/Index.Html"><img class="Icons_Inicio" alt="Perfil" src="Imagenes_Perfil/Iconos/perfil.svg"><p class="Text_LinkPerfil">Regresar</p></a>  <!--Agregr icono o diseno mejor-->
+                 </div>
+            </div> 
 
             <div class="contenido_inicio">
-                <h1>Bienvenido al sistema</h1>
+                <h1>Bienvenido al Perfil</h1>
 
-                <!-- Aqui vamosa agregar los diagramas [ara hacer el dashboard]-->
+                <!-- Aqui vamosa agregar los diagramas para hacer el dashboard]-->
                 <div class="card">
-                    <h3>Productos</h3>
-                    <p>Control de inventario</p>
+                    <h2>Usuarios</h2>
+                    <p>Usuarios Registrados</p>
                 </div>
 
                 <div class="card">
-                    <h3>Categorias</h3>
-                    <p>Gestión de categorías</p>
+                    <h3>Roles</h3>
+                    <p>Roles asignados</p>
                 </div>
 
             </div>
@@ -50,7 +57,7 @@
         </section>
 
         <footer class="footer">
-            <p>Derechos Reservados - Veterinaria M&L - Masatepe © 2026</p>
+            <p>Derechos Reservados - Veterinaria M&L - Masatepe © 2026</p> 
         </footer>
 
     </div>
