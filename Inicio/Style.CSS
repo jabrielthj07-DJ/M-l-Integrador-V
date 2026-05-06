@@ -146,3 +146,27 @@
 .card h3{
     margin-bottom:5px;
 }
+
+.dashboard{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.dashboard-card{
+    text-align:center;
+    padding:20px;
+    transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover{
+    transform: translateY(-5px);
+}
+
+.numero{
+    font-size:28px;
+    font-weight:bold;
+    color:#1f85c0;
+    margin-top:10px;
+}
