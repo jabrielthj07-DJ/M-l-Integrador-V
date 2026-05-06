@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-:root{
-    /*Optimizar los procesos con los colores, fuentes, tama;os etc*/
-}
-
 html{
 font-size: 62.3%;
 }
@@ -15,10 +11,10 @@ font-size: 62.3%;
 body{
 font-family: "Open Sans", sans-serif;
 font-size:1.4rem;
-background-color: #010f15; /*Si no cambiarlo a negro con amarillo*/
-border: 1px solid rgba(0, 136, 255, 0.636);
-padding: 0.4rem;
-margin: 0.5rem;
+background-color: #FFFFFF; 
+border: 2px solid rgba(0, 136, 255, 0.636);
+padding: 0.2rem;
+margin: 0.2rem;
 }
 
 .conteiner_login{
@@ -29,7 +25,7 @@ justify-content: center;
 }
 
 .login_content{
-background-color: rgba(20, 20, 20, .9);
+background-color: #F9FAFB;
 border-radius: 2rem;
 padding: 4rem;
 max-width: 45rem;
@@ -39,8 +35,8 @@ border: 1px solid rgba(0, 136, 255, 0.636);
 }
 
 .form_titulo{
-color: #6fe2f1;
-font-size: 3.2rem;
+color: #1f85c0;
+font-size: 3.6rem;
 text-align: center;
 margin-bottom: 3.7rem;
 }
@@ -52,45 +48,35 @@ margin-bottom: 3rem;
 .form_label{
     display:block;
     margin-bottom: 0.5rem;
-    color: #6fe2f1 ; 
+    color: #1f85c0 ; 
 }
 
 .form_input{
     width: 100%;
     padding: 1rem;
     border-radius: 0.5rem;
-    font-size:1.2rem ;
-    background-color: #1a1a1a;
-    border: 1px solid #333333;
-    color: #fff
+    border: 1px solid #1f85c0;
+    font-size:1.4rem;
+    color:#333;
 
 }
 
 .form_butom{
 width: 100%;
 padding: 1.5rem;
-background-color:#6fe2f1;
-color:black;
-border-radius: 1rem;
+background-color:#1f85c0;
+color:#fff;
+border-radius: 2rem;
 border: none;
 font-size: 2rem;
 font-weight: bold;
 cursor:pointer;
-/* transition: background-color 0.3s ease; indagar mas pa agregarle en este caso el background */
 }
 
-.login_nav{
-text-align: center;
-margin-top:1.5rem;
-
+.form_butom:hover{
+background-color: #254a5f;
+transition:  0.5s ease; 
 }
 
-.login_link{
-    display:block;
-    text-decoration:none;
-color: #e0e0e0;;
-}
 
-.link{
-    color:#6fe2f1 ;
-}
+
