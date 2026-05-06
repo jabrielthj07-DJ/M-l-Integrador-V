@@ -146,3 +146,62 @@
 .card h3{
     margin-bottom:5px;
 }
+
+
+.perfil-card{
+    background:#fff;
+    border-radius:12px;
+    padding:25px;
+    max-width:1000px; /*Tama;o card*/
+    margin-top:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.perfil-header{
+    text-align:center;
+}
+
+.perfil-header img{
+    width:80px;
+    height:80px;
+    border-radius:60%;
+    margin-bottom:20px;
+}
+
+.perfil-header h2{
+    margin-bottom:5px;
+}
+
+.perfil-header p{
+    color:#777;
+}
+
+.perfil-info{
+    margin-top:15px;
+}
+
+.perfil-info p{
+    margin-bottom:8px;
+}
+
+.perfil-acciones{
+    margin-top:15px;
+    text-align:center;
+}
+
+.perfil-acciones button{
+    padding:10px 20px;
+    border:none;
+    background:#1f85c0;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.perfil-acciones button:hover{
+    background:#1b51a1;
+}
