@@ -64,7 +64,7 @@
     padding:20px;
     display:flex;
     flex-direction:column;
-    color:#444;
+    color:#444;;
 }
 
 .sidebar ul{
@@ -98,20 +98,20 @@
 .perfil{
     margin-top:auto;
     padding:10px;
-    background:rgb(255 255 255 / 95%);
+    background:rgba(255,255,255,0.4);
     border-radius:6px;
     cursor:pointer;
     text-align: center;
 }
 
 .perfil_link{
-    color:#444;
+    color:white;
     text-decoration:none;
-} 
+}
 
 .Text_LinkPerfil{
     text-align:center;
-} 
+}
 
 .contenido_inicio{
     flex:1;
@@ -147,45 +147,40 @@
     margin-bottom:5px;
 }
 
-.banner-card{
-    height:180px;
-    border-radius:13px;
-    margin-top:15px;
+/*Factura pruueba*/
 
-    background: 
-        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-        url("Imagenes_Inicio/b3.jpeg");
-
-    background-size: cover;      
-    background-position: center; 
-    background-repeat: no-repeat;
-
-    display:flex;
-    align-items:center;
-    padding:20px;
-    color:white;
-}
-
-.dashboard{
-    display:grid;
-    grid-template-columns:  repeat(3, 1fr);
-    gap:20px;
+.factura{ 
+    background:#FFFFFF;
     margin-top:20px;
-}
-
-.dashboard-card{
-    text-align:center;
+    border-radius:10px;
     padding:20px;
-    transition: transform 0.3s ease;
+    width: 100%;
 }
 
-.dashboard-card:hover{
-    transform: translateY(-5px);  /* Efecto hacia arriba*/
-} 
+/* TABLA */
+.factura table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
 
-.numero{
-    font-size:28px;
-    font-weight:bold;
-    color:#1f85c0;
-    margin-top:10px;
+/* CELDAS */
+.factura th,
+.factura td{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+/* ENCABEZADO */
+.factura th{
+    background: #f1f5f9;
+}
+
+.factura h2{
+    margin-bottom: 10px;
+}
+
+.datos{
+    margin-bottom: 15px;
 }
