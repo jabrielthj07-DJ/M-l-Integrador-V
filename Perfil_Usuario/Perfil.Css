@@ -112,12 +112,20 @@
 .Text_LinkPerfil{
     text-align:center;
 }
+/* esttilo para el titulo del perfil de usuario */
+.contenido_inicio h1{
+    text-align:center;
+    width:100%;
+}
 
+/* contenido de la tarjeta de inicio del usuario */
 .contenido_inicio{
     flex:1;
     background-color:#F9FAFB;
-    padding:25px;
+    padding:30px;
     height: 100vh;
+    
+    
 }
 
 .card{
@@ -147,13 +155,13 @@
     margin-bottom:5px;
 }
 
-
+/* estilo para el perfil de usuario */
 .perfil-card{
-    background:#fff;
+    background:#d6dde5;
     border-radius:12px;
     padding:25px;
     max-width:1000px; /*Tama;o card*/
-    margin-top:20px;
+    margin:20px auto;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
     display:flex;
     flex-direction:column;
@@ -192,11 +200,12 @@
     text-align:center;
 }
 
+/* estilos para el boton de editar perfil y cerrar secion */
 .perfil-acciones button{
     padding:10px 20px;
     border:none;
     background:#1f85c0;
-    color:white;
+    color:rgb(255, 255, 255);
     border-radius:6px;
     cursor:pointer;
     transition:0.3s;
@@ -205,3 +214,4 @@
 .perfil-acciones button:hover{
     background:#1b51a1;
 }
+
