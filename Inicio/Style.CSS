@@ -140,7 +140,7 @@ color:#444;
     background-color:#1f2b45;
     color:#9CA3AF;
     text-align:center;
-    padding:5px;
+    padding:3px;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -197,3 +197,76 @@ color:#444;
     color:#1f85c0;
     margin-top:10px;
 }
+/* 
+Tablet maximo de ancho de 900 */
+
+@media (max-width: 900px){
+
+    .dashboard{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .titulo{
+        font-size:26px;
+    }
+
+}
+
+
+/* 
+celulares maximos de ancho de 600 */
+
+@media (max-width: 600px){
+
+    .section-contenedor{
+        flex-direction:column;
+    }
+
+     .logo{
+        position:static;
+        width:70px;
+        height:70px;
+    }
+
+    .sidebar{
+        width:100%;
+        padding:10px;
+    }
+
+    .sidebar ul{
+        gap:10px;
+    }
+
+    .sidebar ul li{
+        height:auto;
+        padding:12px;
+    }
+
+      .nav_header{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .contenido_inicio{
+        padding:15px;
+        height:auto;
+    }
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+     .banner-card{
+        height:140px;
+    }
+
+    .titulo{
+        font-size:22px;
+        text-align:center;
+    }
+
+   
+
+}
+
+/*Tarea para todos: Implementar mejor el responsive en este caso de 600px para que el sidebar se mire en un menu burger*/
