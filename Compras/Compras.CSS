@@ -1,0 +1,235 @@
+﻿*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.main-container{
+    display:grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 80px auto 60px;
+    grid-template-areas: 
+    "header header"
+    "section section"
+    "footer footer";
+}
+
+.nav_header{
+    display:flex;
+    align-items:center;
+    width:100%;
+    justify-content:center;
+}
+
+.header-contenedor{
+    grid-area:header;
+    background: linear-gradient(to right, #1f85c0, #4fc3f7, #3387db, #1b51a1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+    position:relative;
+}
+
+.logo{
+    width:130px;
+    height:125px;
+    position:absolute;
+    left:20px;
+}
+
+.titulo{
+    color:#FFFFFF;
+    font-size:33px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-align:center;
+}
+
+.section-contenedor{
+    grid-area:section;
+    display:flex;
+    height:100%;
+}
+
+.Icons_Inicio{
+    width:25px;
+    height:auto;
+}
+
+.sidebar{
+    width:220px;
+    background-color: rgb(0 0 0 / 15%);
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    color:#444;
+}
+
+.sidebar ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+    gap:25px;
+}
+
+.sidebar ul li{
+    padding:10px;
+    margin-bottom:10px;
+    background:rgb(255 255 255 / 95%);
+    border-radius:6px;
+    text-align:center;
+    width:auto;
+    height:40px;
+    display:flex;
+    justify-content:flex-start;
+    gap:10px;
+    transition:all 0.3s ease;
+}
+
+.sidebar ul li:hover{
+    background:#1f85c0;
+    cursor:pointer;
+    color:#FFFFFF;
+}
+
+.perfil{
+    margin-top:auto;
+    padding:10px;
+    background:rgb(255 255 255 / 95%);
+    border-radius:6px;
+    cursor:pointer;
+    text-align:center;
+}
+
+.perfil_link{
+    color:#444;
+    text-decoration:none;
+}
+
+.Text_LinkPerfil{
+    text-align:center;
+}
+
+.contenido_inicio{
+    flex:1;
+    background-color:#F9FAFB;
+    padding:25px;
+    height:100vh;
+}
+
+.footer{
+    grid-area:footer;
+    background-color:#1f2b45;
+    color:#9CA3AF;
+    text-align:center;
+    padding:5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.titulo-modulo{
+    color:#1f2b45;
+    margin-bottom:20px;
+}
+
+/* estolos para el cuadro de texto de buscar compras */
+.Compras-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.btn-agregar{
+    background:#1f85c0;
+    color:#FFFFFF;
+    border:none;
+    padding:12px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.btn-agregar:hover{
+    background:#1b51a1;
+}
+
+.buscador{
+    width:260px;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    outline:none;
+    margin-left:auto;
+}
+
+.tabla-contenedor{
+    background:#FFFFFF;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.tabla-Compras{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabla-Compras thead{
+    background:#1f85c0;
+    color:#FFFFFF;
+}
+
+.tabla-Compras th{
+    padding:15px;
+}
+/* estilos para las celdas de la tabla de  compras */
+.tabla-Compras td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+/* Estilos para resaltar la fila al pasar el mouse */
+.tabla-Compras tbody tr:hover{
+    background:#f3f9ff;
+}
+/* Estilos para la sección de acciones (editar y eliminar) */
+.acciones{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+/* Estilos para el botón de editar */
+.btn-editar{
+    background:#4fc3f7;
+    border:none;
+    padding:8px 14px;
+    border-radius:6px;
+    color:#FFFFFF;
+    cursor:pointer;
+    transition:0.3s;
+}
+/* Estilos para el botón de editar */
+.btn-editar:hover{
+    background:#3387db;
+}
+/* Estilos para el botón de eliminar */
+.btn-eliminar{
+    background:#e53935;
+    border:none;
+    padding:8px 14px;
+    border-radius:6px;
+    color:#FFFFFF;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-eliminar:hover{
+    background:#c62828;
+}
+
+
