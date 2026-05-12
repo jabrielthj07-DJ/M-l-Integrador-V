@@ -185,23 +185,23 @@
 .tabla-productos th{
     padding:15px;
 }
-
+/* estilos para las celdas de la tabla */
 .tabla-productos td{
     padding:15px;
     text-align:center;
     border-bottom:1px solid #ddd;
 }
-
+/* Estilos para resaltar la fila al pasar el mouse */
 .tabla-productos tbody tr:hover{
     background:#f3f9ff;
 }
-
+/* Estilos para la sección de acciones (editar y eliminar) */
 .acciones{
     display:flex;
     justify-content:center;
     gap:10px;
 }
-
+/* Estilos para el botón de editar */
 .btn-editar{
     background:#4fc3f7;
     border:none;
@@ -211,11 +211,11 @@
     cursor:pointer;
     transition:0.3s;
 }
-
+/* Estilos para el botón de editar */
 .btn-editar:hover{
     background:#3387db;
 }
-
+/* Estilos para el botón de eliminar */
 .btn-eliminar{
     background:#e53935;
     border:none;
