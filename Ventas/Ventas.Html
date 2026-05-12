@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ventas.CSS">
+    <title>Ventas - Veterinaria M&L</title>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header-contenedor">
+        <nav class="nav_header">
+        <img src="../Inicio/Imagenes_Inicio/imagen.png" alt="Logo Veterinaria M&L" class="logo">
+        <h1 class="titulo">Veterinaria M&L</h1>
+        </nav>
+        </header>
+
+    <section class="section-contenedor">
+         <div class="sidebar">
+            <ul class="sidebar_ul">
+             <li>
+                 <a class="perfil_link" href="../Inicio/Index.html">
+                 <img alt="Inicio" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/inicio.svg">
+                 Inicio
+                </a>
+
+            </li>
+                <li>
+                    <a class="perfil_link" href="../Productos/Productos.html">
+                    <img alt="Productos" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/producto.svg">
+                     Productos
+                    </a>
+                </li>
+
+                <li>
+                 <a class="perfil_link" href="../Categorias/Categorias.html">
+                 <img alt="Categorias" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/categorias.svg">
+                 Categorías
+                 </a>
+                 </li>
+
+                <li>
+                    <a class="perfil_link active" href="Ventas.html">
+                    <img alt="Ventas" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Ventas_original.svg">
+                    Ventas
+                    </a>
+                </li>
+
+                <li>
+                  <a class="perfil_link" href="../Compras/Compras.html">
+                  <img alt="Compras" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/compras.svg">
+                  Compras
+                  </a>
+                </li>
+
+                    <li>
+                        <a class="perfil_link" href="../Inventario/Inventario.html">
+                            <img alt="Inventario" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Inventario.svg">
+                            Inventario
+                        </a>
+                    </li>
+                    <li>
+                        <a class="perfil_link" href="../Proovedores/Proovedores.Html">
+                            <img alt="Proveedores" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/proovedor.svg">
+                            Proveedores
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="perfil">
+                    <a class="perfil_link" href="../Perfil_Usuario/Perfil.Html">
+                        <img class="Icons_Inicio" alt="Perfil" src="Imagenes_Inicio/Iconos/perfil.svg">
+                        <p class="Text_LinkPerfil">Mi Perfil</p>
+                    </a>
+                </div>
+            </div>
+        
+            <!-- contenidos de inicio de las ventas -->
+            <div class="contenido_inicio">
+                <h1 class="titulo-modulo">Gestión de Ventas</h1>
+
+                <div class="productos-header">
+                    <button class="btn-agregar">+ Agregar Venta</button>
+                    <input type="text" placeholder="Buscar venta..." class="buscador">
+                </div>
+         <!--tablas de ventas -->
+                <div class="tabla-contenedor">
+                    <table class="tabla-productos">
+                        <!--thead para los encabezados de la tabla -->
+                        <thead>
+                            <tr>
+                                <th>ID Venta</th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio Total</th>
+                                <th>Fecha</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <!--tbody para el contenido de la tabla -->
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>alimentos de perro A</td>
+                                <td>2</td>
+                                <td>$50.00</td>
+                                <td>11/05/2026</td>
+                                <td class="acciones">
+                                <button class="btn-editar">Editar</button>
+                                <button class="btn-eliminar">Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- Fila para la segunda venta -->
+                                <td>2</td>
+                                <td>Collar de perro B</td>
+                                <td>1</td>
+                                <td>$30.00</td>
+                                <td>11/05/2026</td>
+                                <td class="acciones">
+                                <button class="btn-editar">Editar</button>
+                                <button class="btn-eliminar">Eliminar</button>
+                                </td>
+                              </tr>
+                            <tr>
+                                <!-- Fila para la tercera venta -->
+                                <td>3</td>
+                                <td>Shampoo para perro C</td>
+                                <td>1</td>
+                                <td>$25.00</td>
+                                <td>11/05/2026</td>
+                                <td class="acciones">
+                                <button class="btn-editar">Editar</button>
+                                <button class="btn-eliminar">Eliminar</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <!-- Fila para la cuarta venta -->
+                                <td>4</td>
+                                <td>Juguete para gato D</td>
+                                <td>3</td>
+                                <td>$45.00</td>
+                                <td>11/05/2026</td>
+                                <td class="acciones">
+                                <button class="btn-editar">Editar</button>
+                                <button class="btn-eliminar">Eliminar</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <!-- Fila para la quinta venta -->
+                                <td>5</td>
+                                <td>Rascador para gato E</td>
+                                <td>1</td>
+                                <td>$60.00</td>
+                                <td>11/05/2026</td>
+                                <td class="acciones">
+                                <button class="btn-editar">Editar</button>
+                                <button class="btn-eliminar">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+</div>
+</body>
+</html>
