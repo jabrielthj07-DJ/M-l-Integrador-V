@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Proovedores.CSS">
+    <title>Proveedores - Veterinaria M&L</title>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header-contenedor">
+        <nav class="nav_header">
+        <img src="../Inicio/Imagenes_Inicio/imagen.png" alt="Logo Veterinaria M&L" class="logo">
+        <h1 class="titulo">Veterinaria M&L</h1>
+        </nav>
+        </header>
+
+    <section class="section-contenedor">
+         <div class="sidebar">
+            <ul class="sidebar_ul">
+             <li>
+                 <a class="perfil_link" href="../Inicio/Index.html">
+                 <img alt="Inicio" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/inicio.svg">
+                 Inicio
+                </a>
+
+            </li>
+                <li>
+                    <a class="perfil_link" href="../Productos/Productos.html">
+                    <img alt="Productos" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/producto.svg">
+                     Productos
+                    </a>
+                </li>
+
+                <li>
+                 <a class="perfil_link" href="../Categorias/Categorias.html">
+                 <img alt="Categorias" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/categorias.svg">
+                 Categorías
+                 </a>
+                 </li>
+
+                <li>
+                    <a class="perfil_link" href="../Ventas/Ventas.html">
+                    <img alt="Ventas" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Ventas_original.svg">
+                    Ventas
+                    </a>
+                </li>
+
+                <li>
+                  <a class="perfil_link active" href="Compras.html">
+                  <img alt="Compras" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/compras.svg">
+                  Compras
+                  </a>
+                </li>
+
+                    <li>
+                        <a class="perfil_link" href="../Inventario/Inventario.html">
+                            <img alt="Inventario" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Inventario.svg">
+                            Inventario
+                        </a>
+                    </li>
+                    <li>
+                        <a class="perfil_link" href="../Proovedores/Proovedores.Html">
+                            <img alt="Proveedores" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/proovedor.svg">
+                            Proveedores
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="perfil">
+                    <a class="perfil_link" href="../Perfil_Usuario/Perfil.Html">
+                        <img class="Icons_Inicio" alt="Perfil" src="Imagenes_Inicio/Iconos/perfil.svg">
+                        <p class="Text_LinkPerfil">Mi Perfil</p>
+                    </a>
+                </div>
+            </div>
+        
+            <!-- contenido principal de la tblas de proveedores -->
+             <div class="contenido_inicio">
+                <h2 class="titulo-modulo">Gestion de Proveedores</h2>
+
+                <!-- bto de agregar proveedores-->
+                <div class="Proveedores-header">
+                <button class="btn-agregar">+ Agregar Proveedores</button>
+                <input type="text" placeholder="Buscar Proveedores..." class="buscador">
+                </div>
+
+                <!--tablas de proveedores-->
+                <div class ="tabla-contenedor">
+                    <table class ="tabla-Proveedores">
+                     
+                        <!-- thead para los encabezado de la tabla de proveedores-->
+                        <thead>
+                          <tr>
+                            <th>Id_Proveedor</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Email</th>
+                            <th>Telefono</th>
+                            <th>Razon_Social</th>
+                            <th>Direccion</th>
+                            <th>Producto</th>
+                            <th>Acciones</th>
+                          </tr>
+                        </thead>
+                      
+                        <!--tbosy para el contenidp de la tabla-->
+                        <tbody>
+                           <tr>
+                            <td>1</td>
+                            <td>Juan</td>
+                            <td>Pérez</td>
+                            <td>juan.perez@email.com</td>
+                            <td>123456789</td>
+                            <td>Empresa S.A.</td>
+                            <td>Calle 123</td>
+                            <td>Higiene</td>
+
+                            <td class="acciones">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                            </td>
+                           </tr>
+                    <!-- fila  de los datos de la tabla de proveedores-->
+                           <tr>
+                            <td>2</td>
+                            <td>María</td>
+                            <td>Gómez</td>
+                            <td>maria.gomez@email.com</td>
+                            <td>987654321</td>
+                            <td>Empresa B.S.</td>
+                            <td>Avenida 456</td>
+                            <td>Alimentos</td>
+
+                            <td class="acciones">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                            </td>
+                           </tr>
+                 <!-- fila de tabla de -->
+                           <tr>
+                            <td>3</td>
+                            <td>Carlos</td>
+                            <td>Ramírez</td>
+                            <td>carlos.ramirez@email.com</td>
+                            <td>456789123</td>
+                            <td>Empresa C.S.</td>
+                            <td>Calle 789</td>
+                            <td>Accesorios</td>
+
+                            <td class="acciones">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                            </td>
+                           </tr>
+
+
+                           <tr>
+                            <td>4</td>
+                            <td>Ana</td>
+                            <td>Martínez</td>
+                            <td>ana.martinez@email.com</td>
+                            <td>321654987</td>
+                            <td>Empresa D.S.</td>
+                            <td>Plaza 101</td>
+                            <td>Alimentos</td>
+
+                            <td class="acciones">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                            </td>
+                           </tr>
+
+                           <tr>
+                            <td>5</td>
+                            <td>Laura</td>
+                            <td>Hernández</td>
+                            <td>laura.hernandez@email.com</td>
+                            <td>654987321</td>
+                            <td>Empresa E.S.</td>
+                            <td>Carrera 321</td>
+                            <td>Higiene</td>
+
+                            <td class="acciones">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                            </td>
+                           </tr>
+                        </tbody>
+                    </table>
+                </div>
+             </div>
+
+        </section> 
+    </div>
+</body>
+</html>
