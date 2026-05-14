@@ -78,7 +78,7 @@
 .sidebar ul li{
     padding:10px;
     margin-bottom:10px;
-    background:rgb(255 255 255 / 95%);
+    background:rgba(212, 226, 247, 0.95);
     border-radius:6px;
     text-align:center;
     width: auto;
@@ -90,7 +90,7 @@
 }
 
 .sidebar ul li:hover{
-    background:  #1f85c0;/*rgb(0 0 0 / 5%);  preguntar cual de los dos se mire mejor  */
+    background:  rgba(162, 192, 236, 0.95);/*rgb(0 0 0 / 5%);  preguntar cual de los dos se mire mejor  */
     cursor:pointer;
     color:#FFFFFF;
 }
