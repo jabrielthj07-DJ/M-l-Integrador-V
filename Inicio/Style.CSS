@@ -60,7 +60,7 @@
 
 .sidebar{
     width:220px;
-    background-color: rgba(127, 156, 219, 0.15); 
+    background-color: rgba(100, 130, 195, 0.15); 
     padding:20px;
     display:flex;
     flex-direction:column;
