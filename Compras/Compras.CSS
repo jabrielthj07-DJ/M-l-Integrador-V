@@ -152,6 +152,7 @@
     cursor:pointer;
     transition:0.3s;
     font-weight:bold;
+    font-size: 20px; /*para agrandar el boton */
 }
 
 .btn-agregar:hover{
@@ -215,7 +216,7 @@
 }
 /* Estilos para el botón de editar */
 .btn-editar:hover{
-    background:#3387db;
+    background:#0b131a;
 }
 /* Estilos para el botón de eliminar */
 .btn-eliminar{
@@ -230,6 +231,245 @@
 
 .btn-eliminar:hover{
     background:#c62828;
+}
+
+/* este campo son para los inputs del formulario de agregar compras */
+.formulario{
+    background-color: #eaecf0;
+    margin: 25px 0 0 20px;
+    padding: 20px;
+    border-radius: 8px;
+   box-shadow:0 10px 30px rgba(0,0,0,0.08);
+   width: calc(100% - 40px);
+   box-sizing: border-box;
+   margin-bottom: 18px; /*linea para separar la tabla y el bton */
+}
+
+/*encabezado del formulario */
+.formulario-header{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:10px;
+
+}
+
+#form-agregar-compras{
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /*espacio del bton */
+
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+.form-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+}
+
+.form-group label{
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+/*seccion del bton */
+.boton-agregar{
+    background-color: #1f85c0; /* Color azul similar al de tu captura */
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-size: 20px; /*agrandar el buton */
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+
+}
+
+.form-actions{
+   display: flex;
+    justify-content: flex-start;
+    margin-top: 100px; /* <--- Esto empuja el botón hacia el fondo */
+    padding-top: 20px;
+    
+}
+
+.form-group input {
+    width: 100%;             /* 1. Hace que el input ocupe todo el ancho de su columna */
+    height: 40px;            /* 2. Le da una altura más robusta y cómoda */
+    padding: 8px 12px;       /* 3. Espacio interno para que el texto no quede pegado al borde */
+    font-size: 15px;         /* 4. Agranda un poco el tamaño de la letra al escribir */
+    border: 1px solid #ccc;  /* Un borde gris limpio */
+    border-radius: 4px;      /* Bordes ligeramente redondeados como en tu referencia */
+    box-sizing: border-box;  /* Evita que el padding rompa el tamaño total */
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+
+/* Aplicamos el diseño grande tanto a los inputs como al select */
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: #FFFFFF;
+    color: #333333;
+
+}
+
+/*iconos de cada input*/
+/* 1. Contenedor del input: le da forma a la caja externa */
+.input-icon {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    overflow: hidden; /* Esto hace que el cuadro gris copie las esquinas redondeadas */
+    height: 50px;     /* Altura idéntica a tus inputs */
+    box-sizing: border-box;
+
+}
+
+/* 2. LA MAGIA: Crea el cuadro gris e inserta el icono automáticamente */
+.input-icon::before {
+    content: attr(data-icon); /* Captura el emoji/texto que pusiste en el HTML */
+    background-color: #f1f3f5; /* El color de fondo gris claro */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;           /* Espaciado a los lados del icono */
+    border-right: 1px solid #cccccc; /* Línea divisoria */
+    font-size: 25px; /* hacer mas grandes los inconos */
+}
+
+/* 3. Ajuste para el input interno */
+.input-icon input,
+.input-icon select{
+    border: none !important;
+    outline: none !important;
+    padding: 8px 12px;
+    width: 100%;
+    height: 100%;
+    font-size: 20px; /*letra mas grande dentro del input */
+    box-sizing: border-box;
+
+}
+
+/* Contenedor principal en la barra lateral */
+.menu-desplegable-compras {
+    display: flex !important;
+    flex-direction: column !important; /* Fuerza el despliegue hacia abajo, no horizontal */
+    width: 100%;
+    height: auto !important; /* Elimina cualquier restricción de altura */
+}
+
+/* Manejo interno del botón principal de compras */
+#btn-main-compras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.compras-txt-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilo de la flechita indicadora */
+.flecha-menu {
+    font-size: 10px;
+    color: #666;
+    transition: transform 0.3s ease;
+    padding-right: 5px;
+}
+
+/* 📋 SUBMENÚ VERTICAL (INTEGRADO, NO FLOTANTE) */
+.submenu-vertical-contenido {
+    display: none; /* Se controla con el JavaScript */
+    flex-direction: column;
+    background-color: #f9fafb; /* Un gris sumamente sutil para diferenciarlo del fondo */
+    border-radius: 6px;
+    margin: 4px 0 8px 10px; /* Separación y sangría hacia la derecha */
+    padding: 4px;
+    border-left: 2px solid #cbd5e1; /* Línea guía elegante en la izquierda */
+}
+
+/* Enlaces del submenú */
+.submenu-vertical-link {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px !important;
+    color: #4b5563 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    height: auto !important;
+}
+
+/* Efectos al pasar el mouse por las sub-opciones */
+.submenu-vertical-link:hover {
+    background-color: #e5e7eb !important;
+    color: #1b578c !important;
+}
+
+/* Indicador visual para la opción en la que estás actualmente */
+.submenu-vertical-link.opcion-activa {
+    background-color: #e2e8f0 !important;
+    color: #111827 !important;
+    font-weight: 600;
+}
+
+.sub-ico {
+    font-size: 13px;
+}
+
+#seccion-formulario {
+    display: none;
+}
+
+
+/* Botón Imprimir */
+.btn-imprimir {
+    background-color: #10b981; /* Un color verde esmeralda muy limpio */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-imprimir:hover {
+    background-color: #059669; /* Se oscurece un poco al pasar el mouse */
+}
+
+/* Asegura que los tres botones queden cómodos en la celda */
+.acciones {
+    display: flex;
+    gap: 6px; 
+    justify-content: center;
 }
 
 

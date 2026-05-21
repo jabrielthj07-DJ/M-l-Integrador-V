@@ -9,50 +9,60 @@
 <body>
     <div class="main-container">
         <header class="header-contenedor">
-        <nav class="nav_header">
-        <img src="../Inicio/Imagenes_Inicio/imagen.png" alt="Logo Veterinaria M&L" class="logo">
-        <h1 class="titulo">Veterinaria M&L</h1>
-        </nav>
+            <nav class="nav_header">
+                <img src="../Inicio/Imagenes_Inicio/imagen.png" alt="Logo Veterinaria M&L" class="logo">
+                <h1 class="titulo">Veterinaria M&L</h1>
+            </nav>
         </header>
 
-    <section class="section-contenedor">
-         <div class="sidebar">
-            <ul class="sidebar_ul">
-             <li>
-                 <a class="perfil_link" href="../Inicio/Index.html">
-                 <img alt="Inicio" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/inicio.svg">
-                 Inicio
-                </a>
+        <section class="section-contenedor">
+            <div class="sidebar">
+                <ul class="sidebar_ul">
+                    <li>
+                        <a class="perfil_link" href="../Inicio/Index.html">
+                            <img alt="Inicio" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/inicio.svg">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a class="perfil_link" href="../Productos/Productos.html">
+                            <img alt="Productos" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/producto.svg">
+                            Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a class="perfil_link" href="../Categorias/Categorias.html">
+                            <img alt="Categorias" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/categorias.svg">
+                            Categorías
+                        </a>
+                    </li>
+                    <li>
+                        <a class="perfil_link" href="../Ventas/Ventas.html">
+                            <img alt="Ventas" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Ventas_original.svg">
+                            Ventas
+                        </a>
+                    </li>
+                    <!--metodo de despliegue de la compra agregar compra y ver lista de compra-->
+                    <li class="menu-desplegable-compras">
+                        <div class="perfil_link active" id="btn-main-compras" onclick="toggleMenuCompras()">
+                            <div class="compras-txt-icon">
+                                <img alt="Compras" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/compras.svg">
+                                <span>Compras</span>
+                            </div>
+                            <span class="flecha-menu" id="flecha-compras">▼</span>
+                        </div>
 
-            </li>
-                <li>
-                    <a class="perfil_link" href="../Productos/Productos.html">
-                    <img alt="Productos" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/producto.svg">
-                     Productos
-                    </a>
-                </li>
-
-                <li>
-                 <a class="perfil_link" href="../Categorias/Categorias.html">
-                 <img alt="Categorias" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/categorias.svg">
-                 Categorías
-                 </a>
-                 </li>
-
-                <li>
-                    <a class="perfil_link" href="../Ventas/Ventas.html">
-                    <img alt="Ventas" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Ventas_original.svg">
-                    Ventas
-                    </a>
-                </li>
-
-                <li>
-                  <a class="perfil_link active" href="Compras.html">
-                  <img alt="Compras" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/compras.svg">
-                  Compras
-                  </a>
-                </li>
-
+                        <div class="submenu-vertical-contenido" id="submenu-compras">
+                            <a href="javascript:void(0);" class="submenu-vertical-link" id="sub-btn-agregar" onclick="mostrarFormulario()">
+                                <span class="sub-ico">➕</span> Agregar Compra
+                            </a>
+                            <a href="javascript:void(0);" class="submenu-vertical-link" id="sub-btn-lista" onclick="mostrarLista()">
+                                <span class="sub-ico">📋</span> Lista de Compras
+                            </a>
+                        </div>
+                    </li>
+                     <!--aqui termina el codigo-->
+                    
                     <li>
                         <a class="perfil_link" href="../Inventario/Inventario.html">
                             <img alt="Inventario" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Inventario.svg">
@@ -74,99 +84,208 @@
                     </a>
                 </div>
             </div>
-        
-            <!-- contenidos de inicio de las compras -->
+         <!--contenido de inicio de compra-->
             <div class="contenido_inicio">
                 <h1 class="titulo-modulo">Gestión de Compras</h1>
 
-                <div class="Compras-header">
-                    <button class="btn-agregar">+ Agregar Compra</button>
-                    <input type="text" placeholder="Buscar compra..." class="buscador">
-                </div>
-         <!--tablas de compras -->
-                <div class="tabla-contenedor">
-                    <table class="tabla-Compras">
-                        <!--thead para los encabezados de la tabla -->
-                        <thead>
-                            <tr>
-                                <th>ID Compra</th>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Precio Total</th>
-                                <th>Fecha</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-
-                        <!--tbody para el contenido de la tabla -->
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>alimentos de perro A</td>
-                                <td>Comida</td>
-                                <td>$50.00</td>
-                                <td>11/05/2026</td>
-                                <td class="acciones">
-                                <button class="btn-editar">Editar</button>
-                                <button class="btn-eliminar">Eliminar</button>
-                                </td>
-                            </tr>
+                <div id="seccion-lista">
+                    <div class="Compras-header">
+                        <button class="btn-agregar" onclick="mostrarFormulario()">+ Agregar Compra</button>
+                        <input type="text" placeholder="Buscar compra..." class="buscador">
+                    </div>
+              <!--creadno tabla de la lista de la compra-->
+                    <div class="tabla-contenedor">
+                        <table class="tabla-Compras">
                             
-                            <tr>
-                                <!-- Fila para la segunda venta de perro -->
-                                <td>2</td>
-                                <td>Collar de perro B</td>
-                                <td>Accesorios</td>
-                                <td>$30.00</td>
-                                <td>11/05/2026</td>
-                                <td class="acciones">
-                                <button class="btn-editar">Editar</button>
-                                <button class="btn-eliminar">Eliminar</button>
-                                </td>
-                              </tr>
-                            <tr>
-                                <!-- Fila para la tercera venta de perro -->
-                                <td>3</td>
-                                <td>Shampoo para perro C</td>
-                                <td>Higiene</td>
-                                <td>$25.00</td>
-                                <td>11/05/2026</td>
-                                <td class="acciones">
-                                <button class="btn-editar">Editar</button>
-                                <button class="btn-eliminar">Eliminar</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <!-- Fila para la cuarta venta de gato -->
-                                <td>4</td>
-                                <td>Juguete para gato D</td>
-                                <td>Accesorios</td>
-                                <td>$45.00</td>
-                                <td>11/05/2026</td>
-                                <td class="acciones">
-                                <button class="btn-editar">Editar</button>
-                                <button class="btn-eliminar">Eliminar</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <!-- Fila para la quinta venta de gato -->
-                                <td>5</td>
-                                <td>Rascador para gato E</td>
-                                <td>Accesorios</td>
-                                <td>$60.00</td>
-                                <td>11/05/2026</td>
-                                <td class="acciones">
-                                <button class="btn-editar">Editar</button>
-                                <button class="btn-eliminar">Eliminar</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            <thead>
+                                <tr> <!--campos de encabezado de la tabla de compra-->
+                                    <th>ID Compra</th>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio Total</th>
+                                    <th>Fecha</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            
+                            <tbody>   <!--informacion de la tabla-->
+                                <tr>
+                                    <td>1</td>
+                                    <td>alimentos de perro A</td>
+                                    <td>Comida</td>
+                                    <td>$50.00</td>
+                                    <td>11/05/2026</td>
+                                    <td class="acciones">
+                                        <button class="btn-editar">Editar</button>
+                                        <button class="btn-eliminar">Eliminar</button>
+                                        <button class="btn-imprimir"onclick="imprimirTicket('1', 'alimentos de perro A', 'Comida', '$50.00', '11/05/2026')">Imprimir</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Collar de perro B</td>
+                                    <td>Accesorios</td>
+                                    <td>$30.00</td>
+                                    <td>11/05/2026</td>
+                                    <td class="acciones">
+                                        <button class="btn-editar">Editar</button>
+                                        <button class="btn-eliminar">Eliminar</button>
+                                        <button class="btn-imprimir" onclick="imprimirTicket('2', 'Collar de perro B', 'Accesorios', '$30.00', '11/05/2026')">Imprimir</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Shampoo para perro C</td>
+                                    <td>Higiene</td>
+                                    <td>$25.00</td>
+                                    <td>11/05/2026</td>
+                                    <td class="acciones">
+                                        <button class="btn-editar">Editar</button>
+                                        <button class="btn-eliminar">Eliminar</button>
+                                        <button class="btn-imprimir" onclick="imprimirTicket('3', 'Shampoo para perro C', 'Higiene', '$25.00', '11/05/2026')">Imprimir</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Juguete para gato D</td>
+                                    <td>Accesorios</td>
+                                    <td>$45.00</td>
+                                    <td>11/05/2026</td>
+                                    <td class="acciones">
+                                        <button class="btn-editar">Editar</button>
+                                        <button class="btn-eliminar">Eliminar</button>
+                                        <button class="btn-imprimir" onclick="imprimirTicket('4', 'Juguete para gato D', 'Accesorios', '$45.00', '11/05/2026')">Imprimir</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Rascador para gato E</td>
+                                    <td>Accesorios</td>
+                                    <td>$60.00</td>
+                                    <td>11/05/2026</td>
+                                    <td class="acciones">
+                                        <button class="btn-editar">Editar</button>
+                                        <button class="btn-eliminar">Eliminar</button>
+                                        <button class="btn-imprimir" onclick="imprimirTicket('5', 'Rascador para gato E', 'Accesorios', '$60.00', '11/05/2026')">Imprimir</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+            <!--seccion del formulario de compra  con input ect y sus iconos-->
+                <div id="seccion-formulario">
+                    <div class="formulario"> 
+                        <div class="formulario-header">
+                            <h2>Agregar Nueva Compra</h2>
+                        </div>
+                        
+                        <form id="form-agregar-compras">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="producto">Producto</label>
+                                    <div class="input-icon" data-icon="📦">
+                                        <input type="text" id="producto" name="producto" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cantidad">Cantidad</label>
+                                    <div class="input-icon" data-icon="🔢">
+                                        <input type="number" id="cantidad" name="cantidad" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="precio">Precio Total</label>
+                                    <div class="input-icon" data-icon="💰">
+                                        <input type="number" id="precio" name="precio" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="estado">Estado</label>
+                                    <div class="input-icon" data-icon="🔄">
+                                        <select id="estado" name="estado" required>
+                                            <option value="">Seleccione un estado</option>
+                                            <option value="disponible">Disponible</option>
+                                            <option value="agotado">Agotado</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="fecha">Fecha</label>
+                                    <div class="input-icon" data-icon="📅">
+                                        <input type="date" id="fecha" name="fecha" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="boton-agregar">Agregar compra</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </section>
-</div>
+    </div>
+   <!--este es funcionalidad de los bton de agregar compra y la lista es un jvacrips-->
+    <script>
+        
+        // Capturamos los dos contenedores principales de la pantalla
+        const seccionLista = document.getElementById('seccion-lista');
+        const seccionFormulario = document.getElementById('seccion-formulario');
+
+        // Capturamos las opciones del submenú lateral
+        const subBtnAgregar = document.getElementById('sub-btn-agregar');
+        const subBtnLista = document.getElementById('sub-btn-lista');
+
+        // Función para mostrar solo el formulario gris
+        function mostrarFormulario() {
+            seccionFormulario.style.display = 'block';
+            seccionLista.style.display = 'none';
+            
+            // Cambiamos cuál opción se ve resaltada en azul en la barra lateral
+            subBtnAgregar.classList.add('opcion-activa');
+            subBtnLista.classList.remove('opcion-activa');
+        }
+
+        // Función para mostrar solo el buscador y la tabla azul
+        function mostrarLista() {
+            seccionLista.style.display = 'block';
+            seccionFormulario.style.display = 'none';
+            
+            // Cambiamos cuál opción se ve resaltada en azul en la barra lateral
+            subBtnLista.classList.add('opcion-activa');
+            subBtnAgregar.classList.remove('opcion-activa');
+        }
+
+        // Función original para abrir/cerrar el acordeón de la barra lateral
+        function toggleMenuCompras() {
+            const submenu = document.getElementById('submenu-compras');
+            const flecha = document.getElementById('flecha-compras');
+            
+            if (submenu.style.display === 'flex') {
+                submenu.style.display = 'none';
+                flecha.style.transform = 'rotate(0deg)';
+            } else {
+                submenu.style.display = 'flex';
+                flecha.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Ejecuciones iniciales al abrir o recargar la página
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mantenemos abierto el submenú compras por defecto
+            document.getElementById('submenu-compras').style.display = 'flex';
+            document.getElementById('flecha-compras').style.transform = 'rotate(180deg)';
+            
+            // Hacemos que la página inicie mostrando la lista de compras automáticamente
+            mostrarLista();
+        });
+    </script>
+
 </body>
 </html>
