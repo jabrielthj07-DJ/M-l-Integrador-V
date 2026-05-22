@@ -22,6 +22,23 @@
     justify-content: center;
 }
 
+.btn-menu{
+    position:absolute;
+    left:20px;
+    background:#1f85c0;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:20px;
+    z-index:100;
+}
+
+.sidebar.oculto{
+    display:none;
+}
+
 .header-contenedor{
     grid-area: header;
     background: linear-gradient(to right, #1f85c0, #4fc3f7, #3387db, #1b51a1);
@@ -33,10 +50,10 @@
 }
 
 .logo{
-    width:130px;
+    width:130px; 
     height:125px;
     position: absolute; /*Se despega del row pa centrarlo esta en el contenedor padre*/
-    left: 20px; /*lo mueve desde izquierda*/
+    left: 70px; /*lo mueve desde izquierda*/
 }
 
 .titulo{

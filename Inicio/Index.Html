@@ -12,10 +12,23 @@
     <div class="main-container">
 
         <header class="header-contenedor">
-            <nav class="nav_header">
-                <img src="Imagenes_Inicio/imagen.png" alt="Logo Veterinaria M&L" class="logo">
-                <h1 class="titulo">Veterinaria M&L</h1>
-            </nav>
+
+         <nav class="nav_header">
+
+            <button id="btnMenu" class="btn-menu">
+                ☰
+            </button>
+
+            <img src="Imagenes_Inicio/imagen.png" 
+            alt="Logo Veterinaria M&L" 
+            class="logo">
+
+            <h1 class="titulo">
+                Veterinaria M&L
+            </h1>
+
+        </nav>
+
         </header>
 
         <section class="section-contenedor">
@@ -268,6 +281,16 @@ dropdowns.forEach(button => {
             submenu.style.display = "block";
         }
     });
+});
+
+const btnMenu = document.getElementById("btnMenu");
+
+const sidebar = document.querySelector(".sidebar");
+
+btnMenu.addEventListener("click", ()=>{
+
+    sidebar.classList.toggle("oculto");
+
 });
 
 </script>
