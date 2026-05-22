@@ -24,7 +24,7 @@
 
 .btn-menu{
     position:absolute;
-    left:20px;
+    left:7px;
     background:#1f85c0;
     color:white;
     border:none;
@@ -53,7 +53,7 @@
     width:130px; 
     height:125px;
     position: absolute; /*Se despega del row pa centrarlo esta en el contenedor padre*/
-    left: 70px; /*lo mueve desde izquierda*/
+    left: 50px; /*lo mueve desde izquierda*/
 }
 
 .titulo{
@@ -84,7 +84,7 @@
     color:#444;
 }
 
-.sidebar ul{
+.sidebar > ul{  /*> agregue esto para que no me afecte en los btn (none) en resumen pa que esten cerrado desde el inicio*/
     list-style:none;
     display:flex; 
     flex-direction:column;
