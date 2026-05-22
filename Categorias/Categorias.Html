@@ -25,76 +25,180 @@
 
 <section class="section-contenedor">
 
-    <div class="sidebar">
+<div class="sidebar"> <!--sidebar-->
 
- <ul class="sidebar_ul">
+<ul class="sidebar_ul">
 
-    <li>
-        <a class="perfil_link" href="../Inicio/Index.html">
-            <img alt="Inicio" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/inicio.svg">
-            Inicio
-        </a>
-    </li>
+<li>
+    <a class="perfil_link" href="../Inicio/Index.html">
+        <img alt="Inicio" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/inicio.svg">
+        Inicio
+    </a>
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Productos" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/producto.svg">
+    Productos
+</button>
+
+<ul class="submenu">
 
     <li>
         <a class="perfil_link" href="../Productos/Productos.html">
-            <img alt="Productos" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/producto.svg">
-            Productos
+            Registrar Producto
         </a>
     </li>
 
     <li>
-        <a class="perfil_link" href="Categorias.html">
-            <img alt="Categorias" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/categorias.svg">
-            Categorias
-        </a>
-    </li>
-
-    <li>
-        <a class="perfil_link" href="../Ventas/Ventas.html">
-            <img alt="Ventas" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Ventas_original.svg">
-            Ventas
-        </a>
-    </li>
-
-    <li>
-        <a class="perfil_link" href="../Compras/Compras.html">
-            <img alt="Compras" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/compras.svg">
-            Compras
-        </a>
-    </li>
-
-    <li>
-        <a class="perfil_link" href="../Inventario/Inventario.html">
-            <img alt="Inventario" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/inventario.svg">
-            Inventario
-        </a>
-    </li>
-
-    <li>
-        <a class="perfil_link" href="../Proovedores/Proovedores.Html">
-            <img alt="Proovedores" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/proovedor.svg">
-            Proovedores
+        <a class="perfil_link" href="../Productos/ListaProductos.html">
+            Lista de Productos
         </a>
     </li>
 
 </ul>
 
-<div class="perfil">
+</li>
 
-<a class="perfil_link" href="../Perfil_Usuario/Perfil.Html">
+<li class="dropdown">
 
-<img class="Icons_Inicio" alt="Perfil" src="Imagenes_Inicio/Iconos/perfil.svg">
+<button class="dropdown-btn">
+    <img alt="Categorias" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/categorias.svg">
+    Categorias
+</button>
 
-<p class="Text_LinkPerfil">
-    Mi Perfil
-</p>
+<ul class="submenu">
 
-</a>
+    <li>
+        <a class="perfil_link" href="#">
+            Registrar Categoría
+        </a>
+    </li>
 
-</div>
+    <li>
+        <a class="perfil_link" href="../Categorias/Categorias.Html">
+            Lista de Categorías
+        </a>
+    </li>
 
-    </div>
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Proveedores" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/proovedor.svg">
+    Proveedores
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="../Proveedores/Proveedores.html">
+            Registrar Proveedor
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Proveedores/ListaProveedores.html">
+            Lista de Proveedores
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Inventario" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/inventario.svg">
+    Inventario
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#">
+            Historial de Ventas 
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="#">
+            Historial de Compras
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="#">
+            Inventario Actual
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Ventas" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/Ventas_original.svg">
+    Ventas
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#">
+            Realizar Venta
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Categorias/Categorias.Html">
+            Historial de Ventas
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Compras" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/compras.svg">
+    Compras
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#">
+            Realizar Compra
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Compras/Compras.Html">
+            Historial de Compras
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+</ul>
+
+                <!-- Link para ir a perfil de usuario-->                
+                <div class="perfil">
+                    <a class="perfil_link"  href="../Perfil_Usuario/Perfil.Html"><img class="Icons_Inicio" alt="Perfil" src="Imagenes_Inicio/Iconos/perfil.svg"><p class="Text_LinkPerfil">Mi Perfil</p></a>  <!--Agregr icono o diseno mejor-->
+                </div>
+            </div>
 
 <div class="contenido_inicio">
 
@@ -220,5 +324,24 @@
 
 </div>
 
+<script>
+const dropdowns = document.querySelectorAll(".dropdown-btn");
+
+dropdowns.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const submenu = button.nextElementSibling;
+
+        if(submenu.style.display === "block"){
+            submenu.style.display = "none";
+        }
+        else{
+            submenu.style.display = "block";
+        }
+    });
+});
+
+</script>
 </body>
 </html>

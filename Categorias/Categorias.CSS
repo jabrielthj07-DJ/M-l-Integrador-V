@@ -55,12 +55,12 @@
 
 .Icons_Inicio{
     width:25px;
-    height:auto;
+    height:25px;
 }
 
 .sidebar{
     width:220px;
-    background-color: rgb(0 0 0 / 15%);
+    background-color: rgba(100, 130, 195, 0.15); 
     padding:20px;
     display:flex;
     flex-direction:column;
@@ -69,30 +69,39 @@
 
 .sidebar ul{
     list-style:none;
-    display:flex;
+    display:flex; 
     flex-direction:column;
-    flex-grow:1;
+    flex-grow:1; 
     gap:25px;
 }
 
 .sidebar ul li{
     padding:10px;
     margin-bottom:10px;
-    background:rgb(255 255 255 / 95%);
+    background:rgba(212, 226, 247, 0.95);
     border-radius:6px;
-    text-align:center;
     width:auto;
     height:40px;
     display:flex;
+    align-items:center;
     justify-content:flex-start;
     gap:10px;
     transition:all 0.3s ease;
 }
 
 .sidebar ul li:hover{
-    background:#1f85c0;
+    background:rgba(162, 192, 236, 0.95);
     cursor:pointer;
-    color:#FFFFFF;
+}
+
+.perfil_link{
+    color:#444;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    width:100%;
+    height:100%;
 }
 
 .perfil{
@@ -102,11 +111,6 @@
     border-radius:6px;
     cursor:pointer;
     text-align:center;
-}
-
-.perfil_link{
-    color:#444;
-    text-decoration:none;
 }
 
 .Text_LinkPerfil{
@@ -307,6 +311,142 @@ celulares maximos de ancho de 600 */
     .titulo{
         font-size:22px;
         text-align:center;
+    }
+
+}
+
+
+/* DROPDOWN */
+
+.dropdown-btn{
+       color:#444;
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    width:100%;
+    height:100%;
+
+    background:none;
+    border:none;
+
+    font-size:16px;
+    cursor:pointer;
+}
+
+.dropdown{
+       flex-direction:column;
+    align-items:flex-start !important;
+    height:auto !important;
+}
+
+.submenu{
+      display:none;
+
+    width:100%;
+    margin-top:10px;
+    padding-left:10px;
+}
+
+.submenu li{
+  width:100%;
+    height:auto !important;
+
+    padding:10px;
+    margin-bottom:5px;
+
+    background:rgba(255,255,255,0.7) !important;
+    border-radius:6px;
+}
+
+.submenu .perfil_link{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+
+    color:#444;
+    text-decoration:none;
+}
+
+.submenu li:hover{
+    background:rgba(162, 192, 236, 0.95) !important;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+    .titulo{
+        font-size:26px;
+    }
+
+    .acciones{
+        flex-direction:column;
+    }
+
+}
+
+@media (max-width:600px){
+
+    .section-contenedor{
+        flex-direction:column;
+    }
+
+    .logo{
+        position:static;
+
+        width:70px;
+        height:70px;
+    }
+
+    .sidebar{
+        width:100%;
+
+        padding:10px;
+    }
+
+    .sidebar ul{
+        gap:10px;
+    }
+
+    .sidebar ul li{
+        height:auto;
+
+        padding:12px;
+    }
+
+    .nav_header{
+        flex-direction:column;
+
+        gap:10px;
+    }
+
+    .contenido_inicio{
+        padding:15px;
+
+        height:auto;
+    }
+
+    .titulo{
+        font-size:22px;
+
+        text-align:center;
+    }
+
+    .productos-header{
+        flex-direction:column;
+
+        gap:15px;
+
+        align-items:stretch;
+    }
+
+    .buscador{
+        width:100%;
     }
 
 }
