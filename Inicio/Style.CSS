@@ -153,6 +153,7 @@ color:#444;
 
 .card h3{
     margin-bottom:5px;
+    color:#0d4dbb;
 }
 
 .banner-card{
@@ -194,7 +195,7 @@ color:#444;
 .numero{
     font-size:28px;
     font-weight:bold;
-    color:#1f85c0;
+    color:#134fa3;
     margin-top:10px;
 }
 /* 
@@ -270,3 +271,147 @@ celulares maximos de ancho de 600 */
 }
 
 /*Tarea para todos: Implementar mejor el responsive en este caso de 600px para que el sidebar se mire en un menu burger*/
+
+/*Dashboard card color*/
+
+.total-productos{
+        background-image:url("/Inicio/Imagenes_Inicio/3dc083d25ceb371fe605174966a2906b.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:white;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+
+.total-roles{
+     background-image:url("/Inicio/Imagenes_Inicio/3dc083d25ceb371fe605174966a2906b.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:white;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+
+.total-inventario{
+         background-image:url("/Inicio/Imagenes_Inicio/3dc083d25ceb371fe605174966a2906b.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:white;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+
+.total-usuarios{
+         background-image:url("/Inicio/Imagenes_Inicio/3dc083d25ceb371fe605174966a2906b.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:white;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+
+.total-categorias{
+       background-image:url("/Inicio/Imagenes_Inicio/3dc083d25ceb371fe605174966a2906b.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:white;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+
+.total-ventas{
+     background-image:url("/Inicio/Imagenes_Inicio/3dc083d25ceb371fe605174966a2906b.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:white;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+
+
+
+.dropdown-btn{
+    color:#444;
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    width:100%;
+    height:100%;
+
+    background:none;
+    border:none;
+
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* CONTENEDOR DEL DROPDOWN */
+.dropdown{
+    flex-direction:column;
+    align-items:flex-start !important;
+    height:auto !important;
+}
+
+/* SUBMENU OCULTO */
+.submenu{
+    display:none;
+
+    width:100%;
+    margin-top:10px;
+    padding-left:10px;
+}
+
+/* CUANDO SE ABRE */
+.submenu.activo{
+    display:block;
+}
+
+/* ITEMS DEL SUBMENU */
+.submenu li{
+    width:100%;
+    height:auto !important;
+
+    padding:10px;
+    margin-bottom:5px;
+
+    background:rgba(255,255,255,0.7) !important;
+    border-radius:6px;
+}
+
+/* LINKS DEL SUBMENU */
+.submenu .perfil_link{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+
+    color:#444;
+    text-decoration:none;
+}
+
+/* HOVER */
+.submenu li:hover{
+    background:rgba(162, 192, 236, 0.95) !important;
+}

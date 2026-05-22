@@ -20,64 +20,177 @@
 
         <section class="section-contenedor">
 
+<div class="sidebar"> <!--sidebar-->
 
-            <div class="sidebar"> <!--sidebar-->
 <ul class="sidebar_ul">
 
-    <li>
-        <a class="perfil_link" href="Index.html">
-            <img alt="Inicio" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/inicio.svg">
-            Inicio
-        </a>
-    </li>
+<li>
+    <a class="perfil_link" href="../Inicio/Index.html">
+        <img alt="Inicio" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/inicio.svg">
+        Inicio
+    </a>
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Productos" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/producto.svg">
+    Productos
+</button>
+
+<ul class="submenu">
 
     <li>
         <a class="perfil_link" href="../Productos/Productos.html">
-            <img alt="Productos" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/producto.svg">
-            Productos
+            Registrar Producto
         </a>
     </li>
 
     <li>
-        <a class="perfil_link" href="../Categorias/Categorias.html">
-            <img alt="Categorias" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/categorias.svg">
-            Categorias
+        <a class="perfil_link" href="../Productos/ListaProductos.html">
+            Lista de Productos
         </a>
     </li>
-
-    <li>
-        <a class="perfil_link" href="../Proovedores/Proovedores.Html">
-            <img alt="Proovedores" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/proovedor.svg">
-            Proovedores
-        </a>
-    </li>
-
-
-      <li>
-        <a class="perfil_link" href="../Inventario/Inventario.html">
-            <img alt="Inventario" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/inventario.svg">
-            Inventario
-        </a>
-    </li>
-    
-    <li>
-        <a class="perfil_link" href="../Ventas/Ventas.html">
-            <img alt="Ventas" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Ventas_original.svg">
-            Ventas
-        </a>
-    </li>
-
-    <li>
-        <a class="perfil_link" href="../Compras/Compras.html">
-            <img alt="Compras" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/compras.svg">
-            Compras
-        </a>
-    </li>
-
-  
-
 
 </ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Categorias" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/categorias.svg">
+    Categorias
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#">
+            Registrar Categoría
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Categorias/Categorias.Html">
+            Lista de Categorías
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Proveedores" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/proovedor.svg">
+    Proveedores
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="../Proveedores/Proveedores.html">
+            Registrar Proveedor
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Proveedores/ListaProveedores.html">
+            Lista de Proveedores
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Inventario" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/inventario.svg">
+    Inventario
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#">
+            Historial de Ventas 
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="#">
+            Historial de Compras
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="#">
+            Inventario Actual
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Ventas" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/Ventas_original.svg">
+    Ventas
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#">
+            Realizar Venta
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Categorias/Categorias.Html">
+            Historial de Ventas
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Compras" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/compras.svg">
+    Compras
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#">
+            Realizar Compra
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Compras/Compras.Html">
+            Historial de Compras
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+</ul>
+        
+
+            
 
                 <!-- Link para ir a perfil de usuario-->                
                 <div class="perfil">
@@ -97,32 +210,32 @@
                 
                 <div class="dashboard">
 
-    <div class="card dashboard-card">
+    <div class="card dashboard-card total-productos"> 
         <h3>Total Productos</h3>
         <p class="numero">120</p>
     </div>
 
-    <div class="card dashboard-card">
+    <div class="card dashboard-card total-ventas"> 
         <h3>Total Ventas</h3>
         <p class="numero">45</p>
     </div>
 
-    <div class="card dashboard-card">
+    <div class="card dashboard-card total-categorias"> 
         <h3>Categorías</h3>
         <p class="numero">3</p>
     </div>
 
-    <div class="card dashboard-card">
-        <h3>Inventario</h3>
+    <div class="card dashboard-card total-inventario"> 
+        <h3>Inventario</h3>                               
         <p class="numero">350</p>
     </div>
 
-    <div class="card dashboard-card">
+    <div class="card dashboard-card total-usuarios"> 
         <h3>Usuarios Registrados</h3>
         <p class="numero">2</p>
     </div>
 
-     <div class="card dashboard-card">
+     <div class="card dashboard-card total-roles"> 
         <h3>Roles Registrados</h3>
         <p class="numero">2</p>
     </div>
@@ -138,6 +251,26 @@
         </footer>
 
     </div>
+
+<script>
+const dropdowns = document.querySelectorAll(".dropdown-btn");
+
+dropdowns.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const submenu = button.nextElementSibling;
+
+        if(submenu.style.display === "block"){
+            submenu.style.display = "none";
+        }
+        else{
+            submenu.style.display = "block";
+        }
+    });
+});
+
+</script>
 
 </body>
 </html>
