@@ -46,13 +46,13 @@
 <ul class="submenu">
 
     <li>
-        <a class="perfil_link" href="../Productos/Productos.html">
+        <a class="perfil_link" href="../Productos/Productos.html"> <!--agregar y crear interfaz add -->
             Registrar Producto
         </a>
     </li>
 
     <li>
-        <a class="perfil_link" href="../Productos/ListaProductos.html">
+        <a class="perfil_link" href="../Productos/Productos.Html">
             Lista de Productos
         </a>
     </li>
@@ -71,7 +71,7 @@
 <ul class="submenu">
 
     <li>
-        <a class="perfil_link" href="#">
+        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add -->
             Registrar Categoría
         </a>
     </li>
@@ -96,13 +96,13 @@
 <ul class="submenu">
 
     <li>
-        <a class="perfil_link" href="../Proveedores/Proveedores.html">
+        <a class="perfil_link" href="../Proveedores/Proveedores.html"> <!--agregar y crear interfaz add -->
             Registrar Proveedor
         </a>
     </li>
 
     <li>
-        <a class="perfil_link" href="../Proveedores/ListaProveedores.html">
+        <a class="perfil_link" href="../Proovedores/Proovedores.Html">
             Lista de Proveedores
         </a>
     </li>
@@ -121,19 +121,19 @@
 <ul class="submenu">
 
     <li>
-        <a class="perfil_link" href="#">
+        <a class="perfil_link" href="../Ventas/Ventas.Html">
             Historial de Ventas 
         </a>
     </li>
 
     <li>
-        <a class="perfil_link" href="#">
+        <a class="perfil_link" href="../Compras/Compras.Html">
             Historial de Compras
         </a>
     </li>
 
     <li>
-        <a class="perfil_link" href="#">
+        <a class="perfil_link" href="../Inventario/Inventario.Html"> <!--agregar y crear interfaz add -->
             Inventario Actual
         </a>
     </li>
@@ -152,13 +152,13 @@
 <ul class="submenu">
 
     <li>
-        <a class="perfil_link" href="#">
+        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add -->
             Realizar Venta
         </a>
     </li>
 
     <li>
-        <a class="perfil_link" href="../Categorias/Categorias.Html">
+        <a class="perfil_link" href="../Ventas/Ventas.Html">
             Historial de Ventas
         </a>
     </li>
@@ -177,7 +177,7 @@
 <ul class="submenu">
 
     <li>
-        <a class="perfil_link" href="#">
+        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add -->
             Realizar Compra
         </a>
     </li>
@@ -504,6 +504,24 @@ window.addEventListener("click", (e) => {
 
     }
 
+});
+
+
+const dropdowns = document.querySelectorAll(".dropdown-btn");
+
+dropdowns.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const submenu = button.nextElementSibling;
+
+        if(submenu.style.display === "block"){
+            submenu.style.display = "none";
+        }
+        else{
+            submenu.style.display = "block";
+        }
+    });
 });
 
 </script>
