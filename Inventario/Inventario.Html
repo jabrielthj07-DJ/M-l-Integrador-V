@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="Inventario.CSS">
+    <title>Inventario - Veterinaria M&L</title>
+
+</head>
+
+<body>
+
+    <div class="main-container">
+
+<header class="header-contenedor">
+
+    <nav class="nav_header">
+
+            <button id="btnMenu" class="btn-menu">
+                ☰
+            </button>
+
+            <img src="/Categorias/Imagenes_Inicio/imagen.png" 
+            alt="Logo Veterinaria M&L" 
+            class="logo">
+
+            <h1 class="titulo">
+                Veterinaria M&L
+            </h1>
+
+        </nav>
+    </nav>
+
+</header>
+
+<section class="section-contenedor">
+
+ <div class="sidebar"> <!--sidebar-->
+
+<ul class="sidebar_ul">
+
+<li>
+    <a class="perfil_link" href="../Inicio/Index.html">
+        <img alt="Inicio" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/inicio.svg">
+        Inicio
+    </a>
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Productos" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/producto.svg">
+    Productos
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="../Productos/Productos.html"> <!--agregar y crear interfaz add -->
+            Registrar Producto
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Productos/Productos.Html">
+            Lista de Productos
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Categorias" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/categorias.svg">
+    Categorias
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add -->
+            Registrar Categoría
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Categorias/Categorias.Html">
+            Lista de Categorías
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Proveedores" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/proovedor.svg">
+    Proveedores
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="../Proveedores/Proveedores.html"> <!--agregar y crear interfaz add -->
+            Registrar Proveedor
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Proovedores/Proovedores.Html">
+            Lista de Proveedores
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Inventario" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/inventario.svg">
+    Inventario
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="../Ventas/Ventas.Html">
+            Historial de Ventas 
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Compras/Compras.Html">
+            Historial de Compras
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Inventario/Inventario.Html"> <!--agregar y crear interfaz add -->
+            Inventario Actual
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Ventas" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/Ventas_original.svg">
+    Ventas
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add -->
+            Realizar Venta
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Ventas/Ventas.Html">
+            Historial de Ventas
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Compras" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/compras.svg">
+    Compras
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add -->
+            Realizar Compra
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Compras/Compras.Html">
+            Historial de Compras
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+</ul>
+        
+
+            
+
+                <!-- Link para ir a perfil de usuario-->                
+                <div class="perfil">
+                    <a class="perfil_link"  href="../Perfil_Usuario/Perfil.Html"><img class="Icons_Inicio" alt="Perfil" src="Imagenes_Inicio/Iconos/perfil.svg"><p class="Text_LinkPerfil">Mi Perfil</p></a>  <!--Agregr icono o diseno mejor-->
+                </div>
+            </div>
+
+<!--contenido principal de inicio de producto y la tabla-->
+<div class="contenido_inicio">
+
+    <h1 class="titulo-modulo">
+        Inventario
+    </h1>
+
+<div class="productos-header">
+
+<div class="contenedor-btn">
+
+    <button class="btn-agregar" id="abrirModal">
+        + Agregar 
+    </button>
+
+</div>
+
+<!-- MODAL -->
+
+<div class="modal" id="modalProducto">
+
+    <div class="modal-contenido">
+
+        <!-- BOTÓN CERRAR -->
+        <span class="cerrar-modal" id="cerrarModal">
+            &times;
+        </span>
+
+        <h2>Agregar Producto</h2>
+
+        <!-- FORMULARIO -->
+        <form class="form-producto">
+
+            <input 
+                type="text" 
+                placeholder="Nombre del producto"
+            >
+
+            <input 
+                type="text" 
+                placeholder="Categoría"
+            >
+
+            <input 
+                type="number" 
+                placeholder="Precio"
+            >
+
+            <input 
+                type="number" 
+                placeholder="Stock"
+            >
+
+            <button type="submit" class="btn-guardar">
+                Guardar Producto
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<input 
+    type="text" 
+    placeholder="Buscar en Inventario..." 
+    class="buscador"
+>
+
+</div>
+
+<div class="tabla-contenedor">
+
+<table class="tabla-productos">
+
+<thead>
+
+<tr>
+
+<th>Producto</th>
+
+<th>Descripción</th>
+
+<th>Categoría</th>
+
+<th>Precio</th>
+
+<th>Stock</th>
+
+<th>Acciones</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+
+<td>Cadena Dorada</td>
+
+<td>Collar dorado de alta calidad</td>
+
+<td>Accesorios</td>
+
+<td>33.40</td>
+
+<td>45</td>
+
+<td class="acciones">
+
+<button class="btn-editar">
+    Editar
+</button>
+
+<button class="btn-eliminar">
+    Eliminar
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Collar Azul</td>
+
+<td>Collar azul de alta calidad</td>
+
+<td>Accesorios</td>
+
+<td>50.00</td>
+
+<td>67</td>
+
+<td class="acciones">
+
+<button class="btn-editar">
+    Editar
+</button>
+
+<button class="btn-eliminar">
+    Eliminar
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Shampoo Mascotas</td>
+
+<td>Shampoo para mascotas de alta calidad</td>
+
+<td>Higiene</td>
+
+<td>55.00</td>
+
+<td>40</td>
+
+<td class="acciones">
+
+<button class="btn-editar">
+    Editar
+</button>
+
+<button class="btn-eliminar">
+    Eliminar
+</button>
+
+</td>
+
+</tr>
+
+
+<td>Shampoo</td>
+
+<td>Shampoo para mascotas de alta calidad</td>
+
+<td>Higiene</td>
+
+<td>70.00</td>
+
+<td>35</td>
+
+<td class="acciones">
+
+<button class="btn-editar">
+    Editar
+</button>
+
+<button class="btn-eliminar">
+    Eliminar
+</button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Cepillo</td>
+
+<td>Cepillo para mascotas de alta calidad</td>
+
+<td>Higiene</td>
+
+<td>22.00</td>
+
+<td>10</td>
+
+<td class="acciones">
+
+<button class="btn-editar">
+    Editar
+</button>
+
+<button class="btn-eliminar">
+    Eliminar
+</button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Collar Verde</td>
+
+<td>Collar verde de alta calidad</td>
+
+<td>Accesorios</td>
+
+<td>65.00</td>
+
+<td>14</td>
+
+<td class="acciones">
+
+<button class="btn-editar">
+    Editar
+</button>
+
+<button class="btn-eliminar">
+    Eliminar
+</button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Cadena de plata</td>
+
+<td>Collar de plata de alta calidad</td>
+
+<td>Accesorios</td>
+
+<td>65.00</td>
+
+<td>12</td>
+
+
+<td class="acciones">
+
+<button class="btn-editar">
+    Editar
+</button>
+
+<button class="btn-eliminar">
+    Eliminar
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+</footer>
+
+</div>
+
+
+<script>
+
+const abrirModal = document.getElementById("abrirModal");
+
+const modal = document.getElementById("modalProducto");
+
+const cerrarModal = document.getElementById("cerrarModal");
+
+
+// ABRIR MODAL
+abrirModal.addEventListener("click", () => {
+
+    modal.style.display = "flex";
+
+});
+
+
+// CERRAR MODAL
+cerrarModal.addEventListener("click", () => {
+
+    modal.style.display = "none";
+
+});
+
+
+// CERRAR SI TOCA AFUERA
+window.addEventListener("click", (e) => {
+
+    if(e.target === modal){
+
+        modal.style.display = "none";
+
+    }
+
+});
+
+
+const dropdowns = document.querySelectorAll(".dropdown-btn");
+
+dropdowns.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const submenu = button.nextElementSibling;
+
+        if(submenu.style.display === "block"){
+            submenu.style.display = "none";
+        }
+        else{
+            submenu.style.display = "block";
+        }
+    });
+});
+
+// Menu
+
+const btnMenu = document.getElementById("btnMenu");
+
+const sidebar = document.querySelector(".sidebar");
+
+btnMenu.addEventListener("click", ()=>{
+
+    sidebar.classList.toggle("oculto");
+
+});
+
+</script>
+
+</body>
+</html>
