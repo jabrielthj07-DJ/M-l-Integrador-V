@@ -9,77 +9,195 @@
 <body>
     <div class="main-container">
         <header class="header-contenedor">
-            <nav class="nav_header">
-                <img src="../Inicio/Imagenes_Inicio/imagen.png" alt="Logo Veterinaria M&L" class="logo">
-                <h1 class="titulo">Veterinaria M&L</h1>
-            </nav>
+             <nav class="nav_header">
+
+            <button id="btnMenu" class="btn-menu">
+                ☰
+            </button>
+
+            <img src="/Compras/Imagenes_Inicio/imagen.png" 
+            alt="Logo Veterinaria M&L" 
+            class="logo">
+
+            <h1 class="titulo">
+                Veterinaria M&L
+            </h1>
+
+        </nav>
         </header>
 
         <section class="section-contenedor">
-            <div class="sidebar">
-                <ul class="sidebar_ul">
-                    <li>
-                        <a class="perfil_link" href="../Inicio/Index.html">
-                            <img alt="Inicio" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/inicio.svg">
-                            Inicio
-                        </a>
-                    </li>
-                    <li>
-                        <a class="perfil_link" href="../Productos/Productos.html">
-                            <img alt="Productos" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/producto.svg">
-                            Productos
-                        </a>
-                    </li>
-                    <li>
-                        <a class="perfil_link" href="../Categorias/Categorias.html">
-                            <img alt="Categorias" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/categorias.svg">
-                            Categorías
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a class="perfil_link" href="/Ventas/Ventas.Html">
-                            <img alt="Ventas" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Ventas_original.svg">
-                            Ventas
-                        </a>
-                    </li>
+            
+    
+<div class="sidebar"> <!--sidebar-->
 
-                    <!--metodo de despliegue de la compra agregar compra y ver lista de compra-->
-                    <li class="menu-desplegable-compras">
-                        <div class="perfil_link active" id="btn-main-compras" onclick="toggleMenuCompras()">
-                            <div class="compras-txt-icon">
-                                <img alt="Compras" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/compras.svg">
-                                <span>Compras</span>
-                            </div>
-                            <span class="flecha-menu" id="flecha-compras">▼</span>
-                        </div>
+<ul class="sidebar_ul">
 
-                        <div class="submenu-vertical-contenido" id="submenu-compras">
-                            <a href="javascript:void(0);" class="submenu-vertical-link" id="sub-btn-agregar" onclick="mostrarFormulario()">
-                                <span class="sub-ico">➕</span> Agregar Compra
-                            </a>
-                            <a href="javascript:void(0);" class="submenu-vertical-link" id="sub-btn-lista" onclick="mostrarLista()">
-                                <span class="sub-ico">📋</span> Lista de Compras
-                            </a>
-                        </div>
-                    </li>
+<li>
+    <a class="perfil_link" href="../Inicio/Index.html">
+        <img alt="Inicio" class="Icons_Inicio " src="../Inicio/Imagenes_Inicio/Iconos/inicio.svg">
+        Inicio
+    </a>
+</li>
 
-                     <!--aqui termina el codigo-->
-                    
-                    <li>
-                        <a class="perfil_link" href="../Inventario/Inventario.html">
-                            <img alt="Inventario" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Inventario.svg">
-                            Inventario
-                        </a>
-                    </li>
-                    <li>
-                        <a class="perfil_link" href="../Proovedores/Proovedores.Html">
-                            <img alt="Proveedores" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/proovedor.svg">
-                            Proveedores
-                        </a>
-                    </li>
-                </ul>
+<li class="dropdown">
 
+<button class="dropdown-btn">
+    <img alt="Productos" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/producto.svg">
+    Productos
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="agregarycrearinterfazadd.html">
+            Registrar Producto
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Productos/Productos.Html">
+            Lista de Productos
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Categorias" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/categorias.svg">
+    Categorias
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add categoria-->
+            Registrar Categoría
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Categorias/Categorias.Html">
+            Lista de Categorías
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Proveedores" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/proovedor.svg">
+    Proveedores
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="../Proveedores/Proveedores.html"> <!--agregar y crear interfaz add -->
+            Registrar Proveedor
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Proovedores/Proovedores.Html">
+            Lista de Proveedores
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Inventario" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/inventario.svg">
+    Inventario
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#">
+            Historial de Ventas 
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="#">
+            Historial de Compras
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="#">
+            Inventario Actual
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Ventas" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/Ventas_original.svg">
+    Ventas
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add -->
+            Realizar Venta
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Ventas/Ventas.Html">
+            Historial de Ventas
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Compras" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/compras.svg">
+    Compras
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add -->
+            Realizar Compra
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Compras/Compras.Html">
+            Historial de Compras
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+</ul>
+        
                 <div class="perfil">
                     <a class="perfil_link" href="../Perfil_Usuario/Perfil.Html">
                         <img class="Icons_Inicio" alt="Perfil" src="Imagenes_Inicio/Iconos/perfil.svg">
@@ -87,13 +205,15 @@
                     </a>
                 </div>
             </div>
+
+
          <!--contenido de inicio de compra-->
             <div class="contenido_inicio">
                 <h1 class="titulo-modulo">Gestión de Compras</h1>
 
                 <div id="seccion-lista">
                     <div class="Compras-header">
-                        <button class="btn-agregar" onclick="mostrarFormulario()">+ Agregar Compra</button>
+                        <button class="btn-agregar">+ Agregar Compra</button>
                         <input type="text" placeholder="Buscar compra..." class="buscador">
                     </div>
               <!--creadno tabla de la lista de la compra-->
@@ -177,119 +297,37 @@
                 </div>
 
 
-            <!--seccion del formulario de compra  con input ect y sus iconos-->
-                <div id="seccion-formulario">
-                    <div class="formulario"> 
-                        <div class="formulario-header">
-                            <h2>Agregar Nueva Compra</h2>
-                        </div>
-                        
-                        <form id="form-agregar-compras">
-                            <div class="form-grid">
-                                <div class="form-group">
-                                    <label for="producto">Producto</label>
-                                    <div class="input-icon" data-icon="📦">
-                                        <input type="text" id="producto" name="producto" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="cantidad">Cantidad</label>
-                                    <div class="input-icon" data-icon="🔢">
-                                        <input type="number" id="cantidad" name="cantidad" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="precio">Precio Total</label>
-                                    <div class="input-icon" data-icon="💰">
-                                        <input type="number" id="precio" name="precio" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="estado">Estado</label>
-                                    <div class="input-icon" data-icon="🔄">
-                                        <select id="estado" name="estado" required>
-                                            <option value="">Seleccione un estado</option>
-                                            <option value="disponible">Disponible</option>
-                                            <option value="agotado">Agotado</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="fecha">Fecha</label>
-                                    <div class="input-icon" data-icon="📅">
-                                        <input type="date" id="fecha" name="fecha" required>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="submit" class="boton-agregar">Agregar compra</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </div>
-   <!--este es funcionalidad de los bton de agregar compra y la lista es un jvacrips-->
+       
     <script>
         
-        // Capturamos los dos contenedores principales de la pantalla
-        const seccionLista = document.getElementById('seccion-lista');
-        const seccionFormulario = document.getElementById('seccion-formulario');
+   const dropdowns = document.querySelectorAll(".dropdown-btn");
 
-        // Capturamos las opciones del submenú lateral
-        const subBtnAgregar = document.getElementById('sub-btn-agregar');
-        const subBtnLista = document.getElementById('sub-btn-lista');
+dropdowns.forEach(button => {
 
-        // Función para mostrar solo el formulario gris
-        function mostrarFormulario() {
-            seccionFormulario.style.display = 'block';
-            seccionLista.style.display = 'none';
-            
-            // Cambiamos cuál opción se ve resaltada en azul en la barra lateral
-            subBtnAgregar.classList.add('opcion-activa');
-            subBtnLista.classList.remove('opcion-activa');
+    button.addEventListener("click", () => {
+
+        const submenu = button.nextElementSibling;
+
+        if(submenu.style.display === "block"){
+            submenu.style.display = "none";
         }
-
-        // Función para mostrar solo el buscador y la tabla azul
-        function mostrarLista() {
-            seccionLista.style.display = 'block';
-            seccionFormulario.style.display = 'none';
-            
-            // Cambiamos cuál opción se ve resaltada en azul en la barra lateral
-            subBtnLista.classList.add('opcion-activa');
-            subBtnAgregar.classList.remove('opcion-activa');
+        else{
+            submenu.style.display = "block";
         }
+    });
+});
 
-        // Función original para abrir/cerrar el acordeón de la barra lateral
-        function toggleMenuCompras() {
-            const submenu = document.getElementById('submenu-compras');
-            const flecha = document.getElementById('flecha-compras');
-            
-            if (submenu.style.display === 'flex') {
-                submenu.style.display = 'none';
-                flecha.style.transform = 'rotate(0deg)';
-            } else {
-                submenu.style.display = 'flex';
-                flecha.style.transform = 'rotate(180deg)';
-            }
-        }
 
-        // Ejecuciones iniciales al abrir o recargar la página
-        document.addEventListener("DOMContentLoaded", function() {
-            // Mantenemos abierto el submenú compras por defecto
-            document.getElementById('submenu-compras').style.display = 'flex';
-            document.getElementById('flecha-compras').style.transform = 'rotate(180deg)';
-            
-            // Hacemos que la página inicie mostrando la lista de compras automáticamente
-            mostrarLista();
-        });
+const btnMenu = document.getElementById("btnMenu");
+
+const sidebar = document.querySelector(".sidebar");
+
+btnMenu.addEventListener("click", ()=>{
+
+    sidebar.classList.toggle("oculto");
+
+});
+        
     </script>
 
 </body>

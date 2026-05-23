@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+         <!--seccion del formulario de compra  con input ect y sus iconos-->
+                <div id="seccion-formulario">
+                    <div class="formulario"> 
+                        <div class="formulario-header">
+                            <h2>Agregar Nueva Compra</h2>
+                        </div>
+                        
+                        <form id="form-agregar-compras">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="producto">Producto</label>
+                                    <div class="input-icon" data-icon="📦">
+                                        <input type="text" id="producto" name="producto" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cantidad">Cantidad</label>
+                                    <div class="input-icon" data-icon="🔢">
+                                        <input type="number" id="cantidad" name="cantidad" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="precio">Precio Total</label>
+                                    <div class="input-icon" data-icon="💰">
+                                        <input type="number" id="precio" name="precio" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="estado">Estado</label>
+                                    <div class="input-icon" data-icon="🔄">
+                                        <select id="estado" name="estado" required>
+                                            <option value="">Seleccione un estado</option>
+                                            <option value="disponible">Disponible</option>
+                                            <option value="agotado">Agotado</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="fecha">Fecha</label>
+                                    <div class="input-icon" data-icon="📅">
+                                        <input type="date" id="fecha" name="fecha" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="boton-agregar">Agregar compra</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+   <!--este es funcionalidad de los bton de agregar compra y la lista es un jvacrips-->
+</body>
+</html>
