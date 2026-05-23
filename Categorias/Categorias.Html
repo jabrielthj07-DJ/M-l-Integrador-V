@@ -15,11 +15,19 @@
 
     <nav class="nav_header">
 
-<img src="../Inicio/Imagenes_Inicio/imagen.png" alt="Logo Veterinaria M&L" class="logo">
+            <button id="btnMenu" class="btn-menu">
+                ☰
+            </button>
 
-        <h1 class="titulo">Veterinaria M&L</h1>
+            <img src="Imagenes_Inicio/imagen.png" 
+            alt="Logo Veterinaria M&L" 
+            class="logo">
 
-    </nav>
+            <h1 class="titulo">
+                Veterinaria M&L
+            </h1>
+
+        </nav>
 
 </header>
 
@@ -46,7 +54,6 @@
 <ul class="submenu">
 
     <li>
-    <li>">
         <a class="perfil_link" href="../Productos/Productos.html"> 
             Registrar Producto
         </a>
@@ -72,7 +79,6 @@
 <ul class="submenu">
 
     <li>
-    <li>">
         <a class="perfil_link" href="#"> 
             Registrar Categoría
         </a>
@@ -98,7 +104,6 @@
 <ul class="submenu">
 
     <li>
-    <li>">
         <a class="perfil_link" href="../Proveedores/Proveedores.html"> 
             Registrar Proveedor
         </a>
@@ -343,6 +348,17 @@ dropdowns.forEach(button => {
             submenu.style.display = "block";
         }
     });
+});
+
+
+const btnMenu = document.getElementById("btnMenu");
+
+const sidebar = document.querySelector(".sidebar");
+
+btnMenu.addEventListener("click", ()=>{
+
+    sidebar.classList.toggle("oculto");
+
 });
 
 </script>

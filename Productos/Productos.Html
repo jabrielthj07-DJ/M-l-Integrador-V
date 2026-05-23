@@ -15,10 +15,19 @@
 
     <nav class="nav_header">
 
-<img src="/Inicio/Imagenes_Inicio/imagen.png" alt="Logo Veterinaria M&L" class="logo">
+            <button id="btnMenu" class="btn-menu">
+                ☰
+            </button>
 
-        <h1 class="titulo">Veterinaria M&L</h1>
+            <img src="/Categorias/Imagenes_Inicio/imagen.png" 
+            alt="Logo Veterinaria M&L" 
+            class="logo">
 
+            <h1 class="titulo">
+                Veterinaria M&L
+            </h1>
+
+        </nav>
     </nav>
 
 </header>
@@ -522,6 +531,18 @@ dropdowns.forEach(button => {
             submenu.style.display = "block";
         }
     });
+});
+
+// Menu
+
+const btnMenu = document.getElementById("btnMenu");
+
+const sidebar = document.querySelector(".sidebar");
+
+btnMenu.addEventListener("click", ()=>{
+
+    sidebar.classList.toggle("oculto");
+
 });
 
 </script>
