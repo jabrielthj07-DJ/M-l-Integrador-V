@@ -172,28 +172,14 @@
 </li>
 
 <li class="dropdown">
-
-<button class="dropdown-btn">
-    <img alt="Compras" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/compras.svg">
-    Compras
-</button>
-
-<ul class="submenu">
-
-    <li>
-        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add -->
-            Realizar Compra
-        </a>
-    </li>
-
-    <li>
-        <a class="perfil_link" href="../Compras/Compras.Html">
-            Historial de Compras
-        </a>
-    </li>
-
-</ul>
-
+    <button class="dropdown-btn">
+        <img alt="Compras" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/compras.svg">
+        Compras
+    </button>
+    <ul class="submenu">
+        <li><a class="perfil_link" href="../Compras/AgregarCompra.Html">Realizar Compra</a></li>
+        <li><a class="perfil_link" href="../Compras/Compras.Html">Historial de Compras</a></li>
+    </ul>
 </li>
 
 </ul>
@@ -213,7 +199,7 @@
 
                 <div id="seccion-lista">
                     <div class="Compras-header">
-                        <button class="btn-agregar">+ Agregar Compra</button>
+                        <button class="btn-agregar" onclick="location.href='AgregarCompra.Html'">+ Agregar Compra</button>
                         <input type="text" placeholder="Buscar compra..." class="buscador">
                     </div>
               <!--creadno tabla de la lista de la compra-->
@@ -296,40 +282,53 @@
                     </div>
                 </div>
 
-
-       
-    <script>
+</div> 
+ <script>
+        // 1. Funcionalidad para desplegar los submenús (Dropdowns)
+        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
         
-   const dropdowns = document.querySelectorAll(".dropdown-btn");
+        dropdownButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const submenu = button.nextElementSibling;
+                
+                document.querySelectorAll('.submenu').forEach(sub => {
+                    if (sub !== submenu) {
+                        sub.classList.remove('activo');
+                    }
+                });
+                
+                submenu.classList.toggle('activo');
+            });
+        });
 
-dropdowns.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const submenu = button.nextElementSibling;
-
-        if(submenu.style.display === "block"){
-            submenu.style.display = "none";
-        }
-        else{
-            submenu.style.display = "block";
-        }
-    });
-});
-
-
-const btnMenu = document.getElementById("btnMenu");
-
-const sidebar = document.querySelector(".sidebar");
-
-btnMenu.addEventListener("click", ()=>{
-
-    sidebar.classList.toggle("oculto");
-
-});
+        // Funcionalidad básica para el botón de menú hamburguesa
+        const btnMenu = document.getElementById('btnMenu');
+        const sidebar = document.querySelector('.sidebar');
         
+        if(btnMenu && sidebar) {
+            btnMenu.addEventListener('click', () => {
+                sidebar.classList.toggle('oculto');
+            });
+        }
+
+        // 2. NUEVA FUNCIONALIDAD: Redirección al dar clic en Agregar Compra
+        const formCompras = document.getElementById('form-agregar-compras');
+        if (formCompras) {
+            formCompras.addEventListener('submit', (e) => {
+                e.preventDefault(); // Detiene la recarga por defecto del formulario
+                
+                // Redirige directamente a la tabla del Historial de Compras
+                window.location.href = '../Compras/Compras.Html';
+            });
+        }
     </script>
 
 </body>
 </html>
+       
+  
+
+
 
