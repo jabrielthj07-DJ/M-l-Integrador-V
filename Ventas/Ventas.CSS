@@ -23,7 +23,7 @@
 
 .header-contenedor{
     grid-area:header;
-    background: linear-gradient(to right, #1f85c0, #4fc3f7, #3387db, #1b51a1);
+    background: linear-gradient(to right, #1e3a5f, #2563eb, #1e3a5f);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -121,7 +121,7 @@
 
 .footer{
     grid-area:footer;
-    background-color:#1f2b45;
+    background: linear-gradient(to right, #1e3a5f, #2563eb, #1e3a5f);
     color:#9CA3AF;
     text-align:center;
     padding:5px;

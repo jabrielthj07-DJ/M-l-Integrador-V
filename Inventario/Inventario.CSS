@@ -42,7 +42,7 @@
 
 .header-contenedor{
     grid-area:header;
-    background: linear-gradient(to right, #1e3a5f, #2563eb);
+    background: linear-gradient(to right, #1e3a5f, #2563eb, #1e3a5f);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -178,7 +178,7 @@
 .footer{
     grid-area:footer;
 
-    background-color:#223253;
+    background-color:linear-gradient(to right, #1e3a5f, #2563eb, #1e3a5f);
 
     color:#9CA3AF;
 
