@@ -29,7 +29,6 @@ const API_URL ="https://localhost:7030/api/Compras"
     const tablaBody = document.querySelector(".tabla-Compras tbody")
     tablaBody.innerHTML =""; //limpiamos antes de insertar
 
-
     //recorremos cada compras y cuerpo de la tablas
     if(Array.isArray(compras)){
         compras.forEach(compra =>{
@@ -67,4 +66,6 @@ const API_URL ="https://localhost:7030/api/Compras"
  //aqui ejecutamos getcompras al cargar la pajina
 
 getCompras();
+ 
+
  
