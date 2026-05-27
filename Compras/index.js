@@ -2,6 +2,13 @@
 
 const API_URL ="https://localhost:7030/api/Compras"
 
+//validar el token antes de cargar la pagina
+const token = localStorage.getItem("token");
+if(!token){
+   document.getElementById("mensaje").innerText = "Debe iniciar sesión para acceder a Compras.";
+  window.location.href= "/Login.html";
+}
+
 //creamos un asincrona y wai para una promesa
  async function getCompras() {
     try{
@@ -14,14 +21,20 @@ const API_URL ="https://localhost:7030/api/Compras"
 
         //header que el formato esta en json
         const headers={"Content-Type": "application/json",
-                       "Authorization": `Bearer ${token} `
+                       "Authorization": `Bearer ${token}`
 
         };
+        
         
     //llamda de la api del metodo Get
     const response = await fetch(API_URL,{
       method:"GET", headers
     });
+    //un if de repuesta si la promesa no se cumple lanzara un error al obtener compras...
+    if (!response.ok) {
+      document.getElementById("mensaje").innerText = "Error al obtener las compras: " + response.status;
+      return;
+    }
     //creamos una constante awai que se espara la promesa
     const compras= await response.json();
 

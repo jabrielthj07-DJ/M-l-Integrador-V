@@ -202,22 +202,30 @@
                         <button class="btn-agregar" onclick="location.href='AgregarCompra.Html'">+ Agregar Compra</button>
                         <input type="text" placeholder="Buscar compra..." class="buscador">
                     </div>
+
+
+        <!-- Aquí agregamos el contenedor de mensajes -->
+        <div id="mensaje" style="color:red; font-weight:bold; margin:10px 0;"></div>
               <!--creadno tabla de la lista de la compra-->
                     <div class="tabla-contenedor">
                         <table class="tabla-Compras">
                             <thead>
                                 <tr> <!--campos de encabezado de la tabla de compra-->
                                     
-                                    <th>Producto</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio Total</th>
-                                    <th>Fecha</th>
+                                    <th>id_Compra</th>
+                                    <th>id_Proveedor</th>
+                                    <th>fecha_Compra</th>
+                                    <th>total</th>
+                                    <th>observaciones</th>
                                     <th>Acciones</th>
                                    
                                 </tr>
-                            
-                       
+                            </thead>
+
+                            <tbody>
+                              <!--aqui se llenaran las filas-->
                             </tbody>
+                       
                      
                         </table>
                           
@@ -267,6 +275,8 @@
     </script>
 
 <script src="index.js"></script>
+
+
 </body>
 </html>
        
