@@ -9,63 +9,178 @@
 <body>
     <div class="main-container">
         <header class="header-contenedor">
-        <nav class="nav_header">
-        <img src="../Inicio/Imagenes_Inicio/imagen.png" alt="Logo Veterinaria M&L" class="logo">
-        <h1 class="titulo">Veterinaria M&L</h1>
+       <nav class="nav_header">
+
+            <button id="btnMenu" class="btn-menu">
+                ☰
+            </button>
+
+            <img src="/Proovedores/Imagenes_Inicio/imagen.png" 
+            alt="Logo Veterinaria M&L" 
+            class="logo">
+
+            <h1 class="titulo">
+                Veterinaria M&L
+            </h1>
+
         </nav>
         </header>
 
     <section class="section-contenedor">
-         <div class="sidebar">
-            <ul class="sidebar_ul">
-             <li>
-                 <a class="perfil_link" href="../Inicio/Index.html">
-                 <img alt="Inicio" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/inicio.svg">
-                 Inicio
-                </a>
+  <div class="sidebar"> <!--sidebar-->
 
-            </li>
-                <li>
-                    <a class="perfil_link" href="../Productos/Productos.html">
-                    <img alt="Productos" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/producto.svg">
-                     Productos
-                    </a>
-                </li>
+<ul class="sidebar_ul">
 
-                <li>
-                 <a class="perfil_link" href="../Categorias/Categorias.html">
-                 <img alt="Categorias" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/categorias.svg">
-                 Categorías
-                 </a>
-                 </li>
+<li>
+    <a class="perfil_link" href="../Inicio/Index.html">
+        <img alt="Inicio" class="Icons_Inicio " src="../Inicio/Imagenes_Inicio/Iconos/inicio.svg">
+        Inicio
+    </a>
+</li>
 
-                <li>
-                    <a class="perfil_link" href="../Ventas/Ventas.html">
-                    <img alt="Ventas" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Ventas_original.svg">
-                    Ventas
-                    </a>
-                </li>
+<li class="dropdown">
 
-                <li>
-                  <a class="perfil_link active" href="Compras.html">
-                  <img alt="Compras" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/compras.svg">
-                  Compras
-                  </a>
-                </li>
+<button class="dropdown-btn">
+    <img alt="Productos" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/producto.svg">
+    Productos
+</button>
 
-                    <li>
-                        <a class="perfil_link" href="../Inventario/Inventario.html">
-                            <img alt="Inventario" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/Inventario.svg">
-                            Inventario
-                        </a>
-                    </li>
-                    <li>
-                        <a class="perfil_link" href="../Proovedores/Proovedores.Html">
-                            <img alt="Proveedores" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/proovedor.svg">
-                            Proveedores
-                        </a>
-                    </li>
-                </ul>
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="agregarycrearinterfazadd.html">
+            Registrar Producto
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Productos/Productos.Html">
+            Lista de Productos
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Categorias" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/categorias.svg">
+    Categorias
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add categoria-->
+            Registrar Categoría
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Categorias/Categorias.Html">
+            Lista de Categorías
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Proveedores" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/proovedor.svg">
+    Proveedores
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="../Proveedores/Proveedores.html"> <!--agregar y crear interfaz add -->
+            Registrar Proveedor
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Proovedores/Proovedores.Html">
+            Lista de Proveedores
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Inventario" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/inventario.svg">
+    Inventario
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#">
+            Historial de Ventas 
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="#">
+            Historial de Compras
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="#">
+            Inventario Actual
+        </a>
+    </li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<button class="dropdown-btn">
+    <img alt="Ventas" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/Ventas_original.svg">
+    Ventas
+</button>
+
+<ul class="submenu">
+
+    <li>
+        <a class="perfil_link" href="#"> <!--agregar y crear interfaz add -->
+            Realizar Venta
+        </a>
+    </li>
+
+    <li>
+        <a class="perfil_link" href="../Ventas/Ventas.Html">
+            Historial de Ventas
+        </a>
+    </li>
+</ul>
+
+</li>
+
+<li class="dropdown">
+     <button class="dropdown-btn">
+    <img alt="Compras" class="Icons_Inicio" src="Imagenes_Inicio/Iconos/compras.svg">
+    Compras
+   </button>
+    <ul class="submenu">
+ <li><a class="perfil_link" href="../Compras/AgregarCompra.Html">Realizar Compra</a></li>
+ <li><a class="perfil_link" href="../Compras/Compras.Html">Historial de Compras</a></li>
+    </ul>
+</li>
+
+
+</ul>
 
                 <div class="perfil">
                     <a class="perfil_link" href="../Perfil_Usuario/Perfil.Html">
@@ -92,7 +207,7 @@
                         <!-- thead para los encabezado de la tabla de proveedores-->
                         <thead>
                           <tr>
-                            <th>Id_Proveedor</th>
+                           
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Email</th>
@@ -107,7 +222,7 @@
                         <!--tbosy para el contenidp de la tabla-->
                         <tbody>
                            <tr>
-                            <td>1</td>
+                            
                             <td>Juan</td>
                             <td>Pérez</td>
                             <td>juan.perez@email.com</td>
@@ -123,7 +238,7 @@
                            </tr>
                     <!-- fila  de los datos de la tabla de proveedores-->
                            <tr>
-                            <td>2</td>
+                          
                             <td>María</td>
                             <td>Gómez</td>
                             <td>maria.gomez@email.com</td>
@@ -139,7 +254,7 @@
                            </tr>
                  <!-- fila de tabla de -->
                            <tr>
-                            <td>3</td>
+                         
                             <td>Carlos</td>
                             <td>Ramírez</td>
                             <td>carlos.ramirez@email.com</td>
@@ -156,7 +271,7 @@
 
 
                            <tr>
-                            <td>4</td>
+                   
                             <td>Ana</td>
                             <td>Martínez</td>
                             <td>ana.martinez@email.com</td>
@@ -172,7 +287,7 @@
                            </tr>
 
                            <tr>
-                            <td>5</td>
+                          
                             <td>Laura</td>
                             <td>Hernández</td>
                             <td>laura.hernandez@email.com</td>
@@ -193,5 +308,35 @@
 
         </section> 
     </div>
+    <script>
+const dropdowns = document.querySelectorAll(".dropdown-btn");
+
+dropdowns.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const submenu = button.nextElementSibling;
+
+        if(submenu.style.display === "block"){
+            submenu.style.display = "none";
+        }
+        else{
+            submenu.style.display = "block";
+        }
+    });
+});
+
+
+const btnMenu = document.getElementById("btnMenu");
+
+const sidebar = document.querySelector(".sidebar");
+
+btnMenu.addEventListener("click", ()=>{
+
+    sidebar.classList.toggle("oculto");
+
+});
+
+</script>
 </body>
 </html>

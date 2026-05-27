@@ -21,9 +21,26 @@
     justify-content:center;
 }
 
+.btn-menu{
+    position:absolute;
+    left:7px;
+    background:#1e3a5f;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:20px;
+    z-index:100;
+}
+
+.sidebar.oculto{
+    display:none;
+}
+
 .header-contenedor{
     grid-area:header;
-    background: linear-gradient(to right, #1f85c0, #4fc3f7, #3387db, #1b51a1);
+    background: linear-gradient(to right, #1e3a5f, #2563eb, #1e3a5f);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -32,10 +49,10 @@
 }
 
 .logo{
-    width:130px;
-    height:125px;
+     width:90px;
+    height:85px;
     position:absolute;
-    left:20px;
+    left:50px;
 }
 
 .titulo{
@@ -59,14 +76,14 @@
 
 .sidebar{
     width:220px;
-    background-color: rgb(0 0 0 / 15%);
+     background-color: rgba(100, 130, 195, 0.15); 
     padding:20px;
     display:flex;
     flex-direction:column;
     color:#444;
 }
 
-.sidebar ul{
+.sidebar > ul{
     list-style:none;
     display:flex;
     flex-direction:column;
@@ -77,7 +94,7 @@
 .sidebar ul li{
     padding:10px;
     margin-bottom:10px;
-    background:rgb(255 255 255 / 95%);
+       background:rgba(212, 226, 247, 0.95);
     border-radius:6px;
     text-align:center;
     width:auto;
@@ -89,7 +106,7 @@
 }
 
 .sidebar ul li:hover{
-    background:#1f85c0;
+       background:  rgba(162, 192, 236, 0.95);/*rgb(0 0 0 / 5%);  preguntar cual de los dos se mire mejor  */
     cursor:pointer;
     color:#FFFFFF;
 }
@@ -106,6 +123,13 @@
 .perfil_link{
     color:#444;
     text-decoration:none;
+        display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    width:100%;
+    height:100%;
 }
 
 .Text_LinkPerfil{
@@ -116,15 +140,15 @@
     flex:1;
     background-color:#F9FAFB;
     padding:25px;
-    height:100vh;
+    height: 100vh;
 }
 
 .footer{
-    grid-area:footer;
-    background-color:#223253;
+    grid-area: footer;
+  background: linear-gradient(to right, #1e3a5f, #2563eb, #1e3a5f);
     color:#9CA3AF;
     text-align:center;
-    padding:5px;
+    padding:3px;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -233,6 +257,75 @@
 
 .btn-eliminar:hover{
     background:#c62828;
+}
+
+
+.dropdown-btn{
+    color:#444;
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    width:100%;
+    height:100%;
+
+    background:none;
+    border:none;
+
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* CONTENEDOR DEL DROPDOWN */
+.dropdown{
+    flex-direction:column;
+    align-items:flex-start !important;
+    height:auto !important;
+}
+
+/* SUBMENU OCULTO */
+.submenu{
+    display:none;
+
+    width:100%;
+    margin-top:10px;
+    padding-left:10px;
+}
+
+/* CUANDO SE ABRE */
+.submenu.activo{
+    display:block;
+}
+
+/* ITEMS DEL SUBMENU */
+.submenu li{
+    width:100%;
+    height:auto !important;
+
+    padding:10px;
+    margin-bottom:5px;
+
+    background:rgba(255,255,255,0.7) !important;
+    border-radius:6px;
+}
+
+/* LINKS DEL SUBMENU */
+.submenu .perfil_link{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+
+    color:#444;
+    text-decoration:none;
+}
+
+/* HOVER */
+.submenu li:hover{
+    background:rgba(162, 192, 236, 0.95) !important;
 }
 
 

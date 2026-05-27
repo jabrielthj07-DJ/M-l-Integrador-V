@@ -26,7 +26,7 @@
 /* 2. HEADER SUPERIOR (BARRA AZUL)*/
 .header-contenedor {
     grid-area: header;
-    background: linear-gradient(to right, #1e3a5f, #2563eb);
+    background: linear-gradient(to right, #1e3a5f, #2563eb, #1e3a5f);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,6 +118,11 @@
     gap: 10px;
     width: 100%;
     height: 100%;
+}
+
+footer {
+    grid-area: footer;
+    background: linear-gradient(to right, #1e3a5f, #2563eb, #1e3a5f);
 }
 
 .Icons_Inicio {
