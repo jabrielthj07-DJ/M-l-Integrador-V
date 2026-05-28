@@ -106,64 +106,79 @@
             </div>
 
             <div class="contenido_inicio">
-                <h1 class="titulo-modulo">Gestión de Ventas</h1>
-                
-                <div class="formulario"> 
-                    <div class="formulario-header">
-                        <h2>Agregar Nueva Venta</h2>
+    <h1 class="titulo-modulo">Gestión de Ventas</h1>
+    
+    <div class="formulario"> 
+        <div class="formulario-header">
+            <h2>Agregar Nueva Venta</h2>
+        </div>
+        
+        <form id="form-agregar-ventas">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="usuario">Usuario que realiza venta</label>
+                    <div class="input-icon" data-icon="👤">
+                        <select id="usuario" name="usuario" required>
+                            <option value="">Seleccione un usuario</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Cajero</option>
+                        </select>
                     </div>
-                    
-                  <form id="form-agregar-compras">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="producto">Producto</label>
-                                <div class="input-icon" data-icon="📦">
-                                    <input type="text" id="producto" name="producto" placeholder="Nombre del producto" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="cantidad">Cantidad</label>
-                                <div class="input-icon" data-icon="🔢">
-                                    <input type="number" id="cantidad" name="cantidad" placeholder="0" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="precio">Precio Total</label>
-                                <div class="input-icon" data-icon="💰">
-                                    <input type="number" id="precio" name="precio" placeholder="C$ 0.00" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="estado">Estado</label>
-                                <div class="input-icon" data-icon="🔄">
-                                    <select id="estado" name="estado" required>
-                                        <option value="">Seleccione un estado</option>
-                                        <option value="Recibido">Recibido</option>
-                                        <option value="Pendiente">Pendiente</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="fecha">Fecha</label>
-                                <div class="input-icon" data-icon="📅">
-                                    <input type="date" id="fecha" name="fecha" required>
-                                </div>
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="submit" class="boton-agregar">Agregar compra</button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
-            </div>
 
-        </section>
+                <div class="form-group">
+                    <label for="producto">Producto</label>
+                    <div class="input-icon" data-icon="📦">
+                        <select id="producto" name="producto" required>
+                            <option value="">Seleccione</option>
+                            <option value="1">Collar</option>
+                            <option value="2">Shampoo</option>
+                             <option value="3">Croqueta</option>
+                              <option value="4">Hueso de Hule</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad">Cantidad</label>
+                    <div class="input-icon" data-icon="🔢">
+                        <input type="number" id="cantidad" name="cantidad" placeholder="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="precioUnitario">Precio Unitario</label>
+                    <div class="input-icon" data-icon="💰">
+                        <input type="number" id="precioUnitario" name="precioUnitario" placeholder="C$ 0.00" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="total">Total</label>
+                    <div class="input-icon" data-icon="🧾">
+                        <input type="number" id="total" name="total" placeholder="C$ 0.00" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <div class="input-icon" data-icon="📅">
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="boton-agregar">Agregar Venta</button>
+                </div>
+
+            </div>
+        </form>
     </div>
+</div>
+
+</section>
+</div>
 
    <script>
         // 1. Funcionalidad para desplegar los submenús (Dropdowns)

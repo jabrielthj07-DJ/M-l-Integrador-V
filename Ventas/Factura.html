@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Factura</title>
+
+    <link rel="stylesheet" href="Factura.css"
+
+</head>
+<body>
+
+    <div class="factura">
+
+        <img src="/Ventas/Imagenes_Inicio/imagen.png" class="logo-mascota">
+        
+        <h1>Factura Veterinaria M&L</h1>
+
+        <p><strong>Producto:</strong> <span id="producto"></span></p>
+
+        <p><strong>Cantidad:</strong> <span id="precio"></span></p> <!--esta ilogico pero con que funcione xd, lugo cambiar si-->
+
+        <p><strong>Precio:</strong> <span id="cantidad"></span></p>
+
+        <button onclick="window.print()">
+            Imprimir
+        </button>
+
+    </div>
+
+<script>
+
+document.getElementById("producto").textContent =
+localStorage.getItem("producto");
+
+document.getElementById("precio").textContent =
+localStorage.getItem("precio");
+
+document.getElementById("cantidad").textContent =
+localStorage.getItem("cantidad");
+
+</script>
+
+</body>
+</html>

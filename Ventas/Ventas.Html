@@ -329,6 +329,34 @@
                 window.location.href = '../Compras/Compras.Html';
             });
         }
+
+
+
+
+
+
+        //Prueba de btn imprimir
+const botonesImprimir = document.querySelectorAll(".btn-imprimir");
+
+botonesImprimir.forEach((boton) => {
+
+    boton.addEventListener("click", () => {
+
+        const fila = boton.parentElement.parentElement;
+
+        const producto = fila.children[0].textContent;
+        const cantidad = fila.children[1].textContent;
+        const precio = fila.children[2].textContent;
+
+        localStorage.setItem("producto", producto);
+        localStorage.setItem("cantidad", cantidad);
+        localStorage.setItem("precio", precio);
+
+        window.location.href = "Factura.html";
+
+    });
+
+});
     </script>
 </body>
 </html>
