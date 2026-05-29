@@ -199,25 +199,34 @@
                     <input type="text" placeholder="Buscar venta..." class="buscador">
                 </div>
          <!--tablas de ventas -->
+          <!-- Aquí agregamos el contenedor de mensajes -->
+        <div id="mensaje" style="color:red; font-weight:bold; margin:10px 0;"></div>
                 <div class="tabla-contenedor">
                     <table class="tabla-Ventas">
                         <!--thead para los encabezados de la tabla -->
                         <thead>
                             <tr>
-                               
-                                <th>Producto</th>
-                            
-                                <th>Cantidad</th>
-                                <th>Precio Total</th>
-                                <th>Fecha</th>
+                                <th>fecha_Venta</th>
+                                <th>nombre</th>
+                                <th>total</th>
+                                <th>nombre_Producto</th>
+                                <th>cantidad</th>
+                                <th>precio_Unitario</th>
                                 <th>Acciones</th>
+                               
                             </tr>
                         </thead>
+                         <tbody>
+                              <!--aqui se llenaran las filas-->
+                        </tbody>
 
                         <!--tbody para el contenido de la tabla -->
-                       <tbody>
+                       <!--<tbody> -->
 
-<tr>
+<!-- aqui no te toque nada ni elimini ni el bton de inprimir solamente anule para mandar a llamar los datos de la venta
+ de nuestra api !!-->
+
+<!--<tr>
    
     <td>Alimento para perro A</td>
     <td>2</td>
@@ -283,11 +292,13 @@
 </tr>
 
 </tbody>
+-->
                     </table>
                 </div>
             </div>
         </section>
 </div>
+
 
  <script>
         // 1. Funcionalidad para desplegar los submenús (Dropdowns)
@@ -358,5 +369,7 @@ botonesImprimir.forEach((boton) => {
 
 });
     </script>
+
+    <script src="Ventas.js"></script>
 </body>
 </html>
