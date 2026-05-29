@@ -21,7 +21,10 @@ document.getElementById("loginForm").addEventListener("submit",async (e) =>{
     const response = await fetch("https://localhost:7030/api/Login/login",{
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({correo: email, clave: password})
+        body: JSON.stringify({
+        correo: email, 
+       clave: password
+        })
     });
 
     //un if de respuesta okay si es null !
@@ -31,13 +34,14 @@ document.getElementById("loginForm").addEventListener("submit",async (e) =>{
     }
     // una constante de data si se cumplio la promesa usa esos datos
     const data = await response.json();
+    console.log("Repuesta del servidor:", data);
 
     //guardamos el token en localStorage
     localStorage.setItem("token",data.token);
     console.log("Token guardado con exito",data.token);
 
     //dirigir al menu principal luego de iniciar sesion con window
-    window.location.href= "/Inicio/Index.html";
+    window.location.href = "/Inicio/Index.html";
 
   }catch (error){
 

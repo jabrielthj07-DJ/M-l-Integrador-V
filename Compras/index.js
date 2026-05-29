@@ -6,7 +6,10 @@ const API_URL ="https://localhost:7030/api/Compras"
 const token = localStorage.getItem("token");
 if(!token){
    document.getElementById("mensaje").innerText = "Debe iniciar sesión para acceder a Compras.";
-  window.location.href= "/Login.html";
+   setTimeout(() => {
+    window.location.href= "/Login.html";
+   },2000);
+  
 }
 
 //creamos un asincrona y wai para una promesa
