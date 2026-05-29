@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realizar Compra - Veterinaria M&L</title>
-    <link rel="stylesheet" href="RealizarCompra.CSS">
+    <title>Agregar a Inventario - Veterinaria M&L</title>
+    <link rel="stylesheet" href="/Inventario/agregarinventario.css">
 </head>
 <body>
     <div class="main-container">
@@ -69,7 +69,7 @@
                         </button>
                         <ul class="submenu">
                             <li><a class="perfil_link" href="/Ventas/Ventas.Html">Historial de Ventas</a></li>
-                            <li><a class="perfil_link" href="../Compras/Compras.Html">Historial de Compras</a></li>
+                            <li><a class="perfil_link" href="/Compras/Compras.Html">Historial de Compras</a></li>
                             <li><a class="perfil_link" href="/Inventario/Inventario.Html">Inventario Actual</a></li>
                         </ul>
                     </li>
@@ -105,118 +105,55 @@
                 </div>
             </div>
 
-       <div class="contenido_inicio">
-    <h1 class="titulo-modulo">Gestión de Compras</h1>
-
+        <div class="contenido_inicio">
+    <h1 class="titulo-modulo">Gestión de Inventario</h1>
+    
     <div class="formulario"> 
         <div class="formulario-header">
-            <h2>Agregar Nueva Compra</h2>
+            <h2>Agregar Inventario</h2>
         </div>
-
-        <form id="form-agregar-compras">
-            <div class="form-grid">
-
-                <div class="form-group">
-                    <label for="proveedor">Proveedor</label>
-                    <div class="input-icon" data-icon="🏢">
-                        <input type="text" id="proveedor" name="proveedor" placeholder="Nombre del proveedor" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="metodoPago">Método de Pago</label>
-                    <div class="input-icon" data-icon="💳">
-                        <select id="metodoPago" name="metodoPago" required>
-                            <option value="">Seleccione un método</option>
-                            <option value="Efectivo">Efectivo</option>
-                            <option value="Transferencia">Transferencia</option>
-                            <option value="Tarjeta">Tarjeta</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="estado">Estado</label>
-                    <div class="input-icon" data-icon="🔄">
-                        <select id="estado" name="estado" required>
-                            <option value="">Seleccione un estado</option>
-                            <option value="Recibido">Recibido</option>
-                            <option value="Pendiente">Pendiente</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="fecha">Fecha</label>
-                    <div class="input-icon" data-icon="📅">
-                        <input type="date" id="fecha" name="fecha" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="observaciones">Observaciones</label>
-                    <div class="input-icon" data-icon="📝">
-                         <input type="text" id="observaciones" name="observaciones" required>
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit" class="boton-agregar">Guardar Compra</button>
-                </div>
-
-            </div>
-        </form>
-    </div>
-
-    <div class="formulario"> 
-        <div class="formulario-header">
-            <h2>Detalle Compra</h2>
-        </div>
-
-        <form id="form-detalle-compra">
+        
+        <form id="form-agregar-inventario">
             <div class="form-grid">
 
                 <div class="form-group">
                     <label for="producto">Producto</label>
                     <div class="input-icon" data-icon="📦">
-                        <input type="text" id="producto" name="producto" placeholder="Nombre del producto" required>
+                        <select id="producto" name="producto" required>
+                            <option value="">Seleccione un producto</option>
+                            <option value="1">Producto 1</option>
+                            <option value="2">Producto 2</option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="cantidad">Cantidad</label>
-                    <div class="input-icon" data-icon="🔢">
-                        <input type="number" id="cantidad" name="cantidad" placeholder="0" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="precioUnitario">Precio Unitario</label>
+                    <label for="precio">Precio</label>
                     <div class="input-icon" data-icon="💰">
-                        <input type="number" id="precioUnitario" name="precioUnitario" placeholder="C$ 0.00" required>
+                        <input type="number" id="precio" name="precio" placeholder="C$ 0.00" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="subtotal">Subtotal</label>
-                    <div class="input-icon" data-icon="🧾">
-                        <input type="number" id="subtotal" name="subtotal" placeholder="C$ 0.00" required>
+                    <label for="stock">Stock</label>
+                    <div class="input-icon" data-icon="📦">
+                        <input type="number" id="stock" name="stock" placeholder="0" required>
                     </div>
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="boton-agregar">Agregar Detalle</button>
+                    <button type="submit" class="boton-agregar">
+                        Agregar Inventario
+                    </button>
                 </div>
 
             </div>
         </form>
     </div>
-
 </div>
 
 </section>
 </div>
-
    <script>
         // 1. Funcionalidad para desplegar los submenús (Dropdowns)
         const dropdownButtons = document.querySelectorAll('.dropdown-btn');

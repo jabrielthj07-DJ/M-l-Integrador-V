@@ -6,6 +6,8 @@ porque te dara una abvertencia.....
 
 /* == 🧐ojo ojo cuidado la cantias modificando el codigo☠️ === */
 
+/*JAJAJA Que va mi dogs nada que ver / Att: DJJA*/
+
 //realizando acceso de usuario para obtener el token
 
 document.getElementById("loginForm").addEventListener("submit",async (e) =>{

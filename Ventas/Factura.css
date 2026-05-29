@@ -1,0 +1,79 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:'Times New Roman', Times, serif;
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("/Ventas/Imagenes_Inicio/b3.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.factura strong{
+    color:#1b51a1;
+}
+
+.factura h1{
+    text-align:center;
+    color:#1a5e86;
+    margin-bottom:25px;
+}
+
+.factura p{
+    font-size:18px;
+    margin:15px 0;
+    color:#333;
+}
+
+.factura{
+    width:420px;
+    background:rgba(255,255,255,0.95);
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+button{
+    width:100%;
+    margin-top:25px;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(to right, #1f85c0, #3387db);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+button:hover{
+    background:linear-gradient(to right, #3387db, #1b51a1);
+    box-shadow:0 8px 20px rgba(31,133,192,0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+.logo-mascota{
+
+    width:250px;
+
+    display:block;
+
+    margin:0 auto 8px auto;
+
+    filter:drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+
+}
+
