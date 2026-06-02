@@ -110,6 +110,16 @@
     color: #FFFFFF;
 }
 
+.perfilav {
+    margin-top:auto;
+    padding:10px;
+      background: rgba(212, 226, 247, 0.7);
+    border-radius:6px;
+    cursor:pointer;
+    text-align: center;
+}
+
+
 .perfil_link {
     color: #444;   
     text-decoration: none;

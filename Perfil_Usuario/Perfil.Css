@@ -69,11 +69,10 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    background: rgba(255, 255, 255, .15);
-    backdrop-filter: blur(10px);
+    background: rgba(115, 104, 235, 0.099);
     padding: 8px 18px;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, .2);
+    /* border: 1px solid rgba(0, 44, 157, 0.2); */
     transition: .3s;
 }
 
@@ -109,7 +108,7 @@
 
 .rol-header {
     background: white;
-    color: #2563eb;
+    color: #15264c;
     padding: 2px 8px;
     border-radius: 20px;
     font-size: 10px;
@@ -244,12 +243,12 @@
 
 /*Card Inicio*/
 .perfil-card {
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 12px;
     padding: 35px;
     max-width: 800px;
     margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.219);
     display: flex;
     flex-direction: row; 
     align-items: center;
