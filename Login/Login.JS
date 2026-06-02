@@ -43,7 +43,13 @@ document.getElementById("loginForm").addEventListener("submit",async (e) =>{
     console.log("Token guardado con exito",data.token);
 
     //dirigir al menu principal luego de iniciar sesion con window
+   document.getElementById("pantallaCarga").style.display = "flex";
+
+setTimeout(() => {
+
     window.location.href = "/Inicio/Index.html";
+
+}, 2500);
 
   }catch (error){
 
