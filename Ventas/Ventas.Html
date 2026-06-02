@@ -230,34 +230,10 @@
            
         </footer>
 
-    </div> <script>
-        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
-        
-        dropdownButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                const submenu = button.nextElementSibling;
-                
-                document.querySelectorAll('.submenu').forEach(sub => {
-                    if (sub !== submenu) {
-                        sub.classList.remove('activo');
-                    }
-                });
-                
-                submenu.classList.toggle('activo');
-            });
-        });
-
-        const btnMenu = document.getElementById('btnMenu');
-        const sidebar = document.querySelector('.sidebar');
-        
-        if(btnMenu && sidebar) {
-            btnMenu.addEventListener('click', () => {
-                sidebar.classList.toggle('oculto');
-            });
-        }
-    </script>
+    </div> 
+    <script src="/CodeGeneralInterface.js/Menu.js"></script>
+<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
+<script src="/CodeGeneralInterface.js/Sesion.js"></script>
     <script src="Ventas.js"></script>
 </body>
 </html>

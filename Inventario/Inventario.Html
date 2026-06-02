@@ -476,47 +476,9 @@
 
 </div>
 
-
-<script>
-
-const abrirModal = document.getElementById("abrirModal");
-
-const modal = document.getElementById("modalProducto");
-
-const cerrarModal = document.getElementById("cerrarModal");
-
-
-
-const dropdowns = document.querySelectorAll(".dropdown-btn");
-
-dropdowns.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const submenu = button.nextElementSibling;
-
-        if(submenu.style.display === "block"){
-            submenu.style.display = "none";
-        }
-        else{
-            submenu.style.display = "block";
-        }
-    });
-});
-
-// Menu
-
-const btnMenu = document.getElementById("btnMenu");
-
-const sidebar = document.querySelector(".sidebar");
-
-btnMenu.addEventListener("click", ()=>{
-
-    sidebar.classList.toggle("oculto");
-
-});
-
-</script>
+<script src="/CodeGeneralInterface.js/Menu.js"></script>
+<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
+<script src="/CodeGeneralInterface.js/Sesion.js"></script>
 
 </body>
 </html>

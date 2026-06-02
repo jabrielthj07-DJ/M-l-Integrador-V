@@ -166,48 +166,9 @@
 
         </section>
     </div>
-
-   <script>
-        // 1. Funcionalidad para desplegar los submenús (Dropdowns)
-        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
-        
-        dropdownButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                const submenu = button.nextElementSibling;
-                
-                document.querySelectorAll('.submenu').forEach(sub => {
-                    if (sub !== submenu) {
-                        sub.classList.remove('activo');
-                    }
-                });
-                
-                submenu.classList.toggle('activo');
-            });
-        });
-
-        // Funcionalidad básica para el botón de menú hamburguesa
-        const btnMenu = document.getElementById('btnMenu');
-        const sidebar = document.querySelector('.sidebar');
-        
-        if(btnMenu && sidebar) {
-            btnMenu.addEventListener('click', () => {
-                sidebar.classList.toggle('oculto');
-            });
-        }
-
-        // 2. NUEVA FUNCIONALIDAD: Redirección al dar clic en Agregar Compra
-        const formCompras = document.getElementById('form-agregar-compras');
-        if (formCompras) {
-            formCompras.addEventListener('submit', (e) => {
-                e.preventDefault(); // Detiene la recarga por defecto del formulario
-                
-                // Redirige directamente a la tabla del Historial de Compras
-                window.location.href = '../Compras/Compras.Html';
-            });
-        }
-    </script>
+<script src="/CodeGeneralInterface.js/Menu.js"></script>
+<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
+<script src="/CodeGeneralInterface.js/Sesion.js"></script>
 
     
 </body>

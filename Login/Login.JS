@@ -40,6 +40,11 @@ document.getElementById("loginForm").addEventListener("submit",async (e) =>{
 
     //guardamos el token en localStorage
     localStorage.setItem("token",data.token);
+
+    // Header rol y nombre
+    localStorage.setItem("usuario", data.usuario);
+localStorage.setItem("rol", data.rol);
+
     console.log("Token guardado con exito",data.token);
 
     //dirigir al menu principal luego de iniciar sesion con window
