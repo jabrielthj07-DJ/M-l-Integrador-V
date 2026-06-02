@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 
-    <link rel="stylesheet" href="Categorias.CSS">
-    <title>Categorias - Veterinaria M&L</title>
+    <link rel="stylesheet" href="Categorias.css">
+    <title>Categorías - Veterinaria M&L</title>
 
 </head>
 
@@ -19,7 +19,7 @@
                 ☰
             </button>
 
-            <img src="Imagenes_Inicio/imagen.png" 
+            <img src="/Categorias/Imagenes_Inicio/imagen.png" 
             alt="Logo Veterinaria M&L" 
             class="logo">
 
@@ -28,12 +28,13 @@
             </h1>
 
         </nav>
+    </nav>
 
 </header>
 
 <section class="section-contenedor">
 
-<div class="sidebar"> 
+ <div class="sidebar"> 
 
 <ul class="sidebar_ul">
 
@@ -160,7 +161,7 @@
 <ul class="submenu">
 
     <li>
-        <a class="perfil_link" href="/Ventas/AgregarVenta.html">
+        <a class="perfil_link" href="../Ventas/AgregarVenta.html"> 
             Realizar Venta
         </a>
     </li>
@@ -185,7 +186,7 @@
 <ul class="submenu">
 
     <li>
-        <a class="perfil_link" href="/Compras/AgregarCompra.html">
+        <a class="perfil_link" href="/Compras/AgregarCompra.Html">
             Realizar Compra
         </a>
     </li>
@@ -201,10 +202,12 @@
 </li>
 
 </ul>
+        
 
-                <!-- Link para ir a perfil de usuario-->                
+            
+
                 <div class="perfil">
-                    <a class="perfil_link"  href="../Perfil_Usuario/Perfil.Html"><img class="Icons_Inicio" alt="Perfil" src="Imagenes_Inicio/Iconos/perfil.svg"><p class="Text_LinkPerfil">Mi Perfil</p></a>  <!--Agregr icono o diseno mejor-->
+                    <a class="perfil_link"  href="../Perfil_Usuario/Perfil.Html"><img class="Icons_Inicio" alt="Perfil" src="Imagenes_Inicio/Iconos/perfil.svg"><p class="Text_LinkPerfil">Mi Perfil</p></a>
                 </div>
             </div>
 
@@ -216,9 +219,13 @@
 
 <div class="productos-header">
 
-<button class="btn-agregar">
-    + Agregar Categoría
-</button>
+<div class="contenedor-btn">
+
+    <button class="btn-agregar" id="abrirModal">
+        + Agregar Categoría
+    </button>
+
+</div>
 
 <input 
     type="text" 
@@ -236,8 +243,6 @@
 
 <tr>
 
-<th>ID</th>
-
 <th>Categoría</th>
 
 <th>Descripción</th>
@@ -252,12 +257,9 @@
 
 <tr>
 
-<td>1</td>
-
 <td>Accesorios</td>
 
-<td>Categoría para accesorios de mascotas</td>
-
+<td>Collares, cadenas y complementos</td>
 
 <td class="acciones">
 
@@ -274,34 +276,10 @@
 </tr>
 
 <tr>
-
-<td>2</td>
-
-<td>Accesorios</td>
-
-<td>Categoría para accesorios de mascotas</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-<button class="btn-eliminar">
-    Eliminar
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>3</td>
 
 <td>Higiene</td>
 
-<td>higiene y cuidado de las mascotas</td>
+<td>Shampoo, cepillos y cuidado dental</td>
 
 <td class="acciones">
 
@@ -332,7 +310,25 @@
 
 </div>
 
+
 <script>
+
+const abrirModal = document.getElementById("abrirModal");
+
+const modal = document.getElementById("modalProducto");
+
+const cerrarModal = document.getElementById("cerrarModal");
+
+
+// ABRIR MODAL
+abrirModal.addEventListener("click", () => {
+
+    modal.style.display = "flex";
+
+});
+
+
+
 const dropdowns = document.querySelectorAll(".dropdown-btn");
 
 dropdowns.forEach(button => {
@@ -350,6 +346,7 @@ dropdowns.forEach(button => {
     });
 });
 
+// Menu
 
 const btnMenu = document.getElementById("btnMenu");
 
@@ -362,5 +359,6 @@ btnMenu.addEventListener("click", ()=>{
 });
 
 </script>
+
 </body>
 </html>
