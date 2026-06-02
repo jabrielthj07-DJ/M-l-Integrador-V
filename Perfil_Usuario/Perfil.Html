@@ -1,76 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<!-- creando el perfil de usuario-->
     <link rel="stylesheet" href="Perfil.Css">
     <title>Perfil de Usuario</title>
-
 </head>
-
 <body>
- <!--creando contenedor con agrupacion div-->
+
     <div class="main-container">
 
         <header class="header-contenedor">
             <nav class="nav_header">
+                <button id="btnMenu" class="btn-menu">☰</button>
                 <img src="/Inicio/Imagenes_Inicio/imagen.png" alt="Logo Veterinaria M&L" class="logo">
                 <h1 class="titulo">Veterinaria M&L</h1>
+                
+                <div class="header-usuario">
+                    <img src="Imagenes_Perfil/DJJA.png" alt="Usuario">
+                    <div class="info-usuario">
+                        <span class="saludo">Hola,</span>
+                        <h4 id="nombreHeader">Darell</h4>
+                        <span id="rolHeader" class="rol-header">Administrador</span>
+                    </div>
+                </div>
             </nav>
         </header>
 
         <section class="section-contenedor">
-          <!-- agrupando imagenes con div esta son solo imagenes de cada seccion-->
-            <div class="sidebar"> <!--sidebar = barra lateral por si las moscas-->
-
+            
+            <div class="sidebar">
                 <ul class="sidebar_ul">
-                    <li><img alt="Inicio" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/inicio.svg">Inicio</li>
-                    <li><img alt="Productos"  class="Icons_Inicio" src="Imagenes_Perfil/Iconos/producto.svg">Productos</li>
-                    <li><img alt="Categorias" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/categorias.svg">Categorias</li>
-                    <li><img alt="Ventas" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/Ventas_original.svg">Ventas</li>
-                    <li><img alt="Compras" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/compras.svg">Compras</li>
-                    <li><img alt="Inventario" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/Inventario.svg">Inventario</li>
-                    <li><img alt="Proovedores" class="Icons_Inicio" src="Imagenes_Perfil/Iconos/proovedor.svg">Proovedores</li>
-                    
+                    <li>
+                        <a class="perfil_link" href="../Inicio/Index.html">
+                            <img alt="Inicio" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/inicio.svg">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li class="dropdown">
+                        <button class="dropdown-btn">
+                            <img alt="Productos" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/producto.svg">
+                            Productos
+                        </button>
+                        <ul class="submenu">
+                            <li><a class="perfil_link" href="/Productos/RegistrarProducto.html">Registrar Producto</a></li>
+                            <li><a class="perfil_link" href="../Productos/Productos.Html">Lista de Productos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button class="dropdown-btn">
+                            <img alt="Categorias" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/categorias.svg">
+                            Categorias
+                        </button>
+                        <ul class="submenu">
+                            <li><a class="perfil_link" href="/Categorias/Categorias.Html">Registrar Categoría</a></li>
+                            <li><a class="perfil_link" href="../Categorias/Categorias.Html">Lista de Categorías</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button class="dropdown-btn">
+                            <img alt="Proveedores" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/proovedor.svg">
+                            Proveedores
+                        </button>
+                        <ul class="submenu">
+                            <li><a class="perfil_link" href="/Proovedores/Proovedores.Html">Registrar Proveedor</a></li>
+                            <li><a class="perfil_link" href="../Proovedores/Proovedores.Html">Lista de Proveedores</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button class="dropdown-btn">
+                            <img alt="Inventario" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/inventario.svg">
+                            Inventario
+                        </button>
+                        <ul class="submenu">
+                            <li><a class="perfil_link" href="/Ventas/Ventas.Html">Historial de Ventas</a></li>
+                            <li><a class="perfil_link" href="/Compras/Compras.Html">Historial de Compras</a></li>
+                            <li><a class="perfil_link" href="/Inventario/Inventario.Html">Inventario Actual</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button class="dropdown-btn">
+                            <img alt="Ventas" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/Ventas_original.svg">
+                            Ventas
+                        </button>
+                        <ul class="submenu">
+                            <li><a class="perfil_link" href="/Ventas/AgregarVenta.html">Realizar Venta</a></li>
+                            <li><a class="perfil_link" href="../Ventas/Ventas.Html">Historial de Ventas</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button class="dropdown-btn">
+                            <img alt="Compras" class="Icons_Inicio" src="/Compras/Imagenes_Inicio/Iconos/compras.svg">
+                            Compras
+                        </button>
+                        <ul class="submenu">
+                            <li><a class="perfil_link" href="../Compras/AgregarCompra.Html">Realizar Compra</a></li>
+                            <li><a class="perfil_link" href="../Compras/Compras.Html">Historial de Compras</a></li>
+                        </ul>
+                    </li>
                 </ul>
-          
-                <div class="perfil"> <!-- AGREGAR UNAFLECHA PARA HACER QUE REGRESE AL INICIO, QUE NO SE REPITA EL Inicio-->
-                    <a class="perfil_link"  href="/Inicio/Index.Html"><img class="Icons_Inicio" alt="Perfil" src="Imagenes_Perfil/Iconos/perfil.svg"><p class="Text_LinkPerfil">Regresar</p></a>  <!--Agregr icono o diseno mejor-->
-                 </div>
+                
+                <div class="perfil_usuario">
+                    <a class="perfil_link" href="/Inicio/Index.Html">
+                        <img class="Icons_Inicio" alt="Perfil" src="/Perfil_Usuario/Imagenes_Perfil/Iconos/Atras.svg">
+                        <p class="Text_LinkPerfil">Regresar</p>
+                    </a>
+                </div>
             </div> 
 
             <div class="contenido_inicio">
-               <h1>Perfil de Usuario</h1>
-<!-- tarjeta de perfil de usuario-->
-<div class="perfil-card">
-    
-    <div class="perfil-header">
-        <img src="Imagenes_Perfil/DJJA.png" alt="Usuario">
-        <h2>Darell Jiménez</h2>
-        <p>Administrador</p>
-    </div>
+                <h1>Perfil de Usuario</h1>
 
-    <div class="perfil-info">
-        <p><strong>Correo:</strong> darell@gmail.com</p>
-        <p><strong>Teléfono:</strong> 8748-1376</p>
-        <p><strong>Usuario:</strong> admin</p>
-    </div>
+                <div class="perfil-card">
+                    
+                    <div class="foto-contenedor">
+                        <img src="Imagenes_Perfil/DJJA.png" alt="Usuario">
+                    </div>
 
-    <div class="perfil-acciones">
-        <button>Editar Perfil</button>
-    </div>
+                    <div class="perfil-detalles">
+                        <h2 id="nombreUsuario">Darell Jiménez</h2>
+                        <span class="rol-badge" id="rolUsuario">Administrador</span>
+                        <p class="empresa">Veterinaria M&L Masatepe</p>
+                        
+                        <div class="linea"></div>
 
-</div>
+                        <div class="perfil-info">
+                            <p>📧 <strong>Correo:</strong> darell@gmail.com</p>
+                            <p>📱 <strong>Teléfono:</strong> 8748-1376</p>
+                            <p>👤 <strong>Usuario:</strong> admin</p>
+                            <p>🕒 <strong>Último acceso:</strong> Hoy</p>
+                        </div>
 
-</div>
+                    </div>
+
+                </div>
             </div>
-
         </section>
 
-        <footer class="footer">
-        
-        </footer>
+        <footer class="footer"></footer>
 
     </div>
 
+    <script>
+        const dropdowns = document.querySelectorAll(".dropdown-btn");
+        dropdowns.forEach(button => {
+            button.addEventListener("click", () => {
+                const submenu = button.nextElementSibling;
+                if(submenu.style.display === "block"){
+                    submenu.style.display = "none";
+                } else {
+                    submenu.style.display = "block";
+                }
+            });
+        });
+
+        const btnMenu = document.getElementById("btnMenu");
+        const sidebar = document.querySelector(".sidebar");
+        btnMenu.addEventListener("click", () => {
+            sidebar.classList.toggle("oculto");
+        });
+    </script>
 </body>
 </html>

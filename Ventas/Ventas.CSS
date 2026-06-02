@@ -38,7 +38,6 @@
     display:none;
 }
 
-
 .header-contenedor{
     grid-area:header;
     background: linear-gradient(to right, #1e3a5f, #2563eb, #1e3a5f);
@@ -77,7 +76,7 @@
 
 .sidebar{
     width:220px;
-  background-color: rgba(100, 130, 195, 0.15); 
+    background-color: rgba(100, 130, 195, 0.15); 
     padding:20px;
     display:flex;
     flex-direction:column;
@@ -95,7 +94,7 @@
 .sidebar ul li{
     padding:10px;
     margin-bottom:10px;
-      background:rgba(212, 226, 247, 0.95);
+    background:rgba(212, 226, 247, 0.95);
     border-radius:6px;
     text-align:center;
     width:auto;
@@ -107,7 +106,7 @@
 }
 
 .sidebar ul li:hover{
- background:  rgba(162, 192, 236, 0.95);/*rgb(0 0 0 / 5%);  preguntar cual de los dos se mire mejor  */
+ background:  rgba(162, 192, 236, 0.95);
     cursor:pointer;
     color:#FFFFFF;
 }
@@ -124,12 +123,9 @@
 .perfil_link{
    color:#444;   
     text-decoration:none;
-
     display:flex;
     align-items:center;
-
     gap:10px;
-
     width:100%;
     height:100%;
 }
@@ -145,15 +141,17 @@
     height:100vh;
 }
 
+/* TU FOOTER IDÉNTICO AL INDEX */
 .footer{
-    grid-area:footer;
+    grid-area: footer;
     background: linear-gradient(to right, #1e3a5f, #2563eb, #1e3a5f);
-    color:#9CA3AF;
+    color:#FFFFFF; /* Cambiado a blanco para que resalte con el fondo */
     text-align:center;
-    padding:5px;
+    padding:3px;
     display:flex;
     justify-content:center;
     align-items:center;
+    font-size: 13px;
 }
 
 .titulo-modulo{
@@ -191,8 +189,6 @@
     outline:none;
 }
 
-/* estilo para el contenedor de la tabla de ventas */
-
 .tabla-contenedor{
     background:#FFFFFF;
     border-radius:12px;
@@ -213,23 +209,23 @@
 .tabla-Ventas th{
     padding:15px;
 }
-/* estilos para las celdas de la tabla */
+
 .tabla-Ventas td{
     padding:15px;
     text-align:center;
     border-bottom:1px solid #ddd;
 }
-/* Estilos para resaltar la fila al pasar el mouse */
+
 .tabla-Ventas tbody tr:hover{
     background:#f3f9ff;
 }
-/* Estilos para la sección de acciones (editar y eliminar) */
+
 .acciones{
     display:flex;
     justify-content:center;
     gap:10px;
 }
-/* Estilos para el botón de editar */
+
 .btn-editar{
     background:#4fc3f7;
     border:none;
@@ -239,14 +235,13 @@
     cursor:pointer;
     transition:0.3s;
 }
-/* Estilos para el botón de editar */
+
 .btn-editar:hover{
     background:#3387db;
 }
 
-/* Botón Imprimir */
 .btn-imprimir {
-    background-color: #10b981; /* Un color verde esmeralda muy limpio */
+    background-color: #10b981;
     color: white;
     border: none;
     padding: 6px 12px;
@@ -257,75 +252,55 @@
     transition: background-color 0.2s ease;
 }
 
-
-/*Code DJ Original*/
-
-
 .dropdown-btn{
     color:#444;
     text-decoration:none;
-
     display:flex;
     align-items:center;
     gap:10px;
-
     width:100%;
     height:100%;
-
     background:none;
     border:none;
-
     font-size:16px;
     cursor:pointer;
 }
 
-/* CONTENEDOR DEL DROPDOWN */
 .dropdown{
     flex-direction:column;
     align-items:flex-start !important;
     height:auto !important;
 }
 
-/* SUBMENU OCULTO */
 .submenu{
     display:none;
-
     width:100%;
     margin-top:10px;
     padding-left:10px;
 }
 
-/* CUANDO SE ABRE */
 .submenu.activo{
     display:block;
 }
 
-/* ITEMS DEL SUBMENU */
 .submenu li{
     width:100%;
     height:auto !important;
-
     padding:10px;
     margin-bottom:5px;
-
     background:rgba(255,255,255,0.7) !important;
     border-radius:6px;
 }
 
-/* LINKS DEL SUBMENU */
 .submenu .perfil_link{
     width:100%;
     height:100%;
-
     display:flex;
     align-items:center;
-
     color:#444;
     text-decoration:none;
 }
 
-/* HOVER */
 .submenu li:hover{
     background:rgba(162, 192, 236, 0.95) !important;
 }
-

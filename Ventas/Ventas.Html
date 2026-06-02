@@ -25,11 +25,8 @@
 
         </nav>
         </header>
-     <!--contenedor principal de todas las secciones-->
-    <section class="section-contenedor">
-  <div class="sidebar"> <!--sidebar-->
-
-<ul class="sidebar_ul">
+     <section class="section-contenedor">
+  <div class="sidebar"> <ul class="sidebar_ul">
 
 <li>
     <a class="perfil_link" href="../Inicio/Index.html">
@@ -170,13 +167,13 @@
 </li>
 
 <li class="dropdown">
-    <button class="dropdown-btn">
-        <img alt="Compras" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/compras.svg">
-        Compras
-    </button>
+     <button class="dropdown-btn">
+    <img alt="Compras" class="Icons_Inicio" src="../Inicio/Imagenes_Inicio/Iconos/compras.svg">
+    Compras
+   </button>
     <ul class="submenu">
-        <li><a class="perfil_link" href="../Compras/AgregarCompra.Html">Realizar Compra</a></li>
-        <li><a class="perfil_link" href="../Compras/Compras.Html">Historial de Compras</a></li>
+ <li><a class="perfil_link" href="../Compras/AgregarCompra.Html">Realizar Compra</a></li>
+ <li><a class="perfil_link" href="../Compras/Compras.Html">Historial de Compras</a></li>
     </ul>
 </li>
 
@@ -190,7 +187,6 @@
                 </div>
             </div>
         
-            <!-- contenidos de inicio de las ventas -->
             <div class="contenido_inicio">
                 <h1 class="titulo-modulo">Gestión de Ventas</h1>
 
@@ -198,12 +194,10 @@
                     <button class="btn-agregar">+ Agregar Venta</button>
                     <input type="text" placeholder="Buscar venta..." class="buscador">
                 </div>
-         <!--tablas de ventas -->
-          <!-- Aquí agregamos el contenedor de mensajes -->
-        <div id="mensaje" style="color:red; font-weight:bold; margin:10px 0;"></div>
+
+                <div id="mensaje" style="color:red; font-weight:bold; margin:10px 0;"></div>
                 <div class="tabla-contenedor">
                     <table class="tabla-Ventas">
-                        <!--thead para los encabezados de la tabla -->
                         <thead>
                             <tr>
                                 <th>fecha_Venta</th>
@@ -213,95 +207,20 @@
                                 <th>cantidad</th>
                                 <th>precio_Unitario</th>
                                 <th>Acciones</th>
-                               
                             </tr>
                         </thead>
                          <tbody>
-                              <!--aqui se llenaran las filas-->
-                        </tbody>
-
-                        <!--tbody para el contenido de la tabla -->
-                       <!--<tbody> -->
-
-<!-- aqui no te toque nada ni elimini ni el bton de inprimir solamente anule para mandar a llamar los datos de la venta
- de nuestra api !!-->
-
-<!--<tr>
-   
-    <td>Alimento para perro A</td>
-    <td>2</td>
-    <td>$50.00</td>
-    <td>11/05/2026</td>
-
-    <td class="acciones">
-        <button class="btn-editar">Editar</button>
-         <button class="btn-imprimir">Imprimir</button>
-    </td>
-</tr>
-
-<tr>
-  
-    <td>Collar de perro B</td>
-    <td>1</td>
-    <td>$30.00</td>
-    <td>11/05/2026</td>
-
-    <td class="acciones">
-        <button class="btn-editar">Editar</button>
-         <button class="btn-imprimir">Imprimir</button>
-    </td>
-</tr>
-
-<tr>
-    
-    <td>Shampoo para perro C</td>
-    <td>3</td>
-    <td>$25.00</td>
-    <td>11/05/2026</td>
-
-    <td class="acciones">
-        <button class="btn-editar">Editar</button>
-          <button class="btn-imprimir">Imprimir</button>
-    </td>
-</tr>
-
-<tr>
-    
-    <td>Juguete para gato D</td>
-    <td>2</td>
-    <td>$45.00</td>
-    <td>11/05/2026</td>
-
-    <td class="acciones">
-        <button class="btn-editar">Editar</button>
-         <button class="btn-imprimir">Imprimir</button>
-    </td>
-</tr>
-
-<tr>
-  
-    <td>Rascador para gato E</td>
-    <td>1</td>
-    <td>$60.00</td>
-    <td>11/05/2026</td>
-
-    <td class="acciones">
-        <button class="btn-editar">Editar</button>
-       <button class="btn-imprimir">Imprimir</button>
-    </td>
-</tr>
-
-</tbody>
--->
+                              </tbody>
                     </table>
                 </div>
             </div>
         </section>
-</div>
 
+        <footer class="footer">
+            <p>&copy; 2026 Veterinaria M&L. Todos los derechos reservados.</p>
+        </footer>
 
- <script>
-        // 1. Funcionalidad para desplegar los submenús (Dropdowns)
+    </div> <script>
         const dropdownButtons = document.querySelectorAll('.dropdown-btn');
         
         dropdownButtons.forEach(button => {
@@ -320,7 +239,6 @@
             });
         });
 
-        // Funcionalidad básica para el botón de menú hamburguesa
         const btnMenu = document.getElementById('btnMenu');
         const sidebar = document.querySelector('.sidebar');
         
@@ -329,47 +247,7 @@
                 sidebar.classList.toggle('oculto');
             });
         }
-
-        // 2. NUEVA FUNCIONALIDAD: Redirección al dar clic en Agregar Compra
-        const formCompras = document.getElementById('form-agregar-compras');
-        if (formCompras) {
-            formCompras.addEventListener('submit', (e) => {
-                e.preventDefault(); // Detiene la recarga por defecto del formulario
-                
-                // Redirige directamente a la tabla del Historial de Compras
-                window.location.href = '../Compras/Compras.Html';
-            });
-        }
-
-
-
-
-
-
-        //Prueba de btn imprimir
-const botonesImprimir = document.querySelectorAll(".btn-imprimir");
-
-botonesImprimir.forEach((boton) => {
-
-    boton.addEventListener("click", () => {
-
-        const fila = boton.parentElement.parentElement;
-
-        const producto = fila.children[0].textContent;
-        const cantidad = fila.children[1].textContent;
-        const precio = fila.children[2].textContent;
-
-        localStorage.setItem("producto", producto);
-        localStorage.setItem("cantidad", cantidad);
-        localStorage.setItem("precio", precio);
-
-        window.location.href = "Factura.html";
-
-    });
-
-});
     </script>
-
     <script src="Ventas.js"></script>
 </body>
 </html>

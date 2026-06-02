@@ -112,10 +112,10 @@
     color:#FFFFFF;
 }
 
-.perfil{
+.perfilc{
     margin-top:auto;
     padding:10px;
-    background:rgb(255 255 255 / 95%);
+background: rgba(212, 226, 247, 0.7);
     border-radius:6px;
     cursor:pointer;
     text-align:center;
