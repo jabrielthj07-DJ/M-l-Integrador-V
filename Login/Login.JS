@@ -31,8 +31,7 @@ document.getElementById("loginForm").addEventListener("submit",async (e) =>{
 
     //un if de respuesta okay si es null !
     if (!response.ok){
-        throw new Error("Credenciales invalidas o error en el servidor");
-
+        throw new Error("Credenciales invalidas o error en el servidor");  
     }
     // una constante de data si se cumplio la promesa usa esos datos
     const data = await response.json();
