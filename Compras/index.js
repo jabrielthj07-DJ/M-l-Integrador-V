@@ -7,7 +7,7 @@ const token = localStorage.getItem("token");
 if(!token){
    document.getElementById("mensaje").innerText = "Debe iniciar sesión para acceder a Compras.";
    setTimeout(() => {
-    window.location.href= "/Login.html";
+    window.location.href= "/Login.html"; //redireccionamos a la pagina de login despues de 2 segundos
    },2000);
   
 }
