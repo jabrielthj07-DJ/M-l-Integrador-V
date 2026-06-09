@@ -11,7 +11,7 @@ porque te dara una abvertencia.....
 //realizando acceso de usuario para obtener el token
 
 document.getElementById("loginForm").addEventListener("submit",async (e) =>{
-    e.preventDefault();
+    e.preventDefault(); // evita que se recargue la interfaz de vuelta
 
     //creamos una contante de email y contrasena
    const email = document.getElementById("email").value;
@@ -29,7 +29,7 @@ document.getElementById("loginForm").addEventListener("submit",async (e) =>{
         })
     });
 
-    //un if de respuesta okay si es null !
+    //Error si no existe el usuario o la contraseña 
     if (!response.ok){
         throw new Error("Credenciales invalidas o error en el servidor");  
     }
