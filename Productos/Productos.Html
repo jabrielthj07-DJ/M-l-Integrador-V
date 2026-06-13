@@ -29,7 +29,7 @@
 
             
               <div class="header-usuario">
-                    <img src="/Inicio/Imagenes_Inicio/DJJA.png" alt="Usuario">
+                    <img src="/Inicio/Imagenes_Inicio/porfile1.jpg" alt="Usuario">
                     <div class="info-usuario">
                         <span class="saludo">Hola,</span>
                         <h4 id="nombreHeader">Darell</h4>
@@ -233,62 +233,18 @@
 
 <div class="contenedor-btn">
 
-    <button class="btn-agregar" id="abrirModal">
+    <button class="btn-agregar" onclick="window.location.href='RegistrarProducto.html'">
         + Agregar Producto
     </button>
 
 </div>
 
-<!-- MODAL -->
-
-<div class="modal" id="modalProducto">
-
-    <div class="modal-contenido">
-
-        <!-- BOTÓN CERRAR -->
-        <span class="cerrar-modal" id="cerrarModal">
-            &times;
-        </span>
-
-        <h2>Agregar Producto</h2>
-
-        <!-- FORMULARIO -->
-        <form class="form-producto">
-
-            <input 
-                type="text" 
-                placeholder="Nombre del producto"
-            >
-
-            <input 
-                type="text" 
-                placeholder="Categoría"
-            >
-
-            <input 
-                type="number" 
-                placeholder="Precio"
-            >
-
-            <input 
-                type="number" 
-                placeholder="Stock"
-            >
-
-            <button type="submit" class="btn-guardar">
-                Guardar Producto
-            </button>
-
-        </form>
-
-    </div>
-
-</div>
 
 <input 
     type="text" 
     placeholder="Buscar producto..." 
     class="buscador"
+    id="buscarProducto"
 >
 
 </div>
@@ -311,130 +267,32 @@
 
 </thead>
 
-<tbody>
+<tbody id="tablaProductos">
 
-<tr>
-
-
-<td>Cadena Dorada</td>
-
-<td>Collar dorado de alta calidad</td>
-
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Collar Azul</td>
-
-<td>Collar azul de alta calidad</td>
-
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Shampoo Mascotas</td>
-
-<td>Shampoo para mascotas de alta calidad</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-</td>
-
-</tr>
-
-
-<td>Shampoo</td>
-
-<td>Shampoo para mascotas de alta calidad</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>Cepillo</td>
-
-<td>Cepillo para mascotas de alta calidad</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>Collar Verde</td>
-
-<td>Collar verde de alta calidad</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>Cadena de plata</td>
-
-<td>Collar de plata de alta calidad</td>
-
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-</td>
-
-</tr>
+    <tr>
+        <td colspan="3">Cargando productos...</td>
+    </tr>
 
 </tbody>
 
 </table>
+<!-- paginacion / habilitar cuando allan mas registros de productos--> 
+
+<!-- <div class="paginacion">
+
+    <button id="btnAnterior">
+        ⬅ Anterior
+    </button>
+
+    <span id="paginaActual">
+        Página 1
+    </span>
+
+    <button id="btnSiguiente">
+        Siguiente ➡
+    </button>
+
+</div> -->
 
 </div>
 
@@ -447,10 +305,12 @@
 
 </div>
 
+<!-- <script src="./paginacion.js"></script> Habilitar cuando se agreguen ms productos -->
+<script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sesion.js"></script>
 
-<script src="/CodeGeneralInterface.js/Menu.js"></script>
-<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
-<script src="/CodeGeneralInterface.js/Sesion.js"></script>
+<script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/producto.js"></script>
 
 </body>
 </html>
