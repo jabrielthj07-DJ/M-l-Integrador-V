@@ -27,7 +27,7 @@ document.getElementById("loginForm").addEventListener("submit",async (e) =>{
         correo: email, 
        clave: password
         })
-    });
+    });   
 
     //un if de respuesta okay si es null !
     if (!response.ok){
