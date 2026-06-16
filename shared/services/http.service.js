@@ -20,43 +20,59 @@ export default class HttpService {
         return await response.json();
     }
 
-    async post(endpoint, body) {
+   async post(endpoint, body) {
 
-        const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
 
-        const response = await fetch(
-            this.baseUrl + endpoint,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`
-                },
-                body: JSON.stringify(body)
-            }
-        );
+    const response = await fetch(
+        this.baseUrl + endpoint,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(body)
+        }
+    );
 
-        return await response.json();
+    const text = await response.text();
+
+    try {
+        return JSON.parse(text);
+    } catch {
+        return text;
     }
+}
 
-    async put(endpoint, body) {
+   async put(endpoint, body) {
 
-        const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
 
-        const response = await fetch(
-            this.baseUrl + endpoint,
-            {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`
-                },
-                body: JSON.stringify(body)
-            }
-        );
+    const response = await fetch(
+        this.baseUrl + endpoint,
+        {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(body)
+        }
+    );
 
-        return await response.json();
+    const text = await response.text();
+
+    try {
+
+        return JSON.parse(text);
+
+    } catch {
+
+        return text;
+
     }
+}
 
     async delete(endpoint) {
 

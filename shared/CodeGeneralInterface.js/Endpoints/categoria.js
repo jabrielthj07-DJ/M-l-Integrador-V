@@ -5,11 +5,9 @@ const service = new CategoriaService();
 async function loadCategorias() {
 
     const categorias = await service.get();
-
     console.log(categorias);
 
     const table = document.getElementById("tableCategorias");
-
     table.innerHTML = "";
 
     categorias.forEach(categoria => {

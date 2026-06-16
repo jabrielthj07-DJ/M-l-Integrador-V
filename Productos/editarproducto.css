@@ -330,8 +330,6 @@ footer {
     
 }
 
-
-/*-------------------*/
 .sidebar.oculto {
     display: none; /* o transform: translateX(-100%); dependiendo de tu diseño */
 }
