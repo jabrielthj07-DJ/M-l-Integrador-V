@@ -1,10 +1,36 @@
 const API_PRODUCTOS = "https://localhost:7030/api/Inventario";
+const usuarioInput = document.getElementById("usuario");
+const usuarioDisplay = document.getElementById("usuarioDisplay");
 const productoSelect = document.getElementById("producto");
 const cantidadInput = document.getElementById("cantidad");
 const precioUnitarioInput = document.getElementById("precioUnitario");
 const totalInput = document.getElementById("total");
 
 let productos = [];
+
+const setLoggedUsuario = () => {
+    const usuarioLogeado = localStorage.getItem("usuario") ||
+        localStorage.getItem("nombre") ||
+        localStorage.getItem("name") ||
+        localStorage.getItem("user") ||
+        localStorage.getItem("email") || "";
+
+    const idUsuario = localStorage.getItem("id_Usuario") ||
+        localStorage.getItem("idUsuario") ||
+        localStorage.getItem("id") || "";
+
+    if (usuarioDisplay) {
+        usuarioDisplay.value = usuarioLogeado;
+    }
+
+    if (usuarioInput) {
+        if (idUsuario) {
+            usuarioInput.value = idUsuario;
+        } else {
+            usuarioInput.value = usuarioLogeado;
+        }
+    }
+};
 
 const actualizarPrecioTotal = () => {
     if (!productoSelect) return;
@@ -64,4 +90,7 @@ if (cantidadInput) {
     cantidadInput.addEventListener("input", actualizarPrecioTotal);
 }
 
-document.addEventListener("DOMContentLoaded", cargarProductos);
+document.addEventListener("DOMContentLoaded", () => {
+    setLoggedUsuario();
+    cargarProductos();
+});

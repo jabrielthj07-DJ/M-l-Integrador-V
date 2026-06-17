@@ -37,14 +37,27 @@ document.getElementById("loginForm").addEventListener("submit",async (e) =>{
     const data = await response.json();
     console.log("Repuesta del servidor:", data);
 
-    //guardamos el token en localStorage
-    localStorage.setItem("token",data.token);
+    // Guardamos el token en localStorage
+    localStorage.setItem("token", data.token);
 
-    // Header rol y nombre
-    localStorage.setItem("usuario", data.usuario);
-localStorage.setItem("rol", data.rol);
+    // Guardamos nombre y rol para usar en las páginas
+    const nombreUsuario = data.usuario || data.nombre || data.name || data.user || "";
+    if (nombreUsuario) {
+        localStorage.setItem("usuario", nombreUsuario);
+        localStorage.setItem("nombre", nombreUsuario);
+    }
 
-    console.log("Token guardado con exito",data.token);
+    if (data.rol) {
+        localStorage.setItem("rol", data.rol);
+    }
+
+    const idUsuario = data.id_Usuario || data.idUsuario || data.id || "";
+    if (idUsuario) {
+        localStorage.setItem("id_Usuario", idUsuario);
+        localStorage.setItem("idUsuario", idUsuario);
+    }
+
+    console.log("Token guardado con exito", data.token);
 
     //dirigir al menu principal luego de iniciar sesion con window
    document.getElementById("pantallaCarga").style.display = "flex";
