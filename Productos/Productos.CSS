@@ -632,3 +632,34 @@
     width: max-content;
     margin-top: 2px;
 }
+
+/*Paginacion debajo de la tabla*/
+
+.paginacion{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:25px;
+}
+
+.paginacion button{
+    background:#1f85c0;
+    color:#FFFFFF;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.paginacion button:hover{
+    background:#1b51a1;
+}
+
+#paginaActual{
+    font-weight:bold;
+    color:#223253;
+    font-size:15px;
+}

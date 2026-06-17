@@ -29,7 +29,7 @@
 
             
               <div class="header-usuario">
-                    <img src="/Inicio/Imagenes_Inicio/DJJA.png" alt="Usuario">
+                    <img src="/Inicio/Imagenes_Inicio/porfile1.jpg" alt="Usuario">
                     <div class="info-usuario">
                         <span class="saludo">Hola,</span>
                         <h4 id="nombreHeader">Darell</h4>
@@ -218,7 +218,7 @@
 
                 <!-- Link para ir a perfil de usuario-->                
                 <div class="perfili">
-                    <a class="perfil_link"  href="../Perfil_Usuario/Perfil.Html"><img class="Icons_Inicio" alt="Perfil" src="/Inventario/Imagenes_Inicio/Iconos/Atras.svg"><p class="Text_LinkPerfil">Regresar</p></a>  <!--Agregr icono o diseno mejor-->
+                    <a class="perfil_link"  href="../Inicio/Index.Html"><img class="Icons_Inicio" alt="Perfil" src="/Inventario/Imagenes_Inicio/Iconos/Atras.svg"><p class="Text_LinkPerfil">Regresar</p></a>  <!--Agregr icono o diseno mejor-->
                 </div>
             </div>
 
@@ -261,8 +261,6 @@
 
 <th>Descripción</th>
 
-<th>Categoría</th>
-
 <th>Precio</th>
 
 <th>Stock</th>
@@ -273,197 +271,34 @@
 
 </thead>
 
-<tbody>
+<tbody id="tablaInventario">
 
-<tr>
+      <tr>
+        <td colspan="5">
+            Cargando inventario...
+        </td>
+    </tr>
 
-
-<td>Cadena Dorada</td>
-
-<td>Collar dorado de alta calidad</td>
-
-<td>Accesorios</td>
-
-<td>33.40</td>
-
-<td>45</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-<button class="btn-eliminar">
-    Eliminar
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Collar Azul</td>
-
-<td>Collar azul de alta calidad</td>
-
-<td>Accesorios</td>
-
-<td>50.00</td>
-
-<td>67</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-<button class="btn-eliminar">
-    Eliminar
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Shampoo Mascotas</td>
-
-<td>Shampoo para mascotas de alta calidad</td>
-
-<td>Higiene</td>
-
-<td>55.00</td>
-
-<td>40</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-<button class="btn-eliminar">
-    Eliminar
-</button>
-
-</td>
-
-</tr>
-
-
-<td>Shampoo</td>
-
-<td>Shampoo para mascotas de alta calidad</td>
-
-<td>Higiene</td>
-
-<td>70.00</td>
-
-<td>35</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-<button class="btn-eliminar">
-    Eliminar
-</button>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>Cepillo</td>
-
-<td>Cepillo para mascotas de alta calidad</td>
-
-<td>Higiene</td>
-
-<td>22.00</td>
-
-<td>10</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-<button class="btn-eliminar">
-    Eliminar
-</button>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>Collar Verde</td>
-
-<td>Collar verde de alta calidad</td>
-
-<td>Accesorios</td>
-
-<td>65.00</td>
-
-<td>14</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-<button class="btn-eliminar">
-    Eliminar
-</button>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>Cadena de plata</td>
-
-<td>Collar de plata de alta calidad</td>
-
-<td>Accesorios</td>
-
-<td>65.00</td>
-
-<td>12</td>
-
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-<button class="btn-eliminar">
-    Eliminar
-</button>
-
-</td>
-
-</tr>
 
 </tbody>
 
 </table>
+
+<div class="paginacion">
+
+    <button id="btnAnterior">
+        ⬅ Anterior
+    </button>
+
+    <span id="paginaActual">
+        Página 1
+    </span>
+
+    <button id="btnSiguiente">
+        Siguiente ➡
+    </button>
+
+</div>
 
 </div>
 
@@ -476,9 +311,12 @@
 
 </div>
 
-<script src="/CodeGeneralInterface.js/Menu.js"></script>
-<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
-<script src="/CodeGeneralInterface.js/Sesion.js"></script>
+
+<script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sesion.js"></script>
+
+<script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/inventario.js"></script>
 
 </body>
 </html>

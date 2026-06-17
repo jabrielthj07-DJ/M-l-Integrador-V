@@ -143,7 +143,7 @@ color:#444;
     flex:1;
     background-color:#F9FAFB;
     padding:25px;
-    height: 100vh;
+    min-height:100vh;
 }
 
 .card{
@@ -489,4 +489,29 @@ celulares maximos de ancho de 600 */
     text-transform: uppercase;
     width: max-content;
     margin-top: 2px;
+}
+
+/*dashboard power BI*/
+
+.powerbi-card{
+    margin-top:20px;
+    background:#FFFFFF;
+    border-radius:15px;
+    padding:20px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.titulo-dashboard{
+    color:#1e3a5f;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.powerbi-card iframe{
+    width:100%;
+    height:700px;
+
+    border:none;
+    border-radius:12px;
 }

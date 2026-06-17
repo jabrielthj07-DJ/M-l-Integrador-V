@@ -29,7 +29,7 @@
 
             
               <div class="header-usuario">
-                    <img src="/Inicio/Imagenes_Inicio/DJJA.png" alt="Usuario">
+                    <img src="/Inicio/Imagenes_Inicio/porfile1.jpg" alt="Usuario"> <!--Agregar luego img por rol (Cambie)-->
                     <div class="info-usuario">
                         <span class="saludo">Hola,</span>
                         <h4 id="nombreHeader">Darell</h4>
@@ -231,7 +231,7 @@
 
 <div class="contenedor-btn">
 
-    <button class="btn-agregar" id="abrirModal">
+    <button class="btn-agregar"  onclick="window.location.href='AgregarCategoria.html'" >
         + Agregar Categoría
     </button>
 
@@ -247,7 +247,7 @@
 
 <div class="tabla-contenedor">
 
-<table class="tabla-productos">
+<table border="1" class="tabla-productos" >
 
 <thead>
 
@@ -263,51 +263,34 @@
 
 </thead>
 
-<tbody>
+    <tbody id="tableCategorias">
 
-<tr>
+     <tr>
+        <td colspan="3">Cargando productos...</td>
+    </tr>
 
-<td>Accesorios</td>
-
-<td>Collares, cadenas y complementos</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-<button class="btn-eliminar">
-    Eliminar
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Higiene</td>
-
-<td>Shampoo, cepillos y cuidado dental</td>
-
-<td class="acciones">
-
-<button class="btn-editar">
-    Editar
-</button>
-
-<button class="btn-eliminar">
-    Eliminar
-</button>
-
-</td>
-
-</tr>
-
-</tbody>
+    </tbody>
 
 </table>
+
+<!-- paginacion / Usarla en el futuro al agregar mas categorias--> 
+<!-- 
+<div class="paginacion">
+
+    <button id="btnAnterior">
+        ⬅ Anterior
+    </button>
+
+    <span id="paginaActual">
+        Página 1
+    </span>
+
+    <button id="btnSiguiente">
+        Siguiente ➡
+    </button> -->
+
+
+</div>
 
 </div>
 
@@ -321,9 +304,11 @@
 </div>
 
 
-<script src="/CodeGeneralInterface.js/Menu.js"></script>
-<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
-<script src="/CodeGeneralInterface.js/Sesion.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sesion.js"></script>
+
+<script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/categoria.js"></script>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./Style.CSS">
     <title>Veterinaria M&L</title>
 
 </head>
@@ -28,7 +28,7 @@
             </h1>
 
               <div class="header-usuario">
-                    <img src="/Inicio/Imagenes_Inicio/DJJA.png" alt="Usuario">
+                    <img src="/Inicio/Imagenes_Inicio/porfile1.jpg" alt="Usuario">
                     <div class="info-usuario">
                         <span class="saludo">Hola,</span>
                         <h4 id="nombreHeader">Darell</h4>
@@ -213,41 +213,17 @@
         <p>Control total de inventario y ventas</p>
     </div>
 </div>
-                
-                <div class="dashboard">
 
-    <div class="card dashboard-card total-productos"> 
-        <h3>Total Productos</h3>
-        <p class="numero">120</p>
+    <div class="powerbi-card">
+        <h2 class="titulo-dashboard">
+            Dashboard Analítico Veterinaria M&L
+        </h2>
+                <iframe
+                        title="Dashboard Veterinaria"
+                            src="https://app.powerbi.com/view?r=eyJrIjoiZGM4NWNkMmItZDdkNy00Mzg4LWE0NTQtZDI3ZTg1NmViYzI4IiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9"
+                        allowfullscreen="true">
+                </iframe>
     </div>
-
-    <div class="card dashboard-card total-ventas"> 
-        <h3>Total Ventas</h3>
-        <p class="numero">45</p>
-    </div>
-
-    <div class="card dashboard-card total-categorias"> 
-        <h3>Categorías</h3>
-        <p class="numero">3</p>
-    </div>
-
-    <div class="card dashboard-card total-inventario"> 
-        <h3>Inventario</h3>                               
-        <p class="numero">350</p>
-    </div>
-
-    <div class="card dashboard-card total-usuarios"> 
-        <h3>Usuarios Registrados</h3>
-        <p class="numero">2</p>
-    </div>
-
-     <div class="card dashboard-card total-roles"> 
-        <h3>Roles Registrados</h3>
-        <p class="numero">2</p>
-    </div>
-
-            </div>
-
 
             </div>
 
@@ -258,9 +234,9 @@
 
     </div>
 
-<script src="/CodeGeneralInterface.js/Menu.js"></script>
-<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
-<script src="/CodeGeneralInterface.js/Sesion.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sesion.Js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
     
 </body>
 </html>
