@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar a Inventario - Veterinaria M&L</title>
-    <link rel="stylesheet" href="/Inventario/agregarinventario.css">
+    <title>Editar Inventario- Veterinaria M&L</title>
+    <link rel="stylesheet" href="/Inventario/editarinventario.css">
 </head>
 <body>
     <div class="main-container">
@@ -97,84 +97,78 @@
                     </li>
                 </ul>
                 
-                <div class="perfil">
+                <div class="perfilp">
                     <a class="perfil_link" href="../Perfil_Usuario/Perfil.Html">
-                        <img class="Icons_Inicio" alt="Perfil" src="../Inicio/Imagenes_Inicio/Iconos/perfil.svg">
-                        <p class="Text_LinkPerfil">Mi Perfil</p>
+                        <img class="Icons_Inicio" alt="Perfil" src="/Productos/Imagenes_Inicio/Iconos/Atras.svg">
+                        <p class="Text_LinkPerfil">Regresar</p>
                     </a>
                 </div>
             </div>
 
-        <div class="contenido_inicio">
-    <h1 class="titulo-modulo">Gestión de Inventario</h1>
-    
-    <div class="formulario"> 
-        <div class="formulario-header">
-            <h2>Agregar Inventario</h2>
-        </div>
-        
-        <form id="form-agregar-inventario">
-            < class="form-grid">
-
-                <div class="form-group">
-
+            <div class="contenido_inicio">
+                <h1 class="titulo-modulo">Gestión de Inventario</h1>
+                
+                <div class="formulario"> 
+                    <div class="formulario-header">
+                        <h2>Editar Inventario</h2>
+                    </div>
                     
-                    <label for="producto">Producto</label>
-                    <div class="input-icon" data-icon="📦">
-                       <select id="producto" name="producto" required>
-                 <option value="">
-        Seleccione un producto
-                 </option>
-                       </select>
-                    </div>
-                </div>
+                  <form id="form-agregar-compras">
 
-                <div class="form-group">
-    <label for="descripcion">Descripción</label>
-    <div class="input-icon" data-icon="📝">
-        <input
-            type="text"
-            id="descripcion"
-            name="descripcion"
-            placeholder="Descripción del producto"
-            required
-        >
+    <div class="form-grid">
+
+
+        <div class="form-group">
+            <label for="producto">Producto</label>
+            <div class="input-icon" data-icon="📦">
+                <select id="producto" name="producto" required>
+                    <option value="">Seleccione</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <div class="input-icon" data-icon="📝">
+                <input type="text" id="descripcion" name="descripcion" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="precio">Precio</label>
+            <div class="input-icon" data-icon="💰">
+                <input type="number" id="precio" name="precio" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <div class="input-icon" data-icon="📦">
+                <input type="number" id="stock" name="stock" required>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" class="boton-agregar">
+            Guardar Cambios
+        </button>
+    </div>
+
+</form>
     </div>
 </div>
 
-                <div class="form-group">
-                    <label for="precio">Precio</label>
-                    <div class="input-icon" data-icon="💰">
-                        <input type="number" id="precio" name="precio" placeholder="C$ 0.00" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="stock">Stock</label>
-                    <div class="input-icon" data-icon="📦">
-                        <input type="number" id="stock" name="stock" placeholder="0" required>
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit" class="boton-agregar">
-                        Agregar Inventario
-                    </button>
-                </div>
-
-            
-        </form>
+        </section>
     </div>
-</div>
 
-</section>
-</div>
-  <script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
+ <script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
 <script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
 <script src="../shared/CodeGeneralInterface.js/Sesion.js"></script>
 
-<script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/registrarinventario.js"></script>
+<script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/editarinventario.js"></script>
     
 </body>
 </html>
-   <!--este es funcionalidad de los bton de agregar compra y la lista es un jvacrips-->
+

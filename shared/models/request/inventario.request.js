@@ -7,6 +7,8 @@ export default class InventarioRequest {
         idProducto,
         nombreProducto = null
     ){
+        this.id_Inventario = 0;
+
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
@@ -17,6 +19,8 @@ export default class InventarioRequest {
     toJson(){
 
         return {
+
+            id_Inventario: this.id_Inventario,
 
             descripcion: this.descripcion,
             precio: this.precio,
