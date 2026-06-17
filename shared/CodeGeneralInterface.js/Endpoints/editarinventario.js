@@ -6,95 +6,162 @@ const productoService = new ProductoService();
 const inventarioService = new InventarioService();
 
 const urlParams = new URLSearchParams(window.location.search);
-const idProducto = parseInt(urlParams.get("id")); 
 
-const cmbProducto = document.getElementById("producto");
-const txtDescripcion = document.getElementById("descripcion");
-const txtPrecio = document.getElementById("precio");
-const txtStock = document.getElementById("stock");
+const idProducto =
+parseInt(urlParams.get("id"));
+
+const cmbProducto =
+document.getElementById("producto");
+
+const txtDescripcion =
+document.getElementById("descripcion");
+
+const txtPrecio =
+document.getElementById("precio");
+
+const txtStock =
+document.getElementById("stock");
 
 let inventarioActual = null;
 
-async function cargarProductos() {
+async function cargarProductos(){
 
-    const productos = await productoService.get();
+    try{
 
-    cmbProducto.innerHTML = `
-        <option value="">Seleccione</option>
-    `;
+        const productos =
+        await productoService.get();
 
-    productos.forEach(p => {
-
-        cmbProducto.innerHTML += `
-            <option value="${p.idProducto}">
-                ${p.nombreProducto}
+        cmbProducto.innerHTML = `
+            <option value="">
+                Seleccione
             </option>
         `;
-    });
-}
 
-async function cargarInventario() {
+        productos.forEach(producto => {
 
-    try {
+            cmbProducto.innerHTML += `
+                <option value="${producto.idProducto}">
+                    ${producto.nombreProducto}
+                </option>
+            `;
+        });
 
-        const inventario =
-            await inventarioService.getByProducto(idProducto);
+    }
+    catch(error){
 
-        inventarioActual = inventario;
+        console.error(error);
 
-        cmbProducto.value = inventario.idProducto;
-        txtDescripcion.value = inventario.descripcion;
-        txtPrecio.value = inventario.precio;
-        txtStock.value = inventario.stock;
-
-    } catch (error) {
-
-        console.error("Error cargando inventario:", error);
-        alert("No se pudo cargar el inventario");
+        alert(
+            "Error cargando productos"
+        );
     }
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
+async function cargarInventario(){
 
-    if (!idProducto) {
-        alert("No se encontró el ID");
-        window.location.href = "Inventario.html";
+    try{
+
+        const inventario =
+        await inventarioService.getByProducto(
+            idProducto
+        );
+
+        inventarioActual =
+        inventario;
+
+        cmbProducto.value =
+        inventario.idProducto;
+
+        txtDescripcion.value =
+        inventario.descripcion;
+
+        txtPrecio.value =
+        inventario.precio;
+
+        txtStock.value =
+        inventario.stock;
+    }
+    catch(error){
+
+        console.error(error);
+
+        alert(
+            "No se pudo cargar el inventario"
+        );
+    }
+}
+
+document.addEventListener(
+"DOMContentLoaded",
+async () => {
+
+    if(!idProducto){
+
+        alert(
+            "No se encontró el ID"
+        );
+
+        window.location.href =
+        "Inventario.html";
+
         return;
     }
 
     await cargarProductos();
+
     await cargarInventario();
 
-    document.getElementById("form-agregar-compras")
-        .addEventListener("submit", async (e) => {
+    document
+    .getElementById("form-agregar-compras")
+    .addEventListener(
+    "submit",
+    async function(e){
 
-            e.preventDefault();
+        e.preventDefault();
 
-            try {
+        try{
 
-                const request = new InventarioRequest(
+            const request =
+            new InventarioRequest(
 
-                    txtDescripcion.value,
-                    parseFloat(txtPrecio.value),
-                    parseInt(txtStock.value),
-                    parseInt(cmbProducto.value),
-                    inventarioActual?.nombre_Producto || null
-                );
+                txtDescripcion.value,
 
-                request.id_Inventario = inventarioActual.idInventario;
+                parseFloat(
+                    txtPrecio.value
+                ),
 
-                    console.log(request.toJson());
+                parseInt(
+                    txtStock.value
+                ),
 
-                await inventarioService.update(request);
+                parseInt(
+                    cmbProducto.value
+                ),
 
-                alert("Inventario actualizado correctamente");
+                inventarioActual.nombreProducto
+            );
 
-                window.location.href = "/Inventario/Inventario.html";
+            request.id_Inventario =
+            inventarioActual.idInventario;
 
-            } catch (error) {
+            await inventarioService.update(
+                request
+            );
 
-                console.error(error);
-                alert("Error al actualizar inventario");
-            }
-        });
+            alert(
+                "Inventario actualizado correctamente"
+            );
+
+            window.location.href =
+            "/Inventario/Inventario.html";
+        }
+        catch(error){
+
+            console.error(error);
+
+            alert(
+                "Error al actualizar inventario"
+            );
+        }
+    });
 });
