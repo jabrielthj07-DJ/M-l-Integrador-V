@@ -68,9 +68,10 @@
                             Inventario
                         </button>
                         <ul class="submenu">
-                            <li><a class="perfil_link" href="/Ventas/Ventas.Html">Historial de Ventas</a></li>
-                            <li><a class="perfil_link" href="/Compras/Compras.Html">Historial de Compras</a></li>
-                            <li><a class="perfil_link" href="/Inventario/Inventario.Html">Inventario Actual</a></li>
+                            <!--
+                            <li><a class="perfil_link" href="/Ventas/Ventas.Html">Historial de Ventas</a></li>                                 
+                            <li><a class="perfil_link" href="/Compras/Compras.Html">Historial de Compras</a></li>-->                                                                                                                                                                                                   
+                            <li><a class="perfil_link" href="/Inventario/Inventario.Html">Inventario Actual</a></li>                           
                         </ul>
                     </li>
 
@@ -117,13 +118,10 @@
             <div class="form-grid">
 
                 <div class="form-group">
-                    <label for="usuario">Usuario que realiza venta</label>
+                    <label for="usuarioDisplay">Usuario que realiza venta</label>
                     <div class="input-icon" data-icon="👤">
-                        <select id="usuario" name="usuario" required>
-                            <option value="">Seleccione un usuario</option>
-                            <option value="1">Administrador</option>
-                            <option value="2">Cajero</option>
-                        </select>
+                        <input type="text" id="usuarioDisplay" name="usuarioDisplay" placeholder="Usuario" readonly>
+                        <input type="hidden" id="usuario" name="usuario">
                     </div>
                 </div>
 
@@ -132,10 +130,6 @@
                     <div class="input-icon" data-icon="📦">
                         <select id="producto" name="producto" required>
                             <option value="">Seleccione</option>
-                            <option value="1">Collar</option>
-                            <option value="2">Shampoo</option>
-                             <option value="3">Croqueta</option>
-                              <option value="4">Hueso de Hule</option>
                         </select>
                     </div>
                 </div>
@@ -180,10 +174,10 @@
 </section>
 </div>
 
-<script src="/CodeGeneralInterface.js/Menu.js"></script>
-<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
-<script src="/CodeGeneralInterface.js/Sesion.js"></script>
-    
+<script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sesion.Js"></script>
+<script src="RealizarVenta.js"></script>
 </body>
 </html>
    <!--este es funcionalidad de los bton de agregar compra y la lista es un jvacrips-->

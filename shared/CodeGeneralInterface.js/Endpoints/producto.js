@@ -1,14 +1,24 @@
 import ProductoService from "../../services/producto.service.js";
+//===================para nombre de categoria de prodcuto
+import CategoriaService from "../../services/categoria.service.js";//exportamos para el nomnbre sde la categoria de cada prodcuto
 
 const service = new ProductoService();
+const categoriaService = new CategoriaService();//igual para nombrar el nombre de la categoria de product..
 
 let todosProductos = [];
+let todasCategorias = [];//iguak ae pone esto para el nombre de la categoria..
 
 async function loadProductos(){
 
     try{
 
-        todosProductos = await service.get();
+        const [productos, categorias] = await Promise.all([
+            service.get(),
+            categoriaService.get()
+        ]);
+
+        todosProductos = productos;
+        todasCategorias = categorias;
 
         renderizarProductos(todosProductos);
 
@@ -18,6 +28,15 @@ async function loadProductos(){
 
     }
 }
+
+function obtenerNombreCategoria(idCategoria){
+    const categoria = todasCategorias.find(
+        cat => cat.idCategoria === idCategoria
+    );
+
+    return categoria ? categoria.nombreCategoria : "Sin categoría";
+}
+//============== solo se implemento el nombre de la categortiria para que muestre en producto..
 
 // renderizacion tbl
 function renderizarProductos(productos){
@@ -35,6 +54,8 @@ function renderizarProductos(productos){
             <td>${producto.nombreProducto}</td>
 
             <td>${producto.descripcion}</td>
+
+            <td>${obtenerNombreCategoria(producto.idCategoria)}</td>
 
             <td class="acciones">
 

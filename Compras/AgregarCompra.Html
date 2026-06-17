@@ -68,8 +68,9 @@
                             Inventario
                         </button>
                         <ul class="submenu">
+                            <!--
                             <li><a class="perfil_link" href="/Ventas/Ventas.Html">Historial de Ventas</a></li>
-                            <li><a class="perfil_link" href="../Compras/Compras.Html">Historial de Compras</a></li>
+                            <li><a class="perfil_link" href="../Compras/Compras.Html">Historial de Compras</a></li>-->
                             <li><a class="perfil_link" href="/Inventario/Inventario.Html">Inventario Actual</a></li>
                         </ul>
                     </li>
@@ -106,14 +107,17 @@
             </div>
 
        <div class="contenido_inicio">
+    <!-- Contenido principal de la página de compras -->
     <h1 class="titulo-modulo">Gestión de Compras</h1>
 
     <div class="formulario"> 
+        <!-- Encabezado principal de la tarjeta de compra -->
         <div class="formulario-header">
             <h2>Agregar Nueva Compra</h2>
         </div>
 
-        <form id="form-agregar-compras">
+        <!-- Formulario con los datos generales de la compra -->
+        <form id="form-agregar-compra">
             <div class="form-grid">
 
                 <div class="form-group">
@@ -159,23 +163,17 @@
                          <input type="text" id="observaciones" name="observaciones" required>
                     </div>
                 </div>
-
-                <div class="form-actions">
-                    <button type="submit" class="boton-agregar">Guardar Compra</button>
-                </div>
-
             </div>
         </form>
-    </div>
 
-    <div class="formulario"> 
-        <div class="formulario-header">
+        <!-- Sección de detalle de compra, colocada dentro de la misma tarjeta -->
+        <div class="formulario-header" style="margin-top: 24px;"><!--un estilo basico dog de margin de espacio-->
             <h2>Detalle Compra</h2>
         </div>
 
-        <form id="form-detalle-compra">
+        <!-- Formulario para agregar un producto al detalle de la compra -->
+        <form id="form-agregar-detalle">
             <div class="form-grid">
-
                 <div class="form-group">
                     <label for="producto">Producto</label>
                     <div class="input-icon" data-icon="📦">
@@ -205,7 +203,7 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="boton-agregar">Agregar Detalle</button>
+                    <button type="submit" class="boton-agregar">Agregar Compra</button>
                 </div>
 
             </div>
@@ -217,9 +215,10 @@
 </section>
 </div>
 
- <script src="/CodeGeneralInterface.js/Menu.js"></script>
-<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
-<script src="/CodeGeneralInterface.js/Sesion.js"></script>
+ <!-- Scripts compartidos de la interfaz general: menú, sidebar y sesión -->
+ <script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sesion.js"></script>
 
     
 </body>
