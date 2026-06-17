@@ -25,7 +25,7 @@
 
             
               <div class="header-usuario">
-                    <img src="/Inicio/Imagenes_Inicio/DJJA.png" alt="Usuario">
+                    <img src="/Inicio/Imagenes_Inicio/porfile1.jpg" alt="Usuario">
                     <div class="info-usuario">
                         <span class="saludo">Hola,</span>
                         <h4 id="nombreHeader">Darell</h4>
@@ -201,8 +201,8 @@
                 <h1 class="titulo-modulo">Gestión de Ventas</h1>
 
                 <div class="Ventas-header">
-                    <button class="btn-agregar">+ Agregar Venta</button>
-                    <input type="text" placeholder="Buscar venta..." class="buscador">
+                    <button class="btn-agregar" onclick=" window.location.href='AgregarVenta.html'">+ Agregar Venta</button>
+                    <input type="text" id="buscarVenta" placeholder="Buscar venta..." class="buscador">
                 </div>
 
                 <div id="mensaje" style="color:red; font-weight:bold; margin:10px 0;"></div>
@@ -219,9 +219,27 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                         <tbody>
+                         <tbody id="tablaventas">
+                            <tr>
+        <td colspan="7">Cargando productos...</td>
+    </tr>
                               </tbody>
                     </table>
+                    <div class="paginacion">
+
+    <button id="btnAnterior">
+        ⬅ Anterior
+    </button>
+
+    <span id="paginaActual">
+        Página 1
+    </span>
+
+    <button id="btnSiguiente">
+        Siguiente ➡
+    </button>
+
+</div>
                 </div>
             </div>
         </section>
@@ -231,9 +249,10 @@
         </footer>
 
     </div> 
-    <script src="/CodeGeneralInterface.js/Menu.js"></script>
-<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
-<script src="/CodeGeneralInterface.js/Sesion.js"></script>
-    <script src="Ventas.js"></script>
+    <script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sesion.js"></script>
+
+    <script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/ventas.js"></script>
 </body>
 </html>

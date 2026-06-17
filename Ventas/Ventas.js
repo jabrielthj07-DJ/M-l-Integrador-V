@@ -137,8 +137,4 @@ function imprimirVenta(venta) {
             `;
         });
     }
-
-    
-    
-  
 }
