@@ -1,79 +1,86 @@
 body{
-    margin:0;
-    padding:0;
-    font-family:'Times New Roman', Times, serif;
-    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("/Ventas/Imagenes_Inicio/b3.jpeg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.factura strong{
-    color:#1b51a1;
-}
-
-.factura h1{
-    text-align:center;
-    color:#1a5e86;
-    margin-bottom:25px;
-}
-
-.factura p{
-    font-size:18px;
-    margin:15px 0;
-    color:#333;
+    background:#f4f6f9;
+    font-family:'Segoe UI',sans-serif;
+    padding:30px;
 }
 
 .factura{
-    width:420px;
-    background:rgba(255,255,255,0.95);
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
 }
 
-button{
+.encabezado{
+    text-align:center;
+    border-bottom:3px solid #2563eb;
+    padding-bottom:15px;
+}
+
+.encabezado h1{
+    color:#1e3a5f;
+    margin:0;
+}
+
+.encabezado p{
+    color:#666;
+}
+
+.info-venta{
+    margin:25px 0;
+    display:flex;
+    justify-content:space-between;
+}
+
+table{
     width:100%;
-    margin-top:25px;
-    padding:14px;
-    border:none;
-    border-radius:10px;
-    background:linear-gradient(to right, #1f85c0, #3387db);
+    border-collapse:collapse;
+}
+
+thead{
+    background:#2563eb;
     color:white;
-    font-size:16px;
-    font-weight:bold;
+}
+
+th,td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+.total-container{
+    text-align:right;
+    margin-top:20px;
+}
+
+.total-container h2{
+    color:#2563eb;
+}
+
+.btn-imprimir{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
     cursor:pointer;
-    transition:0.3s ease;
 }
 
-button:hover{
-    background:linear-gradient(to right, #3387db, #1b51a1);
-    box-shadow:0 8px 20px rgba(31,133,192,0.4);
-}
+@media print{
 
+    .btn-imprimir{
+        display:none;
+    }
 
+    body{
+        background:white;
+    }
 
-
-
-
-
-
-
-
-
-.logo-mascota{
-
-    width:250px;
-
-    display:block;
-
-    margin:0 auto 8px auto;
-
-    filter:drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+    .factura{
+        box-shadow:none;
+    }
 
 }
-

@@ -422,3 +422,8 @@ background: rgba(212, 226, 247, 0.7);
     width: max-content;
     margin-top: 2px;
 }
+
+
+.perfil_improvisado{
+cursor: pointer;
+}

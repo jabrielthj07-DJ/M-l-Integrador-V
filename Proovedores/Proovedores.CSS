@@ -388,3 +388,7 @@
     width: max-content;
     margin-top: 2px;
 }
+
+.perfil_improvisado{
+cursor: pointer;
+}

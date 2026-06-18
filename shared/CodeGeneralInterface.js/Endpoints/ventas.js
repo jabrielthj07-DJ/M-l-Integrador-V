@@ -233,34 +233,8 @@ async function(id) {
 window.imprimirVenta =
 function(id) {
 
-    const venta =
-        todasVentas.find(
-            x => x.idVenta == id
-        );
-
-    if (!venta)
-        return;
-
-    const detalle =
-        venta.detalles?.[0];
-
-    localStorage.setItem(
-        "producto",
-        detalle?.nombreProducto ?? ""
-    );
-
-    localStorage.setItem(
-        "precio",
-        detalle?.precioUnitario ?? ""
-    );
-
-    localStorage.setItem(
-        "cantidad",
-        detalle?.cantidad ?? ""
-    );
-
     window.open(
-        "/Ventas/Factura.html",
+        `/Ventas/Factura.html?id=${id}`,
         "_blank"
     );
 };

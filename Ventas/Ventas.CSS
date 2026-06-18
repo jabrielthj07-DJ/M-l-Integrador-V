@@ -418,3 +418,8 @@
 .btn-eliminar:hover{
     background:#c62828;
 }
+
+
+.perfil_improvisado{
+cursor: pointer;
+}

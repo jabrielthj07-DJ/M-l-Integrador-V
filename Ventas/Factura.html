@@ -1,36 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Factura</title>
-
-    <link rel="stylesheet" href="Factura.css"
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Factura - Veterinaria M&L</title>
+<link rel="stylesheet" href="factura.css">
 </head>
 <body>
 
-    <div class="factura">
+<div class="factura">
 
-        <img src="/Ventas/Imagenes_Inicio/imagen.png" class="logo-mascota">
-        
-        <h1>Factura Veterinaria M&L</h1>
-
-        <p><strong>Producto:</strong> <span id="producto"></span></p>
-
-        <p><strong>Cantidad:</strong> <span id="precio"></span></p> <!--esta ilogico pero con que funcione xd, lugo cambiar si-->
-
-        <p><strong>Precio:</strong> <span id="cantidad"></span></p>
-
-        <button onclick="window.print()">
-            Imprimir
-        </button>
-
+    <div class="encabezado">
+        <h1>Veterinaria M&L</h1>
+        <p>Cuidando a tus mascotas</p>
     </div>
 
+    <div class="info-venta">
+        <div>
+            <strong>Factura #</strong>
+            <span id="idVenta"></span>
+        </div>
 
-<script type="module"
-src="../shared/CodeGeneralInterface.js/Endpoints/factura.js">
-</script>
+        <div>
+            <strong>Fecha:</strong>
+            <span id="fecha"></span>
+        </div>
+
+        <div>
+            <strong>Usuario:</strong>
+            <span id="usuario"></span>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>P. Unitario</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <tbody id="detalleFactura">
+
+        </tbody>
+    </table>
+
+    <div class="total-container">
+        <h2>Total: C$ <span id="totalGeneral"></span></h2>
+    </div>
+
+    <div class="pie">
+        <p>Gracias por confiar en Veterinaria M&L</p>
+    </div>
+
+    <button onclick="window.print()" class="btn-imprimir">
+        Imprimir Factura
+    </button>
+
+</div>
+
+<script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/factura.js"></script>
 
 </body>
 </html>

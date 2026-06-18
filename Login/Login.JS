@@ -1,13 +1,3 @@
-/*ojo ojo ojo 🧐🧐 dog darell no borrar nada aqui ni modificar el codigo ya esta listo para optener el token 
-sin necesidad estar copiando token y agregandolo al fetch, solo hay unos pequeños detalles al iniciar tiene que ser con la
-contraseña en texto plano la original no pongas la contraseña incriptada de la base de datos que ocupamos para iniciar sesion en la API 
-porque te dara una abvertencia.....
-*/
-
-/* == 🧐ojo ojo cuidado la cantias modificando el codigo☠️ === */
-
-/*JAJAJA Que va mi dogs nada que ver / Att: DJJA*/
-
 //realizando acceso de usuario para obtener el token
 
 document.getElementById("loginForm").addEventListener("submit",async (e) =>{
