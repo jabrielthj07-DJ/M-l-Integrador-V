@@ -335,4 +335,77 @@ footer {
 /*-------------------*/
 .sidebar.oculto {
     display: none; /* o transform: translateX(-100%); dependiendo de tu diseño */
+}.carrito-container {
+    margin-top: 24px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.08);
+}
+
+.carrito-header h3 {
+    margin-bottom: 16px;
+    color: #1e3a5f;
+}
+
+.carrito-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+
+.carrito-table th,
+.carrito-table td {
+    border: 1px solid #e2e8f0;
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 14px;
+    color: #334155;
+}
+
+.carrito-table th {
+    background-color: #f1f5f9;
+    font-weight: 700;
+}
+
+.carrito-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.carrito-total {
+    font-weight: 700;
+    font-size: 16px;
+    color: #1f2b45;
+}
+
+.boton-finalizar {
+    background-color: #16a34a;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.boton-finalizar:hover {
+    background-color: #15803d;
+}
+
+.boton-eliminar {
+    background-color: #ef4444;
+    border: none;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.boton-eliminar:hover {
+    background-color: #dc2626;
 }

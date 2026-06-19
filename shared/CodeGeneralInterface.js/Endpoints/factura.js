@@ -7,7 +7,9 @@ new URLSearchParams(window.location.search);
 
 const idVenta =
 parseInt(params.get("id"));
-
+//se agrego para que inprima la factura
+const shouldPrint = params.get("print") === "true";
+//===================================================
 async function cargarFactura() {
 
     try {
@@ -63,6 +65,10 @@ async function cargarFactura() {
 
         document.getElementById("totalGeneral").textContent =
         totalGeneral.toFixed(2);
+  // para imprimir la factura 
+        if (shouldPrint) {
+            window.print();
+        }
 
     }
     catch (error) {
@@ -71,6 +77,7 @@ async function cargarFactura() {
 
         alert("No se pudo cargar la factura");
     }
+    //========================= 
 }
 
 cargarFactura();

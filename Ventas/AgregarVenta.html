@@ -131,10 +131,10 @@
                         <select id="producto" name="producto" required>
                             <option value="">Seleccione</option>
                             <option value="1">Collar</option>
-                            <option value="2">Shampoo</option>
+                            <option value="2">Shampoo</option>                                   
                              <option value="3">Croqueta</option>
-                              <option value="4">Hueso de Hule</option>
-                        </select>
+                              <option value="4">Hueso de Hule</option>                         
+                        </select>          
                     </div>
                 </div>
 
@@ -167,21 +167,49 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="boton-agregar">Agregar Venta</button>
+                    <button id="btnAgregarCarrito" type="submit" class="boton-agregar">Agregar producto</button>
                 </div>
 
             </div>
         </form>
+  <!--tabla para la factura a la hora de agregar una venta-->
+        <div class="carrito-container">
+            <div class="carrito-header">
+                <h3>Productos agregados</h3>
+            </div>
+
+            <table class="carrito-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio unitario</th>
+                        <th>Subtotal</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="carritoBody">
+                    <tr>
+                        <td colspan="5">No hay productos agregados.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="carrito-footer">
+                <div class="carrito-total">Total: C$ <span id="carritoTotal">0.00</span></div>
+                <button id="btnFinalizarVenta" type="button" class="boton-finalizar">Generar factura</button>
+            </div>
+        </div>
     </div>
 </div>
-
+<!--aqui terminar-->
 </section>
 </div>
 
-<script src="/CodeGeneralInterface.js/Menu.js"></script>
-<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
-<script src="/CodeGeneralInterface.js/Sesion.js"></script>
-<script src="RealizarVenta.js"></script> <!--llamamo realizarVentas.js para que haga su funcion..-->
+<script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sesion.js"></script>
+<script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/registrarventa.js"></script> <!--llamamo realizarVentas.js para que haga su funcion..-->
 </body>
 </html>
-<!--este es funcionalidad de los boton de agregar compra y la lista es un javascript-->
+<!--este es funcionalidad de los boton de agregar compra y la lista es un javascript-->                                   
