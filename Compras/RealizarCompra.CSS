@@ -336,3 +336,77 @@ footer {
 .sidebar.oculto {
     display: none; /* o transform: translateX(-100%); dependiendo de tu diseño */
 }
+
+
+/*Estilo para la tabla de abajo de compras */
+.Compra-container{
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+
+    
+}
+
+.compras-header{
+color: #0f375a;
+font-size: 1.15rem;
+margin-top: 0%;
+margin-bottom: 20px;
+}
+
+.carrito-compra{
+width: 100%;
+border-collapse: collapse;
+text-align: left;
+border: 1px solid #e2e8f0;
+margin-bottom: 24px;
+
+
+}
+
+/* encabezdo de la tabla thead*/
+.carrito-compra th {
+    background-color: #f4f7f9;
+    color: #1e293b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-right: 1px solid #e2e8f0;
+}
+
+.carrito-compra th:last-child{
+    border-right: none;
+}
+
+/*fila de la tabla ua do esta vacia */
+.compra-row{
+    color: #64748b !important;
+    font-style: normal;
+    background-color: #ffffff;
+}
+
+
+.footer-compras{
+ display: flex;
+    justify-content: space-between; /* Empuja el total a la izquierda y el botón a la derecha */
+    align-items: center;
+    width: 100%;
+}
+
+.bton-finalizado{
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+   margin-top: 0;
+  
+}
