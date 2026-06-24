@@ -29,14 +29,9 @@
                 <div class="header-usuario perfil_improvisado">
                     <img src="/Inicio/Imagenes_Inicio/porfile1.jpg" alt="Usuario">
                     <div class="info-usuario perfil_improvisado">
-<<<<<<< HEAD
-                        
-                        <a class="saludo perfil_improvisado" onclick="window.location.href='.././Perfil_Usuario/Perfil.Html'">Hola,</a>
-=======
 
                         <a class="saludo perfil_improvisado"
                             onclick="window.location.href='.././Perfil_Usuario/Perfil.Html'">Hola,</a>
->>>>>>> 8920cfd87a36624005ac4c505c366c8acbfa5c9f
                         <h4 id="nombreHeader " class="perfil_improvisado"></h4>
                         <span id="rolHeader" class="rol-header perfil_improvisado">Administrador</span>
 
@@ -210,13 +205,13 @@
 
                 </ul>
 
-                <!-- Link para ir a perfil de usuario-->
+               
                 <div class="perfil">
                     <a class="perfil_link" id="logout">
                         <img class="Icons_Inicio" alt="Perfil"
-                            src="/Productos/Imagenes_Inicio/Iconos/Atras.svg">
+                            src="../Inicio/Imagenes_Inicio/Iconos/logout.svg">
                         <p class="Text_LinkPerfil">Cerrar Sesion</p>
-                    </a> <!--Agregr icono o diseno mejor-->
+                    </a> 
                 </div>
             </div>
 
@@ -252,14 +247,7 @@
     <script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
     <script src="../shared/CodeGeneralInterface.js/Sesion.Js"></script>
     <script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
-    <script>
-        const logoutButton = document.getElementById("logout");
-        logoutButton.addEventListener("click", () => {
-            localStorage.removeItem("token");
-            const loginUrl = window.location.origin + "/Login/Login.Html";
-            window.location.href = loginUrl;
-        });
-    </script>
+    <script src="../shared/CodeGeneralInterface.js/logout.js"></script>
 
 </body>
 

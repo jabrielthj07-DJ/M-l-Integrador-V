@@ -46,7 +46,7 @@
 
 <section class="section-contenedor">
 
- <div class="sidebar"> <!--sidebar-->
+ <div class="sidebar"> 
 
 <ul class="sidebar_ul">
 
@@ -218,13 +218,17 @@
 
             
 
-                <!-- Link para ir a perfil de usuario-->                
+                      
                 <div class="perfili">
-                    <a class="perfil_link"  href="../Inicio/Index.Html"><img class="Icons_Inicio" alt="Perfil" src="/Inventario/Imagenes_Inicio/Iconos/Atras.svg"><p class="Text_LinkPerfil">Regresar</p></a>  <!--Agregr icono o diseno mejor-->
+                      <a class="perfil_link" id="logout">
+                        <img class="Icons_Inicio" alt="Perfil"
+                            src="../Inicio/Imagenes_Inicio/Iconos/logout.svg">
+                        <p class="Text_LinkPerfil">Cerrar Sesion</p>
+                    </a> 
                 </div>
             </div>
 
-<!--contenido principal de inicio de producto y la tabla-->
+
 <div class="contenido_inicio">
 
     <h1 class="titulo-modulo">
@@ -317,6 +321,7 @@
 <script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
 <script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
 <script src="../shared/CodeGeneralInterface.js/Sesion.js"></script>
+  <script src="../shared/CodeGeneralInterface.js/logout.js"></script>
 
 <script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/inventario.js"></script>
 
