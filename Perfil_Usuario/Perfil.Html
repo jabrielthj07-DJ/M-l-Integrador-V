@@ -117,40 +117,51 @@
             <div class="contenido_inicio">
                 <h1>Perfil de Usuario</h1>
 
-                <div class="perfil-card">
-                    
-                    <div class="foto-contenedor">
-                        <img src="/Inicio/Imagenes_Inicio/porfile1.jpg" alt="Usuario">
-                    </div>
+          <div class="perfil-card">
 
-                    <div class="perfil-detalles">
-                        <h2 id="nombreUsuario">Darell Jiménez</h2>
-                        <span class="rol-badge" id="rolUsuario">Administrador</span>
-                        <p class="empresa">Veterinaria M&L Masatepe</p>
-                        
-                        <div class="linea"></div>
+    <div class="foto-contenedor">
+        <img id="avatarUsuario" src="/Inicio/Imagenes_Inicio/porfile1.jpg" alt="Usuario">
+    </div>
 
-                        <div class="perfil-info">
-                            <p>📧 <strong>Correo:</strong> darell@gmail.com</p>
-                            <p>📱 <strong>Teléfono:</strong> 8748-1376</p>
-                            <p>👤 <strong>Usuario:</strong> admin</p>
-                            <p>🕒 <strong>Último acceso:</strong> Hoy</p>
-                        </div>
+    <div class="perfil-detalles">
 
-                    </div>
+        <h2 id="nombreUsuario">Usuario</h2>
 
-                </div>
-            </div>
+        <span class="rol-badge" id="rolUsuario"></span>
+
+        <p class="empresa">Veterinaria M&L Masatepe 🐾</p>
+
+        <div class="linea"></div>
+
+        <div class="perfil-info">
+
+            <p>📧 <strong>Correo:</strong> <span id="correoUsuario"></span></p>
+
+            <p>📱 <strong>Teléfono:</strong> +505 8748-1376</p>
+
+            <p>👤 <strong>Usuario:</strong> <span id="usuarioSistema"></span></p>
+
+            <p>🏢 <strong>Sucursal:</strong> Masatepe</p>
+
+            <p>🕒 <strong>Último acceso:</strong> Hoy</p>
+
+        </div>
+
+    </div>
+
+</div>
         </section>
 
         <footer class="footer"></footer>
 
     </div>
 
- <script src="/CodeGeneralInterface.js/Menu.js"></script>
-<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
+ <script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
   <script src="../shared/CodeGeneralInterface.js/Sesion.Js"></script>
   <script src="../shared/CodeGeneralInterface.js/logout.js"></script>
+
+  <script src="perfilUsuario.js"></script>
 
 </body>
 </html>
