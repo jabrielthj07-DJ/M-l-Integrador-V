@@ -209,7 +209,7 @@
                 <!-- bto de agregar proveedores-->
                 <div class="Proveedores-header">
                 <button class="btn-agregar">+ Agregar Proveedores</button>
-                <input type="text" placeholder="Buscar Proveedores..." class="buscador">
+                <input type="text" id="buscarProveedor" placeholder="Buscar Proveedores..." class="buscador">
                 </div>
 
                 <!--tablas de proveedores-->
@@ -230,97 +230,16 @@
                             <th>Acciones</th>
                           </tr>
                         </thead>
-                          <tbody>
-                            <!-- el tbody es para el contenido de la tabla de proveedores se estaran agregando dinamicamente 
-                             pero no lo veras aqui si no en la tabla-->
+
+
+                          <tbody id="tablaProveedores">
+
+    <tr>
+        <td colspan="8">Cargando productos...</td>
+    </tr>
                              
                          </tbody>
-                      
-                        <!--tbosy para el contenidp de la tabla
-                        <tbody>
-                           <tr>
-                            
-                            <td>Juan</td>
-                            <td>Pérez</td>
-                            <td>juan.perez@email.com</td>
-                            <td>123456789</td>
-                            <td>Empresa S.A.</td>
-                            <td>Calle 123</td>
-                            <td>Higiene</td>
-
-                            <td class="acciones">
-                            <button class="btn-editar">Editar</button>
-                            <button class="btn-eliminar">Eliminar</button>
-                            </td>
-                           </tr>   -->
-
-                    <!-- fila  de los datos de la tabla de proveedores
-                           <tr>
-                          
-                            <td>María</td>
-                            <td>Gómez</td>
-                            <td>maria.gomez@email.com</td>
-                            <td>987654321</td>
-                            <td>Empresa B.S.</td>
-                            <td>Avenida 456</td>
-                            <td>Alimentos</td>
-
-                            <td class="acciones">
-                            <button class="btn-editar">Editar</button>
-                            <button class="btn-eliminar">Eliminar</button>
-                            </td>
-                           </tr> -->
-                 <!-- fila de tabla de 
-                           <tr>
-                         
-                            <td>Carlos</td>
-                            <td>Ramírez</td>
-                            <td>carlos.ramirez@email.com</td>
-                            <td>456789123</td>
-                            <td>Empresa C.S.</td>
-                            <td>Calle 789</td>
-                            <td>Accesorios</td>
-
-                            <td class="acciones">
-                            <button class="btn-editar">Editar</button>
-                            <button class="btn-eliminar">Eliminar</button>
-                            </td>
-                           </tr>
-
-
-                           <tr>
-                   
-                            <td>Ana</td>
-                            <td>Martínez</td>
-                            <td>ana.martinez@email.com</td>
-                            <td>321654987</td>
-                            <td>Empresa D.S.</td>
-                            <td>Plaza 101</td>
-                            <td>Alimentos</td>
-
-                            <td class="acciones">
-                            <button class="btn-editar">Editar</button>
-                            <button class="btn-eliminar">Eliminar</button>
-                            </td>
-                           </tr>
-
-                           <tr>
-                          
-                            <td>Laura</td>
-                            <td>Hernández</td>
-                            <td>laura.hernandez@email.com</td>
-                            <td>654987321</td>
-                            <td>Empresa E.S.</td>
-                            <td>Carrera 321</td>
-                            <td>Higiene</td>
-
-                            <td class="acciones">
-                            <button class="btn-editar">Editar</button>
-                            <button class="btn-eliminar">Eliminar</button>
-                            </td>
-                           </tr>
-                        </tbody>
-                        -->
+                
                     </table>
                 </div>
              </div>
@@ -336,6 +255,6 @@
   <script src="../shared/CodeGeneralInterface.js/logout.js"></script>
 
 
-<script src="Proveedor.js"></script>
+<script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/proveedor.js"></script>
 </body>
 </html>
