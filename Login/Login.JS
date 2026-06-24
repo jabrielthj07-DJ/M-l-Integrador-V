@@ -28,7 +28,7 @@ document.getElementById("loginForm").addEventListener("submit",async (e) =>{
     console.log("Repuesta del servidor:", data);
 
     // Guardamos el token en localStorage
-    localStorage.setItem("token", data.token);
+    localStorage.setItem("token", data.token);  
 
     // Guardamos nombre y rol para usar en las páginas
     const nombreUsuario = data.usuario || data.nombre || data.name || data.user || "";

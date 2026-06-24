@@ -208,7 +208,50 @@
 
             </div>
         </form>
+
+    <!--creamos tala para mostrar la ventas realizadas y imprimir factura de compra-->
+    <div class="Compra-container">
+
+        <div class="compras-header">
+            <h3>Compras agregadas</h3>
+        </div>
+       
+        <table class="carrito-compra">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>observaciones</th>
+                    <th>total</th> 
+                    <th>fecha</th>
+                    <th>cantidad</th>
+                    <th>precio Unitario</th>
+                    <th>Subtotal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <!--thead para verificar los productos agregados-->
+            <thead>
+                <tbody id class="compraBody">
+                    <tr>
+                    <td colspan="8" class="compra-row">No hay compras de productos agregadas. </td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+
+          <!--creamos en la parte de abajo para el total de la compras-->
+          <div class="footer-compras">
+            <div class="compras-total">Total: C$ <span id="compraTotal">0.00</span></div>
+            <button id="finalizarcompra" type="button" class="bton-finalizado">Generar factura</button>
+          </div>
+
     </div>
+
+
+
+    <!--=========================================-->
+ </div>
 
 </div>
 
