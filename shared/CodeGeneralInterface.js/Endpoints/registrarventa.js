@@ -144,37 +144,80 @@ function actualizarBotonFinalizar() {
 }
 
 async function finalizarVenta() {
+
+  console.log("ENTRÓ A FINALIZAR");
+
   if (carrito.length === 0) {
     alert("Debe agregar al menos un producto al carrito.");
     return;
   }
 
-  // Obtener el ID del usuario logueado guardado por Login.JS
-  const storedId = localStorage.getItem("id_Usuario") || localStorage.getItem("idUsuario");
-  const idUsuario = storedId ? parseInt(storedId, 10) : null;
+  // ✔️ Obtener usuario de sesión
+  const idUsuario = parseInt(
+  localStorage.getItem("id_Usuario") ||
+  localStorage.getItem("idUsuario"),
+  10
+);
 
-  if (!idUsuario) {
-    alert("No se pudo identificar el usuario de la sesión. Por favor, inicie sesión de nuevo.");
-    return;
-  }
+console.log("RAW ID:", idUsuario);
+
+  console.log("ID USUARIO:", idUsuario);
+
+  // ✔️ FIX: no mandar a JS ni romper flujo
+if (isNaN(idUsuario) || idUsuario <= 0) {
+  alert("Sesión inválida. Inicie sesión nuevamente.");
+  window.location.href = "../../../Login/Login.html";
+  return;
+}
 
   if (!txtFecha.value) {
     alert("Seleccione una fecha para la venta.");
     return;
   }
 
-  const detalles = carrito.map((item) => new DetalleVentaRequest(item.idProducto, item.cantidad, item.precioUnitario));
+  // ✔️ construir detalles
+  const detalles = carrito.map(item =>
+    new DetalleVentaRequest(
+      item.idProducto,
+      item.cantidad,
+      item.precioUnitario
+    )
+  );
+
   const total = parseFloat(carritoTotal.textContent) || 0;
-  const venta = new VentasRequest(idUsuario, txtFecha.value, total, detalles);
+
+  const venta = new VentasRequest(
+    idUsuario,
+    txtFecha.value,
+    total,
+    detalles
+  );
 
   try {
+
     const response = await ventasService.create(venta);
-    const idVenta = response?.id_Venta || response?.idVenta || response?.id || 0;
-    alert("Venta registrada correctamente.");
-    window.location.href = `/Ventas/Factura.html?id=${idVenta}`;
+
+    console.log("RESPUESTA BACKEND:", response);
+
+    const idVenta =
+      response?.id_Venta ??
+      response?.idVenta ??
+      response?.id;
+
+    if (!idVenta) {
+      alert("No se pudo obtener el ID de la venta");
+      return;
+    }
+
+    alert("Venta registrada correctamente");
+
+    // ✔️ IR A FACTURA (CORRECTO)
+    window.location.href =
+      `../../.././Ventas/Factura.html?id=${idVenta}&print=true`;
+
   } catch (error) {
-    console.error(error);
-    alert("Error al registrar la venta.");
+    console.error("ERROR FINALIZANDO VENTA:", error);
+    alert("Error al registrar la venta");
   }
 }
 

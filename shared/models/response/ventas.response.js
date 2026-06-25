@@ -1,5 +1,4 @@
-import { DetalleVentaResponse }
-from "./detalleventa.response.js";
+import { DetalleVentaResponse } from "./detalleventa.response.js";
 
 export class VentasResponse {
 
@@ -29,10 +28,9 @@ export class VentasResponse {
             json.nombre,
             json.total,
 
-            (json.detalles || []).map(
-                detalle =>
-                DetalleVentaResponse.fromJson(detalle)
-            )
+            Array.isArray(json.detalles)
+                ? json.detalles.map(d => DetalleVentaResponse.fromJson(d))
+                : []
         );
     }
 }

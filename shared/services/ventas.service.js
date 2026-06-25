@@ -18,13 +18,27 @@ export default class VentasService extends HttpService {
         );
     }
 
-    async getById(id){
 
-        const json =
-        await super.get(`${this.endpoint}/${id}`);
+    // solucionando pa que de la factura
+async getById(id){
 
-        return VentasResponse.fromJson(json);
-    }
+    const json = await super.get(this.endpoint);
+
+    const data = Array.isArray(json)
+        ? json.find(v => v.id_Venta === id)
+        : json;
+
+    return VentasResponse.fromJson(data);
+}
+
+    // codigo bien porsi las moscas 
+    // async getById(id){
+
+    //     const json =
+    //     await super.get(`${this.endpoint}/${id}`);
+
+    //     return VentasResponse.fromJson(json);
+    // }
 
     async create(ventasRequest){
 
