@@ -28,7 +28,7 @@
                     <div class="info-usuario perfil_improvisado">
                         
                         <a class="saludo perfil_improvisado" onclick="window.location.href='.././Perfil_Usuario/Perfil.Html'">Hola,</a>
-                        <h4 id="nombreHeader " class="perfil_improvisado">Darell</h4>
+                        <h4 id="nombreHeader" class="perfil_improvisado"></h4>
                         <span id="rolHeader" class="rol-header perfil_improvisado">Administrador</span>
                     </div>
                 </div>
@@ -190,10 +190,11 @@
 </ul>
 
                 <div class="perfil">
-                    <a class="perfil_link" href="../Inicio/Index.Html">
-                        <img class="Icons_Inicio" alt="Perfil" src="/Ventas/Imagenes_Inicio/Iconos/Atras.svg">
-                        <p class="Text_LinkPerfil">Regresar</p>
-                    </a>
+                         <a class="perfil_link" id="logout">
+                        <img class="Icons_Inicio" alt="Perfil"
+                            src="../Inicio/Imagenes_Inicio/Iconos/logout.svg">
+                        <p class="Text_LinkPerfil">Cerrar Sesion</p>
+                    </a> 
                 </div>
             </div>
         
@@ -252,6 +253,7 @@
     <script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
 <script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
 <script src="../shared/CodeGeneralInterface.js/Sesion.js"></script>
+  <script src="../shared/CodeGeneralInterface.js/logout.js"></script>
 
     <script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/ventas.js"></script>
 </body>

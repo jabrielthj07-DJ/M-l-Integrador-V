@@ -100,7 +100,11 @@
                 
                   <!-- Link para ir a perfil de usuario-->                
                 <div class="perfilpr">
-                    <a class="perfil_link"  href="../Inicio/Index.Html"><img class="Icons_Inicio" alt="Perfil" src="/Proovedores/Imagenes_Inicio/Iconos/Atras.svg"><p class="Text_LinkPerfil">Regresar</p></a>  <!--Agregr icono o diseno mejor-->
+                           <a class="perfil_link" id="logout">
+                        <img class="Icons_Inicio" alt="Perfil"
+                            src="../Inicio/Imagenes_Inicio/Iconos/logout.svg">
+                        <p class="Text_LinkPerfil">Cerrar Sesion</p>
+                    </a> 
                 </div>
             </div>
 
@@ -156,6 +160,17 @@
         <input type="text" id="direccion" name="direccion" placeholder="Ingrese Dirección" required>
     </div>
 </div>
+
+<div class="form-group">
+    <label for="idProducto">Producto</label>
+    <div class="input-icon" data-icon="📦">
+        <select id="idProducto" name="idProducto" required>
+            <option value="">
+                Seleccione un producto
+            </option>
+        </select>
+    </div>
+</div>
   
 
                             <div class="form-actions">
@@ -169,11 +184,12 @@
 
         </section>
     </div>
-<script src="/CodeGeneralInterface.js/Menu.js"></script>
-<script src="/CodeGeneralInterface.js/Sidebar.js"></script>
-<script src="/CodeGeneralInterface.js/Sesion.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
+<script src="../shared/CodeGeneralInterface.js/Sesion.js"></script>
+  <script src="../shared/CodeGeneralInterface.js/logout.js"></script>
 
-<script src="RegistrarProveedor.js"></script>
+<script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/registrarproveedor.js"></script>
     
 </body>
 </html>

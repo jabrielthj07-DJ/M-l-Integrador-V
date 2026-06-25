@@ -1,7 +1,3 @@
-//dog esto lo modefique porque el profe quiere que muestre el nombre del usario en venta 
-//osea la persona que esta logiada tu podes entrar y en venta se carga tu nombre 
-//que estas logiado..
-// Obtener los datos del usuario y rol desde el localStorage.
 // Esto viene de la página de inicio de sesión (`Login.JS`).
 let usuario = localStorage.getItem("usuario") || "";
 const rol = localStorage.getItem("rol") || "";
@@ -48,3 +44,29 @@ if (document.readyState === "loading") {
 } else {
     populateSessionFields();
 }
+
+
+// Add Mas adelante 
+
+// // Prueba de cambio img por rol
+
+// const usuario = JSON.parse(localStorage.getItem("usuarioLogeado"));
+
+// if (usuario) {
+
+//     document.getElementById("nombreHeader").textContent = usuario.nombre;
+//     document.getElementById("rolHeader").textContent = usuario.cargo;
+
+//     const headerAvatar = document.getElementById("headerAvatar");
+
+   
+// if (usuario.cargo === "Administrador") {
+//     avatar.src = "/Inicio/Imagenes_Inicio/porfile1.jpg";
+// } 
+// else if (usuario.cargo === "Cajero") {
+//     avatar.src = "/Inicio/Imagenes_Inicio/porfile2.jpg";
+// } 
+//     else {
+//         headerAvatar.src = "/Inicio/Imagenes_Inicio/avatars/default.png";
+//     }
+// }
