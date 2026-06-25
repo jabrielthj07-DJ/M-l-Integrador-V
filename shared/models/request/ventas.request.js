@@ -20,7 +20,7 @@ export default class VentasRequest {
             fecha_Venta: this.fecha_Venta,
             total: this.total,
             detalles: this.detalles.map(
-                detalle => detalle.toJson()
+            detalle => detalle.toJson()
             )
         };
     }
