@@ -1,7 +1,7 @@
 //implementando los servicio de las compras 
 import HttpService from "./http.service.js";
 import CompraRequest from "../models/request/compras.request.js";
-import { CompraResponse, VentasResponse } from "../models/response/compras.response.js";
+import { CompraResponse } from "../models/response/compras.response.js";
 import ComprasRequest from "../models/request/compras.request.js";
 
 export default class Compraservice extends HttpService {

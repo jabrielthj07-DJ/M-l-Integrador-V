@@ -121,14 +121,15 @@
         <!-- Formulario con los datos generales de la compra -->
         <form id="form-agregar-compra">
             <div class="form-grid">
-
                 <div class="form-group">
                     <label for="proveedor">Proveedor</label>
                     <div class="input-icon" data-icon="🏢">
-                        <input type="text" id="proveedor" name="proveedor" placeholder="Nombre del proveedor" required>
+                        <select id="proveedor" name="proveedor" required>
+                            <option value="">Seleccione un proveedor</option>
+                        </select>
                     </div>
                 </div>
-
+               <!--
                 <div class="form-group">
                     <label for="metodoPago">Método de Pago</label>
                     <div class="input-icon" data-icon="💳">
@@ -140,7 +141,9 @@
                         </select>
                     </div>
                 </div>
+                 -->
 
+                 <!--
                 <div class="form-group">
                     <label for="estado">Estado</label>
                     <div class="input-icon" data-icon="🔄">
@@ -151,7 +154,7 @@
                         </select>
                     </div>
                 </div>
-
+               -->
                 <div class="form-group">
                     <label for="fecha">Fecha</label>
                     <div class="input-icon" data-icon="📅">
@@ -179,7 +182,9 @@
                 <div class="form-group">
                     <label for="producto">Producto</label>
                     <div class="input-icon" data-icon="📦">
-                        <input type="text" id="producto" name="producto" placeholder="Nombre del producto" required>
+                        <select id="producto" name="producto" required>
+                            <option value="">Seleccione un producto</option>
+                        </select>
                     </div>
                 </div>
 
@@ -255,16 +260,16 @@
   
  </div>
 
-</div>
+ </div>
 
-</section>
-</div>
+ </section>
+ </div>
 
  <script src="../shared/CodeGeneralInterface.js/Menu.js"></script>
 <script src="../shared/CodeGeneralInterface.js/Sidebar.js"></script>
 <script src="../shared/CodeGeneralInterface.js/Sesion.js"></script>
-  <script src="../shared/CodeGeneralInterface.js/logout.js"></script>
+<script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/registrarCompra.js"></script>
+<script src="../shared/CodeGeneralInterface.js/logout.js"></script>
 
-    
 </body>
 </html>
