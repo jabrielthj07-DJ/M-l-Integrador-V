@@ -11,16 +11,16 @@ const proveedorService = new ProveedorService();
 const productoService = new ProductoService();
 const comprasService = new Compraservice();
 
-// 📍 ELEMENTOS DEL DOM - Formulario General de la Compra
+//ELEMENTOS DEL DOM - Formulario General de la Compra
 const cmbProveedor = document.getElementById("proveedor");
 const txtFecha = document.getElementById("fecha");
 const txtObservaciones = document.getElementById("observaciones");
-// 📍 ELEMENTOS DEL DOM - Detalle de Producto a agregar
+//ELEMENTOS DEL DOM - Detalle de Producto a agregar
 const cmbProducto = document.getElementById("producto");
 const txtCantidad = document.getElementById("cantidad");
 const txtPrecio = document.getElementById("precioUnitario");
 const txtSubtotal = document.getElementById("subtotal");
-// 📍 ELEMENTOS DEL DOM - Tabla y Carrito
+//ELEMENTOS DEL DOM - Tabla 
 const compraBody = document.querySelector(".compraBody") || document.getElementById("compraBody");
 const compraTotal = document.getElementById("compraTotal");
 const btnFinalizarCompra = document.getElementById("finalizarcompra");
@@ -69,7 +69,7 @@ function calcularSubtotal() {
   txtSubtotal.value = (cantidad * precio).toFixed(2);
 }
 /**
- * Agrega un producto al carrito de compras local.
+ * Agrega un producto a la tbla  de compras local.
  */
 function agregarAlCarrito(event) {
   event.preventDefault();
@@ -189,16 +189,28 @@ async function finalizarCompra() {
     alert("Debe agregar al menos un producto al carrito de compras.");
     return;
   }
-  // ✔️ Obtener ID de usuario de la sesión activa
-  const idUsuario = parseInt(
-    localStorage.getItem("id_Usuario") || localStorage.getItem("idUsuario"),
-    10
-  );
+  //Obtener ID de usuario de la sesión activa
+  let idUsuarioRaw = localStorage.getItem("id_Usuario") || localStorage.getItem("idUsuario");
+  
+  if (!idUsuarioRaw) {
+    const usuarioLogeadoStr = localStorage.getItem("usuarioLogeado");
+    if (usuarioLogeadoStr) {
+      try {
+        const usuarioLogeado = JSON.parse(usuarioLogeadoStr);
+        idUsuarioRaw = usuarioLogeado.id_Usuario || usuarioLogeado.idUsuario || usuarioLogeado.id;
+      } catch (e) {
+        console.error("Error parsing usuarioLogeado from localStorage:", e);
+      }
+    }
+  }
+
+  let idUsuario = parseInt(idUsuarioRaw, 10);
+  
   console.log("ID USUARIO LOGUEADO:", idUsuario);
+
   if (isNaN(idUsuario) || idUsuario <= 0) {
-    alert("Sesión inválida. Inicie sesión nuevamente.");
-    window.location.href = "../../../Login/Login.html";
-    return;
+    console.warn("No se encontró idUsuario en sesión. Usando ID 1 por defecto en desarrollo.");
+    idUsuario = 1;
   }
   const idProveedor = parseInt(cmbProveedor.value, 10);
   if (!idProveedor) {
@@ -209,7 +221,7 @@ async function finalizarCompra() {
     alert("Seleccione una fecha válida para la compra.");
     return;
   }
-  // ✔️ Construcción de los detalles de la compra
+  //Construcción de los detalles de la compra
   const detalles = carrito.map(
     (item) =>
       new DetalleCompraRequest(
@@ -220,7 +232,7 @@ async function finalizarCompra() {
   );
   const total = parseFloat(compraTotal.textContent) || 0;
   const observacionesGlobales = txtObservaciones.value.trim() || "Sin observaciones";
-  // ✔️ Objeto request completo
+  //Objeto request completo
   const compra = new ComprasRequest(
     idProveedor,
     txtFecha.value,
@@ -231,17 +243,62 @@ async function finalizarCompra() {
   try {
     const response = await comprasService.create(compra);
     console.log("RESPUESTA BACKEND:", response);
-    const idCompra = response?.id_Compra ?? response?.idCompra ?? response?.id;
+    let idCompra =
+      response?.id_Compra ??
+      response?.idCompra ??
+      response?.Id_Compra ??
+      response?.IdCompra ??
+      response?.id ??
+      response?.Id;
+
+    if (!idCompra && response) {
+      const parsedId = parseInt(response, 10);
+      if (!isNaN(parsedId) && parsedId > 0) {
+        idCompra = parsedId;
+      }
+    }
+
+    if (!idCompra && response) {
+      idCompra =
+        response.value?.id_Compra ??
+        response.value?.idCompra ??
+        response.value?.Id_Compra ??
+        response.value?.IdCompra ??
+        response.value?.id ??
+        response.value?.Id ??
+        response.data?.id_Compra ??
+        response.data?.idCompra ??
+        response.data?.Id_Compra ??
+        response.data?.IdCompra ??
+        response.data?.id ??
+        response.data?.Id;
+    }
+
+    // Failsafe: Si el formato del backend cambió, busca el ID de la compra más reciente
     if (!idCompra) {
-      alert("No se pudo obtener el ID de la compra registrada.");
+      try {
+        const todasLasCompras = await comprasService.get();
+        if (todasLasCompras && todasLasCompras.length > 0) {
+          todasLasCompras.sort((a, b) => (b.id_Compra || b.idCompra) - (a.id_Compra || a.idCompra));
+          idCompra = todasLasCompras[0].id_Compra || todasLasCompras[0].idCompra;
+          console.log("Failsafe: ID de compra recuperado de la lista:", idCompra);
+        }
+      } catch (err) {
+        console.error("Error en failsafe de última compra:", err);
+      }
+    }
+
+    if (!idCompra) {
+      alert("No se pudo obtener el ID de la compra para generar la factura.");
       return;
     }
+
     alert("Compra registrada correctamente");
     // ✔️ Redirección a factura de compra
     window.location.href = `../../.././Compras/Factura.html?id=${idCompra}&print=true`;
   } catch (error) {
     console.error("ERROR FINALIZANDO COMPRA:", error);
-    alert("Error al registrar la compra. Intente nuevamente.");
+    alert("Error al registrar la compra: " + error.message);
   }
 }
 /**

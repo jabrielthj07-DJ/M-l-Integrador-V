@@ -17,6 +17,10 @@ export default class HttpService {
             }
         );
 
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         return await response.json();
     }
 
@@ -37,6 +41,10 @@ export default class HttpService {
     );
 
     const text = await response.text();
+
+    if (!response.ok) {
+        throw new Error(text || `HTTP error! status: ${response.status}`);
+    }
 
     try {
         return JSON.parse(text);
@@ -63,6 +71,10 @@ export default class HttpService {
 
     const text = await response.text();
 
+    if (!response.ok) {
+        throw new Error(text || `HTTP error! status: ${response.status}`);
+    }
+
     try {
 
         return JSON.parse(text);
@@ -87,6 +99,10 @@ export default class HttpService {
                 }
             }
         );
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
         return await response.json();
     }

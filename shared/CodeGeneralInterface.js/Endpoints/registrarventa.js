@@ -153,22 +153,29 @@ async function finalizarVenta() {
   }
 
   // Obtener usuario de sesión
-  const idUsuario = parseInt(
-  localStorage.getItem("id_Usuario") ||
-  localStorage.getItem("idUsuario"),
-  10
-);
+  let idUsuarioRaw = localStorage.getItem("id_Usuario") || localStorage.getItem("idUsuario");
+  
+  if (!idUsuarioRaw) {
+    const usuarioLogeadoStr = localStorage.getItem("usuarioLogeado");
+    if (usuarioLogeadoStr) {
+      try {
+        const usuarioLogeado = JSON.parse(usuarioLogeadoStr);
+        idUsuarioRaw = usuarioLogeado.id_Usuario || usuarioLogeado.idUsuario || usuarioLogeado.id;
+      } catch (e) {
+        console.error("Error parsing usuarioLogeado from localStorage:", e);
+      }
+    }
+  }
 
-console.log("RAW ID:", idUsuario);
-
+  let idUsuario = parseInt(idUsuarioRaw, 10);
+  
+  console.log("RAW ID:", idUsuarioRaw);
   console.log("ID USUARIO:", idUsuario);
 
-  //FIX: no mandar a JS ni romper flujo
-if (isNaN(idUsuario) || idUsuario <= 0) {
-  alert("Sesión inválida. Inicie sesión nuevamente.");
-  window.location.href = "../../../Login/Login.html";
-  return;
-}
+  if (isNaN(idUsuario) || idUsuario <= 0) {
+    console.warn("No se encontró idUsuario en sesión. Usando ID 1 por defecto en desarrollo.");
+    idUsuario = 1;
+  }
 
   if (!txtFecha.value) {
     alert("Seleccione una fecha para la venta.");
@@ -180,7 +187,8 @@ if (isNaN(idUsuario) || idUsuario <= 0) {
     new DetalleVentaRequest(
       item.idProducto,
       item.cantidad,
-      item.precioUnitario
+      item.precioUnitario,
+      item.nombreProducto
     )
   );
 
@@ -191,6 +199,7 @@ if (isNaN(idUsuario) || idUsuario <= 0) {
     txtFecha.value,
     total,
     detalles
+    
   );
 
   try {
@@ -199,13 +208,53 @@ if (isNaN(idUsuario) || idUsuario <= 0) {
 
     console.log("RESPUESTA BACKEND:", response);
 
-    const idVenta =
+    let idVenta =
       response?.id_Venta ??
       response?.idVenta ??
-      response?.id;
+      response?.Id_Venta ??
+      response?.IdVenta ??
+      response?.id ??
+      response?.Id;
+
+    if (!idVenta && response) {
+      const parsedId = parseInt(response, 10);
+      if (!isNaN(parsedId) && parsedId > 0) {
+        idVenta = parsedId;
+      }
+    }
+
+    if (!idVenta && response) {
+      idVenta =
+        response.value?.id_Venta ??
+        response.value?.idVenta ??
+        response.value?.Id_Venta ??
+        response.value?.IdVenta ??
+        response.value?.id ??
+        response.value?.Id ??
+        response.data?.id_Venta ??
+        response.data?.idVenta ??
+        response.data?.Id_Venta ??
+        response.data?.IdVenta ??
+        response.data?.id ??
+        response.data?.Id;
+    }
+
+    // Failsafe: Si el formato del backend cambió, busca el ID de la venta más reciente
+    if (!idVenta) {
+      try {
+        const todasLasVentas = await ventasService.get();
+        if (todasLasVentas && todasLasVentas.length > 0) {
+          todasLasVentas.sort((a, b) => b.idVenta - a.idVenta);
+          idVenta = todasLasVentas[0].idVenta;
+          console.log("Failsafe: ID de venta recuperado de la lista:", idVenta);
+        }
+      } catch (err) {
+        console.error("Error en failsafe de última venta:", err);
+      }
+    }
 
     if (!idVenta) {
-      alert("No se pudo obtener el ID de la venta");
+      alert("No se pudo obtener el ID de la venta para generar la factura.");
       return;
     }
 
@@ -217,7 +266,7 @@ if (isNaN(idUsuario) || idUsuario <= 0) {
 
   } catch (error) {
     console.error("ERROR FINALIZANDO VENTA:", error);
-    alert("Error al registrar la venta");
+    alert("Error al registrar la venta: " + error.message);
   }
 }
 

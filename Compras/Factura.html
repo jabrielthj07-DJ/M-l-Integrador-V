@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura - Veterinaria M&L</title>
+    <link rel="stylesheet" href="factura.css">
+</head>
+<body>
+
+<div class="factura">
+
+    <div class="encabezado">
+        <h1>Veterinaria M&L</h1>
+        <p>Cuidando a tus mascotas</p>
+    </div>
+
+    <div class="info-venta">
+        <div>
+            <strong>Compra ID #:</strong>
+            <span id="idVenta"></span> </div>
+
+        <div>
+            <strong>Fecha:</strong>
+            <span id="facturaFecha">--/--/----</span>
+        </div>
+
+        <div>
+            <strong>Usuario:</strong>
+            <span id="facturaUsuario">--</span>
+        </div>
+
+        <div>
+            <strong>Proveedor:</strong>
+            <span id="facturaProveedor">--</span>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>P. Unitario</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+
+        <tbody id="facturaDetalleBody">
+            </tbody>
+    </table>
+
+    <div class="total-container">
+        <h2>Total: C$ <span id="facturaTotal">0.00</span></h2>
+    </div>
+
+    <div class="pie">
+        <p>Gracias por confiar en Veterinaria M&L</p>
+    </div>
+
+    <button onclick="window.print()" class="btn-imprimir">
+        Imprimir Factura
+    </button>
+
+</div>
+
+<script type="module" src="../shared/CodeGeneralInterface.js/Endpoints/facturacompra.js"></script>
+
+</body>
+</html>
