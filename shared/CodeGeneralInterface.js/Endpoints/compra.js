@@ -3,6 +3,7 @@ import Compraservice from "../../services/compra.service.js";
 const service = new Compraservice();
 
 let todasCompras = [];
+
 let paginaActual = 1;
 const registrosPorPagina = 7;
 
@@ -11,7 +12,7 @@ async function loadCompras() {
         todasCompras = await service.get();
         mostrarPagina();
     } catch (error) {
-        console.error("Error al cargar compras:", error);
+        console.error(error);
     }
 }
 
@@ -21,12 +22,11 @@ function mostrarPagina() {
     const comprasPagina = todasCompras.slice(inicio, fin);
 
     renderizarCompras(comprasPagina);
-    actualizarPaginacion(todasCompras.length);
+    actualizarPaginacion();
 }
 
 function renderizarCompras(compras) {
-    // Apunta al ID correcto en tu HTML de listado de compras
-    const table = document.getElementById("tablacompras") || document.getElementById("tablaventas");
+    const table = document.getElementById("tablacompras");
     if (!table) return;
 
     table.innerHTML = "";
@@ -43,24 +43,33 @@ function renderizarCompras(compras) {
     }
 
     compras.forEach(compra => {
-        const detalle = compra.detalles?.[0];
+        // Obtenemos los detalles respetando las propiedades exactas que envía C#
+        const listaDetalles = compra.Detalles ?? compra.detalles ?? [];
+        const detalle = listaDetalles[0]; 
+
+        const idCompra = compra.IdCompra ?? compra.idCompra ?? compra.id;
         
-        // Failsafe para extraer IDs y nombres dinámicamente si el backend varía las propiedades
-        const idCompra = compra.idCompra ?? compra.id_Compra ?? compra.idVenta ?? compra.id;
-        const fecha = compra.fechaCompra ?? compra.fecha_Compra ?? compra.fechaVenta ?? "N/A";
-        const total = parseFloat(compra.total || 0).toFixed(2);
+        // Limpieza de formato de fecha (Remueve la "T" si viene con la estampa de tiempo)
+        let fecha = compra.FechaCompra ?? compra.fechaCompra ?? compra.fecha ?? "N/A";
+        if (fecha.includes("T")) {
+            fecha = fecha.split("T")[0].split("-").reverse().join("/");
+        }
+
+        const total = parseFloat(compra.Total ?? compra.total ?? 0).toFixed(2);
+        const proveedor = compra.Nombre ?? compra.nombre ?? "N/A";
+        const producto = detalle?.Nombre_Producto ?? detalle?.nombreProducto ?? "N/A";
+        const cantidad = detalle?.Cantidad ?? detalle?.cantidad ?? 0;
         
-        // Datos del detalle
-        const producto = detalle?.nombreProducto ?? detalle?.nombre_Producto ?? compra.nombreProducto ?? "N/A";
-        const cantidad = detalle?.cantidad ?? compra.cantidad ?? "";
-        const precioUnit = parseFloat(detalle?.precioUnitario ?? detalle?.precio_Unitario ?? compra.precioUnitario ?? 0).toFixed(2);
+        const precioUnit = parseFloat(
+            detalle?.Precio_Unitario ?? detalle?.precioUnitario ?? 0
+        ).toFixed(2);
 
         table.innerHTML += `
         <tr>
             <td>${fecha}</td>
-            <td>${compra.nombre ?? compra.usuario ?? "Admin"}</td>
+            <td>${proveedor}</td>
             <td>C$ ${total}</td>
-            <td>${detalle?.nombreProducto ?? ""}</td>
+            <td>${producto}</td>
             <td>${cantidad}</td>
             <td>C$ ${precioUnit}</td>
             <td class="acciones">
@@ -76,12 +85,9 @@ function renderizarCompras(compras) {
     });
 }
 
-function actualizarPaginacion(totalRegistros) {
-    const totalPaginas = Math.ceil(totalRegistros / registrosPorPagina) || 1;
-    const elementoPagina = document.getElementById("paginaActual");
-    if (elementoPagina) {
-        elementoPagina.textContent = `Página ${paginaActual} de ${totalPaginas}`;
-    }
+function actualizarPaginacion() {
+    const totalPaginas = Math.ceil(todasCompras.length / registrosPorPagina) || 1;
+    document.getElementById("paginaActual").textContent = `Página ${paginaActual} de ${totalPaginas}`;
 }
 
 document.getElementById("btnSiguiente")?.addEventListener("click", () => {
@@ -103,31 +109,26 @@ document.getElementById("buscarCompra")?.addEventListener("input", function() {
     const texto = this.value.toLowerCase();
 
     const filtradas = todasCompras.filter(compra => {
-        const detalle = compra.detalles?.[0];
-        const fecha = (compra.fechaCompra ?? compra.fecha_Compra ?? compra.fechaVenta ?? "").toString().toLowerCase();
-        const usuario = (compra.nombre ?? compra.usuario ?? "").toLowerCase();
-        const producto = (detalle?.nombreProducto ?? detalle?.nombre_Producto ?? compra.nombreProducto ?? "").toLowerCase();
-        const total = (compra.total ?? "").toString();
+        const listaDetalles = compra.Detalles ?? compra.detalles ?? [];
+        const detalle = listaDetalles[0];
+        
+        let fecha = compra.FechaCompra ?? compra.fechaCompra ?? compra.fecha ?? "";
 
         return (
-            usuario.includes(texto) ||
-            fecha.includes(texto) ||
-            producto.includes(texto) ||
-            total.includes(texto)
+            (compra.Nombre ?? compra.nombre ?? "").toLowerCase().includes(texto) ||
+            fecha.toLowerCase().includes(texto) ||
+            (detalle?.Nombre_Producto ?? detalle?.nombreProducto ?? "").toLowerCase().includes(texto) ||
+            (compra.Total ?? compra.total ?? "").toString().includes(texto) ||
+            (detalle?.Cantidad ?? detalle?.cantidad ?? "").toString().includes(texto)
         );
     });
 
     renderizarCompras(filtradas);
-    
-    const elementoPagina = document.getElementById("paginaActual");
-    if (elementoPagina) {
-        elementoPagina.textContent = `Resultados encontrados: ${filtradas.length}`;
-    }
+    document.getElementById("paginaActual").textContent = `Resultados encontrados: ${filtradas.length}`;
 });
 
-// Exponer funciones globales de acción para los botones inline de la tabla
 window.eliminarCompra = async function(id) {
-    const confirmar = confirm("¿Está seguro de eliminar este registro de compra?");
+    const confirmar = confirm("¿Está seguro de que desea eliminar esta compra?");
     if (!confirmar) return;
 
     try {
@@ -135,18 +136,14 @@ window.eliminarCompra = async function(id) {
         await loadCompras();
         alert("Compra eliminada correctamente");
     } catch (error) {
-        console.error("Error al eliminar compra:", error);
-        alert("No se pudo eliminar el registro");
+        console.error(error);
+        alert("No se pudo eliminar la compra");
     }
 };
 
 window.imprimirCompra = function(id) {
-    // Redirecciona directamente a la carpeta de Compras con la bandera para lanzar el diálogo de impresión
-    window.open(
-        `/Ventas/Factura.html?id=${id}&print=true`,
-        "_blank"
-    );
+    window.open(`/Compras/Factura.html?id=${id}&print=true`, "_blank");
 };
 
-// Inicializar ejecución
+// Ejecución inicial al cargar la vista
 loadCompras();

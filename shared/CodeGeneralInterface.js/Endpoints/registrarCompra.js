@@ -1,9 +1,7 @@
-//registra ventas de los productos mi dog el mero prgramador se mucho pero tu me ganas en otras formas mi dog🫡...
-//import
-
 import ProveedorService from "../../services/proveedor.service.js";
 import ProductoService from "../../services/producto.service.js";
 import Compraservice from "../../services/compra.service.js";
+import InventarioService from "../../services/inventario.service.js";
 import ComprasRequest from "../../models/request/compras.request.js";
 import DetalleCompraRequest from "../../models/request/detalleCompra.request.js";
 
@@ -11,23 +9,27 @@ const proveedorService = new ProveedorService();
 const productoService = new ProductoService();
 const comprasService = new Compraservice();
 
-//ELEMENTOS DEL DOM - Formulario General de la Compra
+// ELEMENTOS DEL DOM - Formulario General de la Compra
 const cmbProveedor = document.getElementById("proveedor");
 const txtFecha = document.getElementById("fecha");
 const txtObservaciones = document.getElementById("observaciones");
-//ELEMENTOS DEL DOM - Detalle de Producto a agregar
+
+// ELEMENTOS DEL DOM - Detalle de Producto a agregar
 const cmbProducto = document.getElementById("producto");
 const txtCantidad = document.getElementById("cantidad");
 const txtPrecio = document.getElementById("precioUnitario");
 const txtSubtotal = document.getElementById("subtotal");
-//ELEMENTOS DEL DOM - Tabla 
+
+// ELEMENTOS DEL DOM - Tabla 
 const compraBody = document.querySelector(".compraBody") || document.getElementById("compraBody");
 const compraTotal = document.getElementById("compraTotal");
 const btnFinalizarCompra = document.getElementById("finalizarcompra");
 const formAgregarDetalle = document.getElementById("form-agregar-detalle");
+
 let proveedores = [];
 let productos = [];
 let carrito = [];
+
 /**
  * Carga la lista de proveedores desde la API y llena el select
  */
@@ -44,6 +46,7 @@ async function cargarProveedores() {
     console.error("Error cargando proveedores:", error);
   }
 }
+
 /**
  * Carga la lista de productos desde la API y llena el select
  */
@@ -60,6 +63,7 @@ async function cargarProductos() {
     console.error("Error cargando productos:", error);
   }
 }
+
 /**
  * Calcula automáticamente el subtotal en base a la cantidad y precio unitario ingresados.
  */
@@ -68,8 +72,9 @@ function calcularSubtotal() {
   const precio = parseFloat(txtPrecio.value) || 0;
   txtSubtotal.value = (cantidad * precio).toFixed(2);
 }
+
 /**
- * Agrega un producto a la tbla  de compras local.
+ * Agrega un producto a la tabla de compras local.
  */
 function agregarAlCarrito(event) {
   event.preventDefault();
@@ -97,12 +102,13 @@ function agregarAlCarrito(event) {
   const observaciones = txtObservaciones.value.trim() || "Sin observaciones";
   const fecha = txtFecha.value || new Date().toISOString().split("T")[0];
   const subtotal = parseFloat((cantidad * precioUnitario).toFixed(2));
-  // Bloquea el cambio de proveedor una vez agregado el primer producto para mantener consistencia
+  
   cmbProveedor.disabled = true;
+  
   const detalleExistente = carrito.find((item) => item.idProducto == idProducto);
   if (detalleExistente) {
     detalleExistente.cantidad += cantidad;
-    detalleExistente.precioUnitario = precioUnitario; // actualiza precio
+    detalleExistente.precioUnitario = precioUnitario;
     detalleExistente.subtotal = parseFloat((detalleExistente.cantidad * precioUnitario).toFixed(2));
   } else {
     carrito.push({
@@ -118,6 +124,7 @@ function agregarAlCarrito(event) {
   renderizarCarrito();
   limpiarFormularioProducto();
 }
+
 /**
  * Dibuja la tabla con las compras agregadas temporalmente.
  */
@@ -130,7 +137,7 @@ function renderizarCarrito() {
       </tr>
     `;
     compraTotal.textContent = "0.00";
-    cmbProveedor.disabled = false; // Permite cambiar de proveedor si no hay productos
+    cmbProveedor.disabled = false;
     return;
   }
   let total = 0;
@@ -154,6 +161,7 @@ function renderizarCarrito() {
   compraTotal.textContent = total.toFixed(2);
   actualizarBotonFinalizar();
 }
+
 /**
  * Limpia el formulario inferior una vez agregado el item.
  */
@@ -163,6 +171,7 @@ function limpiarFormularioProducto() {
   txtPrecio.value = "";
   txtSubtotal.value = "";
 }
+
 /**
  * Elimina un producto del carrito usando su índice.
  */
@@ -174,12 +183,14 @@ function eliminarProducto(event) {
   carrito.splice(index, 1);
   renderizarCarrito();
 }
+
 /**
  * Habilita o deshabilita el botón finalizador según si hay ítems.
  */
 function actualizarBotonFinalizar() {
   btnFinalizarCompra.disabled = carrito.length === 0;
 }
+
 /**
  * Valida los datos y envía la compra al backend.
  */
@@ -189,7 +200,8 @@ async function finalizarCompra() {
     alert("Debe agregar al menos un producto al carrito de compras.");
     return;
   }
-  //Obtener ID de usuario de la sesión activa
+
+  // Obtener ID de usuario de la sesión activa
   let idUsuarioRaw = localStorage.getItem("id_Usuario") || localStorage.getItem("idUsuario");
   
   if (!idUsuarioRaw) {
@@ -205,41 +217,53 @@ async function finalizarCompra() {
   }
 
   let idUsuario = parseInt(idUsuarioRaw, 10);
-  
   console.log("ID USUARIO LOGUEADO:", idUsuario);
 
   if (isNaN(idUsuario) || idUsuario <= 0) {
     console.warn("No se encontró idUsuario en sesión. Usando ID 1 por defecto en desarrollo.");
     idUsuario = 1;
   }
+
+  // --- AQUÍ INTEGRADO --- 
   const idProveedor = parseInt(cmbProveedor.value, 10);
   if (!idProveedor) {
     alert("Por favor, seleccione un proveedor.");
     return;
   }
+
+  // Extraemos el texto visible del Option seleccionado (ej: "Juan Perez")
+  const nombreProveedorTexto = cmbProveedor.options[cmbProveedor.selectedIndex].text;
+
   if (!txtFecha.value) {
     alert("Seleccione una fecha válida para la compra.");
     return;
   }
-  //Construcción de los detalles de la compra
+
+  // Construcción de los detalles mapeando los 4 parámetros que corregimos
   const detalles = carrito.map(
     (item) =>
       new DetalleCompraRequest(
         item.idProducto,
         item.cantidad,
-        item.precioUnitario
+        item.precioUnitario,
+        item.nombreProducto // 👈 Clave para que la API registre el nombre
       )
   );
+
   const total = parseFloat(compraTotal.textContent) || 0;
   const observacionesGlobales = txtObservaciones.value.trim() || "Sin observaciones";
-  //Objeto request completo
+
+  // Instanciamos el ComprasRequest pasando el ID para la DB y el Nombre para las vistas
   const compra = new ComprasRequest(
-    idProveedor,
+    idProveedor,          // 👈 Id_Proveedor numérico para evitar el conflicto FK
+    nombreProveedorTexto, // 👈 Nombre para tus listados y reportes
     txtFecha.value,
     total,
     observacionesGlobales,
     detalles
   );
+  // 🚨 --- FIN DE LA INTEGRACIÓN --- 🚨
+
   try {
     const response = await comprasService.create(compra);
     console.log("RESPUESTA BACKEND:", response);
@@ -274,7 +298,6 @@ async function finalizarCompra() {
         response.data?.Id;
     }
 
-    // Failsafe: Si el formato del backend cambió, busca el ID de la compra más reciente
     if (!idCompra) {
       try {
         const todasLasCompras = await comprasService.get();
@@ -294,33 +317,30 @@ async function finalizarCompra() {
     }
 
     alert("Compra registrada correctamente");
-    // ✔️ Redirección a factura de compra
     window.location.href = `../../.././Compras/Factura.html?id=${idCompra}&print=true`;
   } catch (error) {
     console.error("ERROR FINALIZANDO COMPRA:", error);
     alert("Error al registrar la compra: " + error.message);
   }
 }
+
 /**
  * Inicialización de oyentes y valores de carga.
  */
 async function inicializar() {
   await cargarProveedores();
   await cargarProductos();
-  txtFecha.value = new Date().toISOString().split("T")[0]; // Asignar fecha de hoy
+  txtFecha.value = new Date().toISOString().split("T")[0];
   renderizarCarrito();
   actualizarBotonFinalizar();
-  // Calcular subtotal en tiempo real al tipear
+  
   txtCantidad.addEventListener("input", calcularSubtotal);
   txtPrecio.addEventListener("input", calcularSubtotal);
-  // Enviar formulario de agregar item
   formAgregarDetalle.addEventListener("submit", agregarAlCarrito);
-  // Evento para eliminar un elemento de la lista
   compraBody.addEventListener("click", eliminarProducto);
-  // Evento para completar y guardar la compra en el servidor
   btnFinalizarCompra.addEventListener("click", finalizarCompra);
 }
-// Inicializar cuando el DOM esté listo
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", inicializar);
 } else {
