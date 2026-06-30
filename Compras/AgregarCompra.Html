@@ -68,9 +68,7 @@
                             Inventario
                         </button>
                         <ul class="submenu">
-                            <!--
-                            <li><a class="perfil_link" href="/Ventas/Ventas.Html">Historial de Ventas</a></li>
-                            <li><a class="perfil_link" href="../Compras/Compras.Html">Historial de Compras</a></li>-->
+
                             <li><a class="perfil_link" href="/Inventario/Inventario.Html">Inventario Actual</a></li>
                         </ul>
                     </li>
@@ -104,21 +102,21 @@
                             src="../Inicio/Imagenes_Inicio/Iconos/logout.svg">
                         <p class="Text_LinkPerfil">Cerrar Sesion</p>
                     </a> 
-                    </a>
+            
                 </div>
             </div>
 
        <div class="contenido_inicio">
-    <!-- Contenido principal de la página de compras -->
+   
     <h1 class="titulo-modulo">Gestión de Compras</h1>
 
     <div class="formulario"> 
-        <!-- Encabezado principal de la tarjeta de compra -->
+        
         <div class="formulario-header">
             <h2>Agregar Nueva Compra</h2>
         </div>
 
-        <!-- Formulario con los datos generales de la compra -->
+       
         <form id="form-agregar-compra">
             <div class="form-grid">
                 <div class="form-group">
@@ -129,32 +127,7 @@
                         </select>
                     </div>
                 </div>
-               <!--
-                <div class="form-group">
-                    <label for="metodoPago">Método de Pago</label>
-                    <div class="input-icon" data-icon="💳">
-                        <select id="metodoPago" name="metodoPago" required>
-                            <option value="">Seleccione un método</option>
-                            <option value="Efectivo">Efectivo</option>
-                            <option value="Transferencia">Transferencia</option>
-                            <option value="Tarjeta">Tarjeta</option>
-                        </select>
-                    </div>
-                </div>
-                 -->
-
-                 <!--
-                <div class="form-group">
-                    <label for="estado">Estado</label>
-                    <div class="input-icon" data-icon="🔄">
-                        <select id="estado" name="estado" required>
-                            <option value="">Seleccione un estado</option>
-                            <option value="Recibido">Recibido</option>
-                            <option value="Pendiente">Pendiente</option>
-                        </select>
-                    </div>
-                </div>
-               -->
+          
                 <div class="form-group">
                     <label for="fecha">Fecha</label>
                     <div class="input-icon" data-icon="📅">
@@ -171,12 +144,12 @@
             </div>
         </form>
 
-        <!-- Sección de detalle de compra, colocada dentro de la misma tarjeta -->
-        <div class="formulario-header" style="margin-top: 24px;"><!--un estilo basico dog de margin de espacio-->
+      
+        <div class="formulario-header" style="margin-top: 24px;">
             <h2>Detalle Compra</h2>
         </div>
 
-        <!-- Formulario para agregar un producto al detalle de la compra -->
+    
         <form id="form-agregar-detalle">
             <div class="form-grid">
                 <div class="form-group">
@@ -216,7 +189,7 @@
             </div>
         </form>
 
-    <!--creamos tala para mostrar la ventas realizadas y imprimir factura de compra-->
+   
     <div class="Compra-container">
 
         <div class="compras-header">
@@ -236,8 +209,7 @@
                     <th>Acciones</th>
                 </tr>
             </thead>
-
-            <!--thead para verificar los productos agregados-->
+            
             <thead>
                 <tbody id class="compraBody">
                     <tr>
@@ -247,7 +219,6 @@
             </thead>
         </table>
 
-          <!--creamos en la parte de abajo para el total de la compras-->
           <div class="footer-compras">
             <div class="compras-total">Total: C$ <span id="compraTotal">0.00</span></div>
             <button id="finalizarcompra" type="button" class="bton-finalizado">Generar factura</button>
